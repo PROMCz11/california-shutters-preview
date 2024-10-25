@@ -131,29 +131,31 @@
     </article>
     <section class="general-benefits bg-white text-navy fs-300">
         <div>
-            <img src="{gearSrc}" alt="gear icon">
             <div>
-                <h2>Excellent Service</h2>
-                <p>We're ready to meet all of your California Shutter needs!</p>
+                <img src="{gearSrc}" alt="gear icon">
+                <div>
+                    <h2>Excellent Service</h2>
+                    <p>We're ready to meet all of your California Shutter needs!</p>
+                </div>
+            </div>
+            <div>
+                <img src="{qualitySrc}" alt="quality icon">
+                <div>
+                    <h2>Record-Breaking Quality</h2>
+                    <p>We have the highest quality California Shutter in Toronto!<br>Check out our reviews!</p>
+                </div>
+            </div>
+            <div>
+                <img src="{piggybankSrc}" alt="piggybank icon">
+                <div>
+                    <h2>Exceptional Prices</h2>
+                    <p>We offer competitive pricing for the top quality California shutters in Toronto</p>
+                </div>
             </div>
         </div>
-        <div>
-            <img src="{qualitySrc}" alt="quality icon">
-            <div>
-                <h2>Record-Breaking Quality</h2>
-                <p>We have the highest quality California Shutter in Toronto!<br>Check out our reviews!</p>
-            </div>
-        </div>
-        <div>
-            <img src="{piggybankSrc}" alt="piggybank icon">
-            <div>
-                <h2>Exceptional Prices</h2>
-                <p>We offer competitive pricing for the top quality California shutters in Toronto</p>
-            </div>
-        </div>
+        <h1 class="fs-heading bg-white text-navy">Three Reasons Why We're the Best</h1>
     </section>
     <section class="main-features-wrapper">
-        <h1 class="fs-heading bg-white text-navy">Three Reasons Why We're the Best</h1>
         <div>
             <h2 class="fs-xl">Constructed with Premium Canadian Poplar</h2>
             <div>
@@ -263,7 +265,7 @@
         padding-block: 1rem;
     }
 
-    .general-benefits {
+    .general-benefits > div {
         padding: 3rem;
         display: flex;
         flex-wrap: wrap;
@@ -271,7 +273,7 @@
         gap: 3rem;
     }
 
-    .general-benefits > div {
+    .general-benefits > div > div {
         max-width: 350px;
         display: flex;
         flex-direction: column;
@@ -281,7 +283,7 @@
         padding-block: var(--spacing);
     }
 
-    .main-features-wrapper > h1 {
+    .general-benefits > h1 {
         padding-inline: 2rem;
         padding-bottom: var(--spacing);
         padding-top: calc(var(--spacing) * 5);
