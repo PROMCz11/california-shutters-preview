@@ -72,6 +72,9 @@ select {
     --clr-blue: #21658A;
     --clr-white: #FBFCFE;
     --clr-yellow: #FFB621;
+
+    /* Global spacing variable for mobile */
+    --spacing: 1rem;
 }
   
 /* Tablet */
@@ -83,6 +86,8 @@ select {
         --fs-500: 1.5rem;
         --fs-xl: 2.5rem;
         --fs-heading: 3rem;
+        
+        --spacing: 2rem;
     }
 }
   
@@ -95,6 +100,8 @@ select {
         --fs-500: 1.75rem;
         --fs-xl: 3rem;
         --fs-heading: 5rem;
+
+        --spacing: 3rem;
     }
 }
 
@@ -123,6 +130,10 @@ select {
 .text-white {color: var(--clr-white);}
 .text-blue {color: var(--clr-blue);}
 .text-yellow {color: var(--clr-yellow);}
+
+.hide {
+    display: none;
+}
 
 /* ------------------- */
 /* Styles              */

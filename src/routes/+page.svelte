@@ -1,18 +1,33 @@
 <script>
-    import heroImg1Src from "$lib/assets/home/IMG_3573.jpg";
-    import heroImg2Src from "$lib/assets/home/IMG_3725.jpg";
-    import heroImg3Src from "$lib/assets/home/IMG_4027.jpg";
-    import heroImg4Src from "$lib/assets/home/IMG_4078.jpg";
-    import heroImg5Src from "$lib/assets/home/IMG_4396.jpg";
-    import heroImg6Src from "$lib/assets/home/IMG_4539.jpg";
-    import heroImg7Src from "$lib/assets/home/IMG_4575 3.jpg";
-    import heroImg8Src from "$lib/assets/home/IMG_4577.jpg";
+    import heroImg1Src from "$lib/assets/home/IMG_3573.webp";
+    import heroImg2Src from "$lib/assets/home/IMG_3725.webp";
+    import heroImg3Src from "$lib/assets/home/IMG_4027.webp";
+    import heroImg4Src from "$lib/assets/home/IMG_4078.webp";
+    import heroImg5Src from "$lib/assets/home/IMG_4396.webp";
+    import heroImg6Src from "$lib/assets/home/IMG_4539.webp";
+    import heroImg7Src from "$lib/assets/home/IMG_4575 3.webp";
+    import heroImg8Src from "$lib/assets/home/IMG_4577.webp";
+    import heroImg9Src from "$lib/assets/home/IMG_4079.webp";
+    import heroImg10Src from "$lib/assets/home/IMG_4542.webp";
 
-    import { animate, scroll, inView } from "motion";
+    import gearSrc from "$lib/assets/home/gear.svg";
+    import qualitySrc from "$lib/assets/home/quality.svg";
+    import piggybankSrc from "$lib/assets/home/piggybank.svg";
+
+    import canadianHardwoodSrc from "$lib/assets/home/canadian-hardwood.png"
+    import noCompositeSrc from "$lib/assets/home/no-composite.png"
+    import premiumPoplarSrc from "$lib/assets/home/premium-poplar.png"
+    import straightShutterSrc from "$lib/assets/home/straight-shutter.png"
+    import mainIcon1Src from "$lib/assets/home/main-icon-1.svg";
+    import mainIcon2Src from "$lib/assets/home/main-icon-2.svg";
+    import mainIcon3Src from "$lib/assets/home/main-icon-3.svg";
+    import mainIcon4Src from "$lib/assets/home/main-icon-4.svg";
+    
+    import { animate, scroll, inView, timeline } from "motion";
 	import { onMount } from "svelte";
 
     onMount(() => {
-        const collageImgs = document.querySelectorAll(".background-collage img");
+        const collageImgs = document.querySelectorAll(".background-collage picture");
         const heroContent = document.querySelector(".content");
         const articleElement = document.querySelector("article");
         inView(collageImgs, ({ target }) => {
@@ -21,12 +36,37 @@
                 duration: .750
             })
         })
+
         scroll(
             animate(heroContent, { y: [0, "-100%"], display: "none" }), { target: articleElement, offset: ["0% 0%", "100% 30%"] }
         )
 
         scroll(
             animate(heroContent, { opacity: [1, 0] }), { target: articleElement, offset: ["50% 0%", "100% 30%"] }
+        )
+
+        scroll(
+            timeline([
+                "one",
+                [".main-features", { translateY: ["40%", "15%"] }, { easing: "linear" }],
+                [".main-features > div:nth-of-type(1)", { opacity: [1, .2] }, { at: "one" }],
+                [".main-features > div:nth-of-type(2)", { opacity: [.2, 1] }, { at: "one" }],
+                [".main-features > div:nth-of-type(3)", { opacity: [0, .2] }, { at: "one" }],
+                [".main-features > div:nth-of-type(4)", { opacity: [0, 0] }, { at: "one" }],
+                "two",
+                [".main-features", { translateY: ["15%", "-10%"] }, { easing: "linear" }],
+                [".main-features > div:nth-of-type(1)", { opacity: [.2, 0] }, { at: "two" }],
+                [".main-features > div:nth-of-type(2)", { opacity: [1, .2] }, { at: "two" }],
+                [".main-features > div:nth-of-type(3)", { opacity: [.2, 1] }, { at: "two" }],
+                [".main-features > div:nth-of-type(4)", { opacity: [0, .2] }, { at: "two" }],
+                "three",
+                [".main-features", { translateY: ["-10%", "-35%"] }, { easing: "linear" }],
+                [".main-features > div:nth-of-type(1)", { opacity: [0, 0] }, { at: "three" }],
+                [".main-features > div:nth-of-type(2)", { opacity: [.2, 0] }, { at: "three" }],
+                [".main-features > div:nth-of-type(3)", { opacity: [1, .2] }, { at: "three" }],
+                [".main-features > div:nth-of-type(4)", { opacity: [.2, 1] }, { at: "three" }]
+            ]),
+            { target: document.querySelector(".main-features-wrapper"), offset: ["start start", "end end"] }
         )
     })
 </script>
@@ -45,34 +85,110 @@
         </div>
         <div class="background-collage">
             <div class="shift">
-                <img src="{heroImg1Src}" alt="background img of a shutter">
-                <img src="{heroImg2Src}" alt="background img of a shutter">
+                <picture>
+                    <img src="{heroImg1Src}" alt="background shutter">
+                </picture>
+                <picture>
+                    <img src="{heroImg2Src}" alt="background shutter">
+                </picture>
             </div>
             <div class="reverse-shift">
-                <img src="{heroImg3Src}" alt="background img of a shutter">
-                <img src="{heroImg4Src}" alt="background img of a shutter">
+                <picture>
+                    <img src="{heroImg3Src}" alt="background shutter">
+                </picture>
+                <picture>
+                    <img src="{heroImg4Src}" alt="background shutter">
+                </picture>
             </div>
             <div class="shift">
-                <img src="{heroImg5Src}" alt="background img of a shutter">
-                <img src="{heroImg6Src}" alt="background img of a shutter">
+                <picture>
+                    <img src="{heroImg5Src}" alt="background shutter">
+                </picture>
+                <picture>
+                    <img src="{heroImg6Src}" alt="background shutter">
+                </picture>
             </div>
             <div class="reverse-shift">
-                <img src="{heroImg7Src}" alt="background img of a shutter">
-                <img src="{heroImg8Src}" alt="background img of a shutter">
+                <picture>
+                    <img src="{heroImg7Src}" alt="background shutter">
+                </picture>
+                <picture>
+                    <img src="{heroImg8Src}" alt="background shutter">
+                </picture>
+            </div>
+            <div class="shift">
+                <picture>
+                    <img src="{heroImg9Src}" alt="background shutter">
+                </picture>
+                <picture>
+                    <img src="{heroImg10Src}" alt="background shutter">
+                </picture>
             </div>
         </div>
         <div class="note fs-300">
             <p>We <span class="text-yellow">only</span> do repairs for <span class="text-yellow">our</span> customers</p>
         </div>
     </article>
+    <section class="general-benefits bg-white text-navy fs-300">
+        <div>
+            <img src="{gearSrc}" alt="gear icon">
+            <div>
+                <h2>Excellent Service</h2>
+                <p>We're ready to meet all of your California Shutter needs!</p>
+            </div>
+        </div>
+        <div>
+            <img src="{qualitySrc}" alt="quality icon">
+            <div>
+                <h2>Record-Breaking Quality</h2>
+                <p>We have the highest quality California Shutter in Toronto!<br>Check out our reviews!</p>
+            </div>
+        </div>
+        <div>
+            <img src="{piggybankSrc}" alt="piggybank icon">
+            <div>
+                <h2>Exceptional Prices</h2>
+                <p>We offer competitive pricing for the top quality California shutters in Toronto</p>
+            </div>
+        </div>
+    </section>
+    <section class="main-features-wrapper">
+        <h1 class="fs-heading bg-white text-navy">Three Reasons Why We're the Best</h1>
+        <div>
+            <h2 class="fs-xl">Constructed with Premium Canadian Poplar</h2>
+            <div>
+                <div class="main-features">
+                    <div>
+                        <img src="{mainIcon1Src}" alt="canadian leaf icon">
+                        <p>All our California and plantation shutters are made with the best Canadian hardwoods on today's market.</p>
+                    </div>
+                    <div>
+                        <img src="{mainIcon2Src}" alt="wood icon">
+                        <p>We do not use composite or makeshift woods to construct even our lowest tier product.</p>
+                    </div>
+                    <div>
+                        <img src="{mainIcon3Src}" alt="poplar icon">
+                        <p>Premium Canadian poplar is cut from the straightest pieces of wood that one can obtain from wood mills across Ontario.</p>
+                    </div>
+                    <div>
+                        <img src="{mainIcon4Src}" alt="shutter icon">
+                        <p>This ensures straight shutter louvers and an excellent closure.</p>
+                    </div>
+                </div>
+                <div class="main-features-collage">
+                    <img src="{canadianHardwoodSrc}" alt="canadian hardwood">
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="box"></div>
 </main>
 
 <style>
     .box {
         min-height: 200vh;
-        background-color: var(--clr-white);
     }
+
     .hero {
         max-width: 100vw;
         overflow: hidden;
@@ -121,7 +237,7 @@
         z-index: -1;
     }
 
-    .background-collage img {
+    .background-collage picture {
         max-width: 320px;
         opacity: 0;
     }
@@ -147,14 +263,73 @@
         padding-block: 1rem;
     }
 
+    .general-benefits {
+        padding: 3rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    .general-benefits > div {
+        max-width: 350px;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+        text-align: center;
+        padding-block: var(--spacing);
+    }
+
+    .main-features-wrapper > h1 {
+        padding-inline: 2rem;
+        padding-bottom: var(--spacing);
+        padding-top: calc(var(--spacing) * 5);
+        text-align: center;
+    }
+
+    .main-features-wrapper h2 {
+        text-align: center;
+        padding-top: 2rem;
+    }
+
+    .main-features-wrapper {
+        min-height: 400vh;
+    }
+
+    .main-features-wrapper > div {
+        position: sticky;
+        top: 5rem;
+    }
+
+    .main-features-wrapper > div > div {
+        padding: var(--spacing);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing);
+        justify-items: center;
+        align-items: center;
+    }
+
+    .main-features {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .main-features > div {
+        display: flex;
+        gap: 1rem;
+    }
+
     @media (max-width: 900px) {
-        .background-collage img {
+        .background-collage picture {
             max-width: 200px;
         }
     }
 
     @media (max-width: 500px) {
-        .background-collage img {
+        .background-collage picture {
             max-width: 130px;
         }
     }

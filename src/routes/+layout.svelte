@@ -1,6 +1,6 @@
 <script>
     import "../../src/global.css";
-    import navbarLogoSrc from "$lib/assets/shared/navbar-logo.png";
+    import navbarLogoSrc from "$lib/assets/shared/navbar-logo.svg";
 </script>
 
 <nav>
