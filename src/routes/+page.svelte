@@ -159,7 +159,7 @@
         <div>
             <h2 class="fs-xl">Constructed with Premium Canadian Poplar</h2>
             <div>
-                <div class="main-features">
+                <div class="main-features fs-300">
                     <div>
                         <img src="{mainIcon1Src}" alt="canadian leaf icon">
                         <p>All our California and plantation shutters are made with the best Canadian hardwoods on today's market.</p>
@@ -178,7 +178,10 @@
                     </div>
                 </div>
                 <div class="main-features-collage">
-                    <img src="{canadianHardwoodSrc}" alt="canadian hardwood">
+                    <picture><img src="{canadianHardwoodSrc}" alt="canadian hardwood"></picture>
+                    <picture><img src="{noCompositeSrc}" alt="logs"></picture>
+                    <picture><img src="{premiumPoplarSrc}" alt="poplar"></picture>
+                    <picture><img src="{straightShutterSrc}" alt="room with installed shutters"></picture>
                 </div>
             </div>
         </div>
@@ -324,9 +327,28 @@
         gap: 1rem;
     }
 
+    .main-features-collage {
+        position: relative;
+        width: 100%;
+        min-height: 350px;
+        /* border: 1px solid red; */
+    }
+
+    .main-features-collage picture {
+        position: absolute;
+        width: 400px;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+    }
+
     @media (max-width: 900px) {
         .background-collage picture {
             max-width: 200px;
+        }
+
+        .main-features-wrapper > div > div {
+            grid-template-columns: 1fr;
         }
     }
 
