@@ -23,6 +23,8 @@
     import mainIcon3Src from "$lib/assets/home/main-icon-3.svg";
     import mainIcon4Src from "$lib/assets/home/main-icon-4.svg";
     
+    import whiteShutterSrc from "$lib/assets/home/white-shutter.png";
+
     import { animate, scroll, inView, timeline } from "motion";
 	import { onMount } from "svelte";
 
@@ -132,14 +134,23 @@
         <h1 class="fs-heading">Three Reasons Why We're the Best</h1>
     </section>
     <section class="main-features">
-        
+        <!-- To be continued -->
+    </section>
+    <div class="box"></div>
+    <section class="free-installation bg-white text-navy">
+        <img src="{whiteShutterSrc}" alt="white shutter of the left">
+        <div>
+            <h2 class="fs-xl">Free Calofornia Shutter Installation with Any Purchase</h2>
+            <p>To thank you for your business, we will absorb all installation charges! We install your shutters with the same precision and care that was used to make them.</p>
+        </div>
+        <img class="reversed" src="{whiteShutterSrc}" alt="white shutter of the right">
     </section>
     <div class="box"></div>
 </main>
 
 <style>
     .box {
-        min-height: 200vh;
+        min-height: 100vh;
     }
 
     .hero {
@@ -238,6 +249,34 @@
         padding-inline: 2rem;
         padding-bottom: var(--spacing);
         padding-top: calc(var(--spacing) * 5);
+        text-align: center;
+    }
+
+    .free-installation {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        min-height: 500px;
+    }
+
+    .free-installation img {
+        width: 40%;
+    }
+
+    .free-installation .reversed {
+        -moz-transform: scale(-1, -1);
+        -o-transform: scale(-1, -1);
+        -webkit-transform: scale(-1, -1);
+        transform: scale(-1, -1);
+    }
+
+    .free-installation > div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: 2;
+        width: 70%;
         text-align: center;
     }
 
