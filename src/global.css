@@ -131,7 +131,7 @@ select {
 body {
     background-color: var(--clr-navy);
     color: var(--clr-white);
-    font-family: "Nimbus Sans L", monospace;
+    font-family: "Nimbus Sans L", sans-serif;
     font-size: var(--fs-400);
 }
 
@@ -141,4 +141,5 @@ button {
     border-radius: 0;
     padding: .6rem 1.2rem;
     cursor: pointer;
+    color: black;
 }

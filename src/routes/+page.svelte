@@ -92,6 +92,10 @@
         width: 100%;
     }
 
+    .content h1 {
+        padding-inline: 2rem;
+    }
+
     .content > div {
         display: flex;
         flex-direction: column;

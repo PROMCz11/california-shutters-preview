@@ -13,7 +13,7 @@
         <li><a href="/">Pricing</a></li>
         <li><a href="/">Contact us</a></li>
     </ul>
-    <button>Free Estimate</button>
+    <button>Btn</button>
 </nav>
 
 <slot></slot>
