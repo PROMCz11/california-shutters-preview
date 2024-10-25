@@ -5,7 +5,7 @@
 
 <nav>
     <a href="/"><img src="{navbarLogoSrc}" alt="logo"></a>
-    <ul>
+    <ul class="fs-300">
         <li><a href="/">Home</a></li>
         <li><a href="/">About us</a></li>
         <li><a href="/">Gallery</a></li>
