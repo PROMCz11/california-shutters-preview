@@ -44,30 +44,6 @@
         scroll(
             animate(heroContent, { opacity: [1, 0] }), { target: articleElement, offset: ["50% 0%", "100% 30%"] }
         )
-
-        scroll(
-            timeline([
-                "one",
-                [".main-features", { translateY: ["40%", "15%"] }, { easing: "linear" }],
-                [".main-features > div:nth-of-type(1)", { opacity: [1, .2] }, { at: "one" }],
-                [".main-features > div:nth-of-type(2)", { opacity: [.2, 1] }, { at: "one" }],
-                [".main-features > div:nth-of-type(3)", { opacity: [0, .2] }, { at: "one" }],
-                [".main-features > div:nth-of-type(4)", { opacity: [0, 0] }, { at: "one" }],
-                "two",
-                [".main-features", { translateY: ["15%", "-10%"] }, { easing: "linear" }],
-                [".main-features > div:nth-of-type(1)", { opacity: [.2, 0] }, { at: "two" }],
-                [".main-features > div:nth-of-type(2)", { opacity: [1, .2] }, { at: "two" }],
-                [".main-features > div:nth-of-type(3)", { opacity: [.2, 1] }, { at: "two" }],
-                [".main-features > div:nth-of-type(4)", { opacity: [0, .2] }, { at: "two" }],
-                "three",
-                [".main-features", { translateY: ["-10%", "-35%"] }, { easing: "linear" }],
-                [".main-features > div:nth-of-type(1)", { opacity: [0, 0] }, { at: "three" }],
-                [".main-features > div:nth-of-type(2)", { opacity: [.2, 0] }, { at: "three" }],
-                [".main-features > div:nth-of-type(3)", { opacity: [1, .2] }, { at: "three" }],
-                [".main-features > div:nth-of-type(4)", { opacity: [.2, 1] }, { at: "three" }]
-            ]),
-            { target: document.querySelector(".main-features-wrapper"), offset: ["start start", "end end"] }
-        )
     })
 </script>
 
@@ -153,38 +129,10 @@
                 </div>
             </div>
         </div>
-        <h1 class="fs-heading bg-white text-navy">Three Reasons Why We're the Best</h1>
+        <h1 class="fs-heading">Three Reasons Why We're the Best</h1>
     </section>
-    <section class="main-features-wrapper">
-        <div>
-            <h2 class="fs-xl">Constructed with Premium Canadian Poplar</h2>
-            <div>
-                <div class="main-features fs-300">
-                    <div>
-                        <img src="{mainIcon1Src}" alt="canadian leaf icon">
-                        <p>All our California and plantation shutters are made with the best Canadian hardwoods on today's market.</p>
-                    </div>
-                    <div>
-                        <img src="{mainIcon2Src}" alt="wood icon">
-                        <p>We do not use composite or makeshift woods to construct even our lowest tier product.</p>
-                    </div>
-                    <div>
-                        <img src="{mainIcon3Src}" alt="poplar icon">
-                        <p>Premium Canadian poplar is cut from the straightest pieces of wood that one can obtain from wood mills across Ontario.</p>
-                    </div>
-                    <div>
-                        <img src="{mainIcon4Src}" alt="shutter icon">
-                        <p>This ensures straight shutter louvers and an excellent closure.</p>
-                    </div>
-                </div>
-                <div class="main-features-collage">
-                    <picture><img src="{canadianHardwoodSrc}" alt="canadian hardwood"></picture>
-                    <picture><img src="{noCompositeSrc}" alt="logs"></picture>
-                    <picture><img src="{premiumPoplarSrc}" alt="poplar"></picture>
-                    <picture><img src="{straightShutterSrc}" alt="room with installed shutters"></picture>
-                </div>
-            </div>
-        </div>
+    <section class="main-features">
+        
     </section>
     <div class="box"></div>
 </main>
@@ -293,62 +241,9 @@
         text-align: center;
     }
 
-    .main-features-wrapper h2 {
-        text-align: center;
-        padding-top: 2rem;
-    }
-
-    .main-features-wrapper {
-        min-height: 400vh;
-    }
-
-    .main-features-wrapper > div {
-        position: sticky;
-        top: 5rem;
-    }
-
-    .main-features-wrapper > div > div {
-        padding: var(--spacing);
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing);
-        justify-items: center;
-        align-items: center;
-    }
-
-    .main-features {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .main-features > div {
-        display: flex;
-        gap: 1rem;
-    }
-
-    .main-features-collage {
-        position: relative;
-        width: 100%;
-        min-height: 350px;
-        /* border: 1px solid red; */
-    }
-
-    .main-features-collage picture {
-        position: absolute;
-        width: 400px;
-        top: 50%;
-        left: 50%;
-        translate: -50% -50%;
-    }
-
     @media (max-width: 900px) {
         .background-collage picture {
             max-width: 200px;
-        }
-
-        .main-features-wrapper > div > div {
-            grid-template-columns: 1fr;
         }
     }
 
