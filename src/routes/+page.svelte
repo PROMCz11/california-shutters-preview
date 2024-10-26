@@ -76,8 +76,28 @@
                 target.parentElement.parentElement.parentElement.classList.toggle("active");
             }
         })
+
+        // Removing the loader screen
+        // window.onload = () => {
+        //     document.getElementById("loader").style.display = "none";
+        //     console.log("loaded");
+        // }
+        // window.addEventListener("DOMContentLoaded", () => {
+        //     console.log("Page loaded");
+        // })
+        const handleLoad = () => document.getElementById("loader").style.display = "none";
+        if (document.readyState === 'complete') {
+            handleLoad();
+        } else {
+            window.addEventListener('load', handleLoad);
+        }
     })
 </script>
+
+<!-- <svelte:window on:load={e => {
+    document.getElementById("loader").style.display = "none";
+    console.log("loaded");
+}}/> -->
 
 <main>
     <article class="hero">
@@ -288,8 +308,24 @@
     </section>
     <div class="box"></div>
 </main>
+<div id="loader">
+    Loading... 
+</div>
 
 <style>
+    #loader {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: black;
+        color: white;
+        z-index: 100;
+        font-family: monospace;
+        font-size: var(--fs-300);
+    }
+
     .box {
         min-height: 100vh;
     }
