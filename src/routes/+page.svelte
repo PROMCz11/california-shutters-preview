@@ -176,18 +176,43 @@
         <img class="reversed" src="{whiteShutterSrc}" alt="white shutter of the right">
     </section>
     <section class="testimonials bg-white text-navy">
-        <div class="card fs-400 bg-navy text-white">
-            <div>
-                <img src="{quoteIconSrc}" alt="quote icon">
-                <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
-                <div>
-                    <img src="{fiveStarsSrc}" alt="five stars">
-                    <span style="color: #C5C6D1;">John D.</span>
+        <div>
+            <h2 class="fs-xl">Satisfaction Guaranteed!</h2>
+            <h3 class="text-blue fs-400">We are Toronto's #1 California Shutters Company</h3>
+        </div>
+        <div class="slider">
+            <Splide options={ { rewind: true } } aria-label="My Favorite Images">
+                <SplideSlide>
+                <div class="card fs-400 bg-navy text-white">
+                    <div>
+                        <img src="{quoteIconSrc}" alt="quote icon">
+                        <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
+                        <div>
+                            <img src="{fiveStarsSrc}" alt="five stars">
+                            <span style="color: #C5C6D1;">John D.</span>
+                        </div>
+                    </div>
+                    <picture>
+                        <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
+                    </picture>
                 </div>
-            </div>
-            <picture>
-                <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
-            </picture>
+                </SplideSlide>
+                <SplideSlide>
+                <div class="card fs-400 bg-navy text-white">
+                    <div>
+                        <img src="{quoteIconSrc}" alt="quote icon">
+                        <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
+                        <div>
+                            <img src="{fiveStarsSrc}" alt="five stars">
+                            <span style="color: #C5C6D1;">John D.</span>
+                        </div>
+                    </div>
+                    <picture>
+                        <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
+                    </picture>
+                </div>
+                </SplideSlide>
+            </Splide>
         </div>
     </section>
     <section class="faq bg-white text-navy">
@@ -217,40 +242,6 @@
         </div>
     </section>
     <div class="box"></div>
-    <Splide aria-label="My Favorite Images">
-        <SplideSlide>
-        <div class="card fs-400 bg-navy text-white">
-            <div>
-                <img src="{quoteIconSrc}" alt="quote icon">
-                <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
-                <div>
-                    <img src="{fiveStarsSrc}" alt="five stars">
-                    <span style="color: #C5C6D1;">John D.</span>
-                </div>
-            </div>
-            <picture>
-                <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
-            </picture>
-        </div>
-           WHat
-        </SplideSlide>
-        <SplideSlide>
-        <div class="card fs-400 bg-navy text-white">
-            <div>
-                <img src="{quoteIconSrc}" alt="quote icon">
-                <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
-                <div>
-                    <img src="{fiveStarsSrc}" alt="five stars">
-                    <span style="color: #C5C6D1;">John D.</span>
-                </div>
-            </div>
-            <picture>
-                <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
-            </picture>
-        </div>
-           Hello
-        </SplideSlide>
-      </Splide>
 </main>
 
 <style>
@@ -386,25 +377,28 @@
     }
 
     .testimonials {
-        width: 100%;
-        min-height: 80vh;
-        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: var(--spacing);
     }
 
-    .testimonials .card {
+    .testimonials h2, .testimonials h3 {
+        text-align: center;
+    }
+
+    .testimonials .slider {
+        max-width: 1200px;
+    }
+
+    .card {
         display: flex;
         gap: 1rem;
         padding: 3rem;
         align-items: center;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        translate: -50% -50%;
-        width: 800px;
-        height: 600px;
     }
 
-    .testimonials .card > div {
+    .card > div {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -412,7 +406,7 @@
         gap: 1rem;
     }
 
-    .testimonials .card > div > div {
+    .card > div > div {
         display: flex;
         gap: 1rem;
         justify-content: end;
@@ -479,7 +473,7 @@
     }
 
     @media (max-width: 768px) {
-        .testimonials .card {
+        .card {
             flex-direction: column-reverse;
             padding: 2rem;
         }
