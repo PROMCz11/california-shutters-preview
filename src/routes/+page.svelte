@@ -131,7 +131,7 @@
                 </div>
             </div>
         </div>
-        <h1 class="fs-heading">Three Reasons Why We're the Best</h1>
+        <!-- <h1 class="fs-heading">Three Reasons Why We're the Best</h1> -->
     </section>
     <section class="main-features">
         <!-- To be continued -->
@@ -245,12 +245,12 @@
         padding-block: var(--spacing);
     }
 
-    .general-benefits > h1 {
+    /* .general-benefits > h1 {
         padding-inline: 2rem;
         padding-bottom: var(--spacing);
         padding-top: calc(var(--spacing) * 5);
         text-align: center;
-    }
+    } */
 
     .free-installation {
         display: flex;
