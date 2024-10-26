@@ -139,6 +139,19 @@ select {
     min-height: 100vh;
 }
 
+#loader {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    z-index: 100;
+    font-family: monospace;
+    font-size: var(--fs-300);
+}
+
 /* ------------------- */
 /* Styles              */
 /* ------------------- */

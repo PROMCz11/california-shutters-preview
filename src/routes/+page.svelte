@@ -77,14 +77,7 @@
             }
         })
 
-        // Removing the loader screen
-        // window.onload = () => {
-        //     document.getElementById("loader").style.display = "none";
-        //     console.log("loaded");
-        // }
-        // window.addEventListener("DOMContentLoaded", () => {
-        //     console.log("Page loaded");
-        // })
+        // Handling page loading
         const handleLoad = () => document.getElementById("loader").style.display = "none";
         if (document.readyState === 'complete') {
             handleLoad();
@@ -93,11 +86,6 @@
         }
     })
 </script>
-
-<!-- <svelte:window on:load={e => {
-    document.getElementById("loader").style.display = "none";
-    console.log("loaded");
-}}/> -->
 
 <main>
     <article class="hero">
@@ -313,19 +301,6 @@
 </div>
 
 <style>
-    #loader {
-        position: fixed;
-        inset: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: black;
-        color: white;
-        z-index: 100;
-        font-family: monospace;
-        font-size: var(--fs-300);
-    }
-
     .hero {
         max-width: 100vw;
         overflow: hidden;
