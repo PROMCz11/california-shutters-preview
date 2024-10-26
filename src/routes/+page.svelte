@@ -25,6 +25,8 @@
     
     import whiteShutterSrc from "$lib/assets/home/white-shutter.png";
 
+    import expandFAQIconSrc from "$lib/assets/home/expand-faq-icon.svg";
+
     import { animate, scroll, inView, timeline } from "motion";
 	import { onMount } from "svelte";
 
@@ -46,6 +48,27 @@
         scroll(
             animate(heroContent, { opacity: [1, 0] }), { target: articleElement, offset: ["50% 0%", "100% 30%"] }
         )
+
+        // Making the faq questions interactive
+        const faqContainer = document.querySelector(".faq > div");
+        faqContainer.addEventListener("click", e => {
+            const target = e.target;
+            if(target.classList.contains("question")) {
+                target.classList.toggle("active");
+            }
+
+            else if(target.parentElement.classList.contains("question")) {
+                target.parentElement.classList.toggle("active");
+            }
+
+            else if(target.parentElement.parentElement.classList.contains("question")) {
+                target.parentElement.parentElement.classList.toggle("active");
+            }
+
+            else if(target.parentElement.parentElement.parentElement.classList.contains("question")) {
+                target.parentElement.parentElement.parentElement.classList.toggle("active");
+            }
+        })
     })
 </script>
 
@@ -144,6 +167,32 @@
             <p>To thank you for your business, we will absorb all installation charges! We install your shutters with the same precision and care that was used to make them.</p>
         </div>
         <img class="reversed" src="{whiteShutterSrc}" alt="white shutter of the right">
+    </section>
+    <section class="faq bg-white text-navy">
+        <h2 class="fs-xl">Frequently Asked Questions (FAQ)</h2>
+        <div>
+            <div class="question">
+                <p>
+                    <span>I don't like the boxy look of California Shutters! What should I do?</span>
+                    <button><img src="{expandFAQIconSrc}" alt="expand plus icon"></button>
+                </p>
+                <p class="fs-300 bg-navy text-white">Most companies out there only provide their customers with one styled shutter. These shutters are boxy looking and flat-styled. They are many times structurally incompetent due to the cheapness of the materials used in their construction. Frankly boxy looking, flat-styled shutters are a pain to look at - especially if you've had them for a long time. California Shutters Toronto Co is one of the only shutter manufactures that makes different styled California shutters.</p>
+            </div>
+            <div class="question active">
+                <p>
+                    <span>I don't like the boxy look of California Shutters! What should I do?</span>
+                    <button><img src="{expandFAQIconSrc}" alt="expand plus icon"></button>
+                </p>
+                <p class="fs-300 bg-navy text-white">Most companies out there only provide their customers with one styled shutter. These shutters are boxy looking and flat-styled. They are many times structurally incompetent due to the cheapness of the materials used in their construction. Frankly boxy looking, flat-styled shutters are a pain to look at - especially if you've had them for a long time. California Shutters Toronto Co is one of the only shutter manufactures that makes different styled California shutters.</p>
+            </div>
+            <div class="question">
+                <p>
+                    <span>I don't like the boxy look of California Shutters! What should I do?</span>
+                    <button><img src="{expandFAQIconSrc}" alt="expand plus icon"></button>
+                </p>
+                <p class="fs-300 bg-navy text-white">Most companies out there only provide their customers with one styled shutter. These shutters are boxy looking and flat-styled. They are many times structurally incompetent due to the cheapness of the materials used in their construction. Frankly boxy looking, flat-styled shutters are a pain to look at - especially if you've had them for a long time. California Shutters Toronto Co is one of the only shutter manufactures that makes different styled California shutters.</p>
+            </div>
+        </div>
     </section>
     <div class="box"></div>
 </main>
@@ -278,6 +327,52 @@
         z-index: 2;
         width: 70%;
         text-align: center;
+    }
+
+    .faq h2 {
+        text-align: center;
+        padding: var(--spacing);
+    }
+
+    .faq > div {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: var(--spacing);
+    }
+
+    .faq .question {
+        cursor: pointer;
+    }
+
+    .faq .question p:first-of-type {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5rem;
+        border-bottom: 1px solid var(--clr-navy);
+    }
+
+    .faq .question p:last-of-type {
+        padding: 1rem;
+        max-height: 0;
+        padding-block: 0;
+        overflow: hidden;
+        transition: all 300ms ease;
+    }
+
+    .faq button {
+        padding: 0;
+        transition: rotate 300ms ease;
+    }
+
+    .faq .question.active p:last-of-type {
+        max-height: 500px;
+        padding-block: 1rem;
+    }
+
+    .faq .question.active button {
+        rotate: 45deg;
     }
 
     @media (max-width: 900px) {
