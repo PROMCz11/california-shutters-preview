@@ -181,7 +181,7 @@
             <h3 class="text-blue fs-400">We are Toronto's #1 California Shutters Company</h3>
         </div>
         <div class="slider">
-            <Splide options={ { rewind: true, width: 1200 } } aria-label="My Favorite Images">
+            <Splide options={ { rewind: true, width: 1200 } } aria-label="testimonials">
                 <SplideSlide>
                 <div class="card fs-400 bg-navy text-white">
                     <div>
