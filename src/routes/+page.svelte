@@ -27,6 +27,13 @@
 
     import expandFAQIconSrc from "$lib/assets/home/expand-faq-icon.svg";
 
+    import quoteIconSrc from "$lib/assets/home/quote-icon.svg";
+    import fiveStarsSrc from "$lib/assets/home/five-stars.svg";
+    import testimonialsPlaceholderSrc from "$lib/assets/home/testimonials-placeholder.webp";
+
+    import { Splide, SplideSlide } from '@splidejs/svelte-splide';
+    import '@splidejs/svelte-splide/css';
+
     import { animate, scroll, inView, timeline } from "motion";
 	import { onMount } from "svelte";
 
@@ -168,6 +175,21 @@
         </div>
         <img class="reversed" src="{whiteShutterSrc}" alt="white shutter of the right">
     </section>
+    <section class="testimonials bg-white text-navy">
+        <div class="card fs-400 bg-navy text-white">
+            <div>
+                <img src="{quoteIconSrc}" alt="quote icon">
+                <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
+                <div>
+                    <img src="{fiveStarsSrc}" alt="five stars">
+                    <span style="color: #C5C6D1;">John D.</span>
+                </div>
+            </div>
+            <picture>
+                <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
+            </picture>
+        </div>
+    </section>
     <section class="faq bg-white text-navy">
         <h2 class="fs-xl">Frequently Asked Questions (FAQ)</h2>
         <div>
@@ -195,6 +217,40 @@
         </div>
     </section>
     <div class="box"></div>
+    <Splide aria-label="My Favorite Images">
+        <SplideSlide>
+        <div class="card fs-400 bg-navy text-white">
+            <div>
+                <img src="{quoteIconSrc}" alt="quote icon">
+                <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
+                <div>
+                    <img src="{fiveStarsSrc}" alt="five stars">
+                    <span style="color: #C5C6D1;">John D.</span>
+                </div>
+            </div>
+            <picture>
+                <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
+            </picture>
+        </div>
+           WHat
+        </SplideSlide>
+        <SplideSlide>
+        <div class="card fs-400 bg-navy text-white">
+            <div>
+                <img src="{quoteIconSrc}" alt="quote icon">
+                <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
+                <div>
+                    <img src="{fiveStarsSrc}" alt="five stars">
+                    <span style="color: #C5C6D1;">John D.</span>
+                </div>
+            </div>
+            <picture>
+                <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
+            </picture>
+        </div>
+           Hello
+        </SplideSlide>
+      </Splide>
 </main>
 
 <style>
@@ -329,8 +385,48 @@
         text-align: center;
     }
 
+    .testimonials {
+        width: 100%;
+        min-height: 80vh;
+        position: relative;
+    }
+
+    .testimonials .card {
+        display: flex;
+        gap: 1rem;
+        padding: 3rem;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: 800px;
+        height: 600px;
+    }
+
+    .testimonials .card > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        gap: 1rem;
+    }
+
+    .testimonials .card > div > div {
+        display: flex;
+        gap: 1rem;
+        justify-content: end;
+        width: 100%;
+    }
+
+    .faq {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
     .faq h2 {
-        text-align: center;
+        /* text-align: center; */
         padding: var(--spacing);
     }
 
@@ -339,6 +435,7 @@
         flex-direction: column;
         gap: 1rem;
         padding: var(--spacing);
+        max-width: 1024px;
     }
 
     .faq .question {
@@ -378,6 +475,13 @@
     @media (max-width: 900px) {
         .background-collage picture {
             max-width: 200px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .testimonials .card {
+            flex-direction: column-reverse;
+            padding: 2rem;
         }
     }
 
