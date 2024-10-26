@@ -326,10 +326,6 @@
         font-size: var(--fs-300);
     }
 
-    .box {
-        min-height: 100vh;
-    }
-
     .hero {
         max-width: 100vw;
         overflow: hidden;

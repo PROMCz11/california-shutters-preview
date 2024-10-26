@@ -135,6 +135,10 @@ select {
     display: none;
 }
 
+.box {
+    min-height: 100vh;
+}
+
 /* ------------------- */
 /* Styles              */
 /* ------------------- */
