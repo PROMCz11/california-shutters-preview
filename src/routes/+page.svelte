@@ -181,7 +181,52 @@
             <h3 class="text-blue fs-400">We are Toronto's #1 California Shutters Company</h3>
         </div>
         <div class="slider">
-            <Splide options={ { rewind: true } } aria-label="My Favorite Images">
+            <Splide options={ { rewind: true, width: 1200 } } aria-label="My Favorite Images">
+                <SplideSlide>
+                <div class="card fs-400 bg-navy text-white">
+                    <div>
+                        <img src="{quoteIconSrc}" alt="quote icon">
+                        <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
+                        <div>
+                            <img src="{fiveStarsSrc}" alt="five stars">
+                            <span style="color: #C5C6D1;">John D.</span>
+                        </div>
+                    </div>
+                    <picture>
+                        <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
+                    </picture>
+                </div>
+                </SplideSlide>
+                <SplideSlide>
+                <div class="card fs-400 bg-navy text-white">
+                    <div>
+                        <img src="{quoteIconSrc}" alt="quote icon">
+                        <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
+                        <div>
+                            <img src="{fiveStarsSrc}" alt="five stars">
+                            <span style="color: #C5C6D1;">John D.</span>
+                        </div>
+                    </div>
+                    <picture>
+                        <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
+                    </picture>
+                </div>
+                </SplideSlide>
+                <SplideSlide>
+                <div class="card fs-400 bg-navy text-white">
+                    <div>
+                        <img src="{quoteIconSrc}" alt="quote icon">
+                        <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
+                        <div>
+                            <img src="{fiveStarsSrc}" alt="five stars">
+                            <span style="color: #C5C6D1;">John D.</span>
+                        </div>
+                    </div>
+                    <picture>
+                        <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
+                    </picture>
+                </div>
+                </SplideSlide>
                 <SplideSlide>
                 <div class="card fs-400 bg-navy text-white">
                     <div>
@@ -376,19 +421,14 @@
         text-align: center;
     }
 
-    .testimonials {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: var(--spacing);
-    }
-
     .testimonials h2, .testimonials h3 {
         text-align: center;
     }
 
     .testimonials .slider {
-        max-width: 1200px;
+        max-width: max-content;
+        margin-inline: auto;
+        padding-block: var(--spacing);
     }
 
     .card {
