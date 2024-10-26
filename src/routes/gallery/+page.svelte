@@ -1,9 +1,8 @@
 <script>
-    import galleryImg1Src from "$lib/assets/gallery/IMG_4576.webp"
-    import galleryImg2Src from "$lib/assets/gallery/IMG_4628.webp"
-    import galleryImg3Src from "$lib/assets/gallery/IMG_4632.webp"
-    import galleryImg4Src from "$lib/assets/gallery/IMG_4634.webp"
-    import galleryImg5Src from "$lib/assets/gallery/IMG_4644.webp"
+    import gallery_1_1Src from "$lib/assets/gallery/gallery1.1.webp"
+    import gallery_1_2Src from "$lib/assets/gallery/gallery1.2.webp"
+    import gallery_1_3Src from "$lib/assets/gallery/gallery1.3.webp"
+    import gallery_1_4Src from "$lib/assets/gallery/gallery1.4.webp"
     import { animate, scroll } from "motion"
 	import { onMount } from "svelte";
 
@@ -39,51 +38,51 @@
 <main>
     <div>
         <div class="group">
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_2Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_3Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_4Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
             <p>Project 1</p>
         </div>
         <div class="group">
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_2Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_3Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_4Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
             <p>Project 2</p>
         </div>
         <h1 class="fs-heading">Explore the results of our work</h1>
     </div>
     <div>
         <div class="group">
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_2Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_3Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_4Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
             <p>Project 3</p>
         </div>
         <div class="group">
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_2Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_3Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_4Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
             <p>Project 4</p>
         </div>
         <h1 class="fs-heading">Explore the results of our work</h1>
     </div>
     <div>
         <div class="group">
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_2Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_3Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_4Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
             <p>Project 5</p>
         </div>
         <div class="group">
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
-            <picture><img src="{galleryImg1Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_2Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_3Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_4Src}" alt="shutter"></picture>
+            <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
             <p>Project 6</p>
         </div>
         <h1 class="fs-heading">Explore the results of our work</h1>
