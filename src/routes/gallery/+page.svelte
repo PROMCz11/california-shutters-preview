@@ -7,7 +7,7 @@
 	import { onMount } from "svelte";
 
     onMount(() => {
-        const headings = document.querySelectorAll("main > div h1");
+        const headings = document.querySelectorAll("main > div h2");
         headings.forEach(heading => {
             scroll(
                 animate(heading, { y: [-400, 400] }), {
@@ -36,6 +36,7 @@
 </script>
 
 <main>
+    <h1 class="fs-heading">Our Gallery</h1>
     <div>
         <div class="group">
             <picture><img src="{gallery_1_2Src}" alt="shutter"></picture>
@@ -51,7 +52,7 @@
             <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
             <p>Project 2</p>
         </div>
-        <h1 class="fs-heading">Explore the results of our work</h1>
+        <h2 class="fs-xl">Explore the results of our work</h2>
     </div>
     <div>
         <div class="group">
@@ -68,7 +69,7 @@
             <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
             <p>Project 4</p>
         </div>
-        <h1 class="fs-heading">Explore the results of our work</h1>
+        <h2 class="fs-xl">Experience what our shutters feel like</h2>
     </div>
     <div>
         <div class="group">
@@ -85,7 +86,7 @@
             <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
             <p>Project 6</p>
         </div>
-        <h1 class="fs-heading">Explore the results of our work</h1>
+        <h2 class="fs-xl">Your doors and windows are in good hands</h2>
     </div>
     <div class="box"></div>
 </main>
@@ -96,14 +97,21 @@
 <style>
     main {
         padding: 10vw;
-        padding-top: 20rem;
+        /* padding-top: 10rem; */
+    }
+
+    main > h1 {
+        padding: var(--spacing);
+        padding-block: 10rem;
+        text-align: center;
     }
 
     main > div {
         position: relative;
         display: flex;
         flex-direction: column;
-        gap: var(--spacing);
+        margin-bottom: 8rem;
+        gap: 8rem;
     }
 
     .group:first-of-type {
@@ -165,7 +173,7 @@
         translate: -35% -35%;
     }
 
-    h1 {
+    h2 {
         position: absolute;
         top: 50%;
         left: 50%;
@@ -187,6 +195,11 @@
             min-height: 300px;
             min-width: 200px;
         }
+
+        main > div {
+            margin-bottom: 5rem;
+            gap: 5rem;
+        }
     }
     
     @media (min-width: 1024px) {
@@ -197,6 +210,11 @@
         .group {
             min-height: 500px;
             min-width: 260px;
+        }
+
+        main > div {
+            margin-bottom: var(--spacing);
+            gap: var(--spacing);
         }
     }
 </style>
