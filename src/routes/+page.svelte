@@ -14,14 +14,17 @@
     import qualitySrc from "$lib/assets/home/quality.svg";
     import piggybankSrc from "$lib/assets/home/piggybank.svg";
 
-    import canadianHardwoodSrc from "$lib/assets/home/canadian-hardwood.png"
-    import noCompositeSrc from "$lib/assets/home/no-composite.png"
-    import premiumPoplarSrc from "$lib/assets/home/premium-poplar.png"
-    import straightShutterSrc from "$lib/assets/home/straight-shutter.png"
+    import canadianHardwoodSrc from "$lib/assets/home/canadian-hardwood.webp"
+    import noCompositeSrc from "$lib/assets/home/no-composite.webp"
+    import premiumPoplarSrc from "$lib/assets/home/premium-poplar.webp"
+    import straightShutterSrc from "$lib/assets/home/straight-shutter.webp"
     import mainIcon1Src from "$lib/assets/home/main-icon-1.svg";
     import mainIcon2Src from "$lib/assets/home/main-icon-2.svg";
     import mainIcon3Src from "$lib/assets/home/main-icon-3.svg";
     import mainIcon4Src from "$lib/assets/home/main-icon-4.svg";
+    import frameSrc from "$lib/assets/home/frame.svg";
+    import uvResistantSrc from "$lib/assets/home/uv-resistant.webp";
+    import warrantySrc from "$lib/assets/home/warranty.webp";
     
     import whiteShutterSrc from "$lib/assets/home/white-shutter.png";
 
@@ -55,6 +58,23 @@
         scroll(
             animate(heroContent, { opacity: [1, 0] }), { target: articleElement, offset: ["50% 0%", "100% 30%"] }
         )
+
+        const mainFeaturesImagesDouble = document.querySelectorAll(".main-features .double picture");
+        mainFeaturesImagesDouble.forEach(image => {
+            scroll(
+                animate(image, { y: [-50, 50] }), {
+                    target: image.parentElement.parentElement,
+                    offset: ["start end", "end start"]
+                }
+            )
+        })
+
+        // scroll(
+        //     animate(mainFeaturesImagesDouble, { y: [-40, 40] }), {
+        //         target: document.querySelector(".main-features"),
+        //         offset: ["start end", "end start"]
+        //     }
+        // )
 
         // Making the faq questions interactive
         const faqContainer = document.querySelector(".faq > div");
@@ -169,12 +189,54 @@
                 </div>
             </div>
         </div>
-        <!-- <h1 class="fs-heading">Three Reasons Why We're the Best</h1> -->
+        <h1 class="fs-heading">Three Reasons Why We're the Best</h1>
     </section>
     <section class="main-features">
-        <!-- To be continued -->
+        <h2 class="fs-xl">Constructed with Premium Canadian Poplar</h2>
+        <div class="double fs-xs">
+            <div class="frame"></div>
+            <div>
+                <div>
+                    <img src="{mainIcon1Src}" alt="canada's flag icon">
+                    <p>All our California and plantation shutters are made with the best Canadian hardwoods on today's market.</p>
+                </div>
+                <picture>
+                    <img src="{noCompositeSrc}" alt="logs">
+                </picture>
+            </div>
+            <div>
+                <picture>
+                    <img src="{canadianHardwoodSrc}" alt="hardwood">
+                </picture>
+                <div>
+                    <img src="{mainIcon2Src}" alt="log icon">
+                    <p>We do not use composite or makeshift woods to construct even our lowest tier product.</p>
+                </div>
+            </div>
+        </div>
+        <div class="double fs-xs">
+            <div class="frame"></div>
+            <div>
+                <div>
+                    <img src="{mainIcon3Src}" alt="canada's flag icon">
+                    <p>All our California and plantation shutters are made with the best Canadian hardwoods on today's market.</p>
+                </div>
+                <picture>
+                    <img src="{straightShutterSrc}" alt="logs">
+                </picture>
+            </div>
+            <div>
+                <picture>
+                    <img src="{premiumPoplarSrc}" alt="hardwood">
+                </picture>
+                <div>
+                    <img src="{mainIcon4Src}" alt="log icon">
+                    <p>We do not use composite or makeshift woods to construct even our lowest tier product.</p>
+                </div>
+            </div>
+        </div>
     </section>
-    <div class="box"></div>
+    <!-- <div class="box"></div> -->
     <section class="free-installation bg-white text-navy">
         <img src="{whiteShutterSrc}" alt="white shutter of the left">
         <div>
@@ -193,10 +255,10 @@
                 <SplideSlide>
                 <div class="card fs-400 bg-navy text-white">
                     <div>
-                        <img src="{quoteIconSrc}" alt="quote icon">
+                        <img class="quote-icon" src="{quoteIconSrc}" alt="quote icon">
                         <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
                         <div>
-                            <img src="{fiveStarsSrc}" alt="five stars">
+                            <img class="stars-icon" src="{fiveStarsSrc}" alt="five stars">
                             <span style="color: #C5C6D1;">John D.</span>
                         </div>
                     </div>
@@ -208,10 +270,10 @@
                 <SplideSlide>
                 <div class="card fs-400 bg-navy text-white">
                     <div>
-                        <img src="{quoteIconSrc}" alt="quote icon">
+                        <img class="quote-icon" src="{quoteIconSrc}" alt="quote icon">
                         <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
                         <div>
-                            <img src="{fiveStarsSrc}" alt="five stars">
+                            <img class="stars-icon" src="{fiveStarsSrc}" alt="five stars">
                             <span style="color: #C5C6D1;">John D.</span>
                         </div>
                     </div>
@@ -223,10 +285,10 @@
                 <SplideSlide>
                 <div class="card fs-400 bg-navy text-white">
                     <div>
-                        <img src="{quoteIconSrc}" alt="quote icon">
+                        <img class="quote-icon" src="{quoteIconSrc}" alt="quote icon">
                         <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
                         <div>
-                            <img src="{fiveStarsSrc}" alt="five stars">
+                            <img class="stars-icon" src="{fiveStarsSrc}" alt="five stars">
                             <span style="color: #C5C6D1;">John D.</span>
                         </div>
                     </div>
@@ -238,10 +300,10 @@
                 <SplideSlide>
                 <div class="card fs-400 bg-navy text-white">
                     <div>
-                        <img src="{quoteIconSrc}" alt="quote icon">
+                        <img class="quote-icon" src="{quoteIconSrc}" alt="quote icon">
                         <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
                         <div>
-                            <img src="{fiveStarsSrc}" alt="five stars">
+                            <img class="stars-icon" src="{fiveStarsSrc}" alt="five stars">
                             <span style="color: #C5C6D1;">John D.</span>
                         </div>
                     </div>
@@ -253,10 +315,10 @@
                 <SplideSlide>
                 <div class="card fs-400 bg-navy text-white">
                     <div>
-                        <img src="{quoteIconSrc}" alt="quote icon">
+                        <img class="quote-icon" src="{quoteIconSrc}" alt="quote icon">
                         <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
                         <div>
-                            <img src="{fiveStarsSrc}" alt="five stars">
+                            <img class="stars-icon" src="{fiveStarsSrc}" alt="five stars">
                             <span style="color: #C5C6D1;">John D.</span>
                         </div>
                     </div>
@@ -393,12 +455,59 @@
         padding-block: var(--spacing);
     }
 
-    /* .general-benefits > h1 {
+    .general-benefits > h1 {
         padding-inline: 2rem;
         padding-bottom: var(--spacing);
         padding-top: calc(var(--spacing) * 5);
         text-align: center;
-    } */
+    }
+
+    .main-features > h2 {
+        margin-block: var(--spacing);
+        text-align: center;
+    }
+
+    .main-features {
+        padding: var(--spacing);
+    }
+
+    .main-features .double {
+        display: flex;
+        gap: var(--spacing);
+        justify-content: center;
+        min-height: 80vh;
+        position: relative;
+        padding-block: 3rem;
+    }
+
+    .main-features .double > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .main-features .frame {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: 100%;
+        aspect-ratio: 3 / 2;
+        z-index: -1;
+        border: 3px solid var(--clr-yellow);
+    }
+
+    .main-features .double > div > div {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .main-features .double > div,
+    .main-features .frame {
+        max-width: 30vw;
+        /* aspect-ratio: 3 / 2; */
+    }
 
     .free-installation {
         display: flex;
@@ -524,11 +633,56 @@
             flex-direction: column-reverse;
             padding: 2rem;
         }
+
+        .card .quote-icon {
+            max-width: 40px;
+        }
+
+        .card .stars-icon {
+            max-width: 100px;
+        }
+
+        .card > div:last-of-type {
+            margin-left: auto;
+        }
+
+        .testimonials .slider {
+            max-width: 80vw;
+        }
     }
 
     @media (max-width: 500px) {
         .background-collage picture {
             max-width: 130px;
+        }
+        /* Split the main features */
+    }
+
+    /* Separate media queries for the main features page */
+    /* @media (min-width: 768px) {
+
+    } */
+
+    @media (max-width: 1024px) {
+
+        .main-features .double {
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 60vh;
+        }
+
+        .main-features .double > div:last-of-type {
+            margin-left: auto;
+        }
+
+        .main-features .double > div {
+            gap: 2rem;
+        }
+        
+        .main-features .double > div,
+        .main-features .frame {
+            max-width: 40vw;
+            min-width: 200px;
         }
     }
 </style>
