@@ -1,6 +1,11 @@
 <script>
     import buttonTextureSrc from "$lib/assets/pricing/button-texture.svg";
     import bridgeImgSrc from "$lib/assets/pricing/bridge.webp";
+    import bayWindowSrc from "$lib/assets/pricing/bay-window.webp";
+    import frenchDoorSrc from "$lib/assets/pricing/french-door.webp";
+    import patioDoorSrc from "$lib/assets/pricing/patio-door.webp";
+    import slidingDoorSrc from "$lib/assets/pricing/sliding-door.webp";
+    import customArchSrc from "$lib/assets/pricing/custom-arch.webp";
 
     import { animate, scroll } from "motion";
 	import { onMount } from "svelte";
@@ -71,10 +76,22 @@
         </div>
     </article>
     <div class="bridge text-navy" style="background-image: url({bridgeImgSrc})">
-        <!-- <picture><img src="{bridgeImgSrc}" alt="room with installed shutters"></picture> -->
         <div>
             <h2 class="fs-xl">Why is our shutter so sought after?</h2>
             <p>Because it is the only branded shutter available in Canada that has a beveled front face. Flat was so yesterday. Curvy is in. Our shutter is the curviest of them all. Available in partially beveled and fully beveled styles, we definitely have the correct option for your home and windows.</p>
+        </div>
+    </div>
+    <div class="options-container">
+        <h2 class="fs-xl">Window types we can cover with our California shutters</h2>
+        <div class="interactive-display">
+            <picture><img src="{bayWindowSrc}" alt="DELETE ME"></picture>
+            <div class="options">
+                <button class="text-white">Bay windows</button>
+                <button class="text-white">French doors</button>
+                <button class="text-white">Patio doors</button>
+                <button class="text-white">Sliding doors</button>
+                <button class="text-white">Custom arches</button>
+            </div>
         </div>
     </div>
     <div class="cta">
@@ -205,6 +222,38 @@
         margin-bottom: var(--spacing);
     }
 
+    .options-container {
+        padding: var(--spacing);
+    }
+
+    .options-container h2 {
+        max-width: 600px;
+        text-align: center;
+        margin-inline: auto;
+        margin-bottom: var(--spacing);
+    }
+
+    .interactive-display {
+        display: grid;
+        max-width: 1400px;
+        margin-inline: auto;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .options > * {
+        background-color: #203c4c;
+        flex: 1;
+    }
+
+    .options > *:not(*:last-of-type) {
+        border-bottom: 1px solid var(--clr-navy);
+    }
+
     .cta {
         min-height: 80vh;
         display: flex;
@@ -238,6 +287,12 @@
 
         .card {
             width: 400px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .interactive-display {
+            grid-template-columns: 1fr;
         }
     }
 </style>
