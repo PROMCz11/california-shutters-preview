@@ -196,7 +196,7 @@
         <h1 class="fs-heading">Three Reasons Why We're the Best</h1>
     </section>
     <section class="main-features">
-        <h2 class="fs-xl">Constructed with Premium Canadian Poplar</h2>
+        <h2 class="fs-xl">1. Constructed with Premium Canadian Poplar</h2>
         <div class="double fs-xs">
             <div class="frame"></div>
             <div>
@@ -239,7 +239,7 @@
                 </div>
             </div>
         </div>
-        <h2 class="fs-xl">Highest Quality UV Resistant Wood Finish</h2>
+        <h2 class="fs-xl">2. Highest Quality UV Resistant Wood Finish</h2>
         <div class="single">
             <p>Our California shutters are sealed with the best wood finish available on the market. We are not like other companies who use water based paint-primer mixes to cover their products for fast & cheap delivery. Our shutters are always painted and primed each at least once. For our higher-level products, we prime up to three times so to provide a smoother and more precise finish.</p>
             <div>
@@ -249,7 +249,7 @@
                 </picture>
             </div>
         </div>
-        <h2 class="fs-xl">Unlimited Lifetime Warranty Guaranteed</h2>
+        <h2 class="fs-xl">3. Unlimited Lifetime Warranty Guaranteed</h2>
         <div class="single alternate">
             <div>
                 <div class="frame"></div>
