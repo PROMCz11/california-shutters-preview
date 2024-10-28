@@ -6,6 +6,11 @@
     import { animate, scroll } from "motion"
 	import { onMount } from "svelte";
 
+    import { Splide, SplideSlide } from '@splidejs/svelte-splide';
+    import '@splidejs/svelte-splide/css';
+
+    import { fade } from "svelte/transition"
+
     onMount(() => {
         const headings = document.querySelectorAll("main > div h2");
         headings.forEach(heading => {
@@ -33,63 +38,144 @@
             window.addEventListener('load', handleLoad);
         }
     })
+
+    let projects = [
+        {
+            projectName: "Project 1",
+            images: [
+                {src: gallery_1_1Src, alt: "shutte"},
+                {src: gallery_1_2Src, alt: "shutte"},
+                {src: gallery_1_3Src, alt: "shutte"},
+                {src: gallery_1_4Src, alt: "shutte"},
+            ]
+        },
+        {
+            projectName: "Project 2",
+            images: [
+                {src: gallery_1_1Src, alt: "shutte"},
+                {src: gallery_1_2Src, alt: "shutte"},
+                {src: gallery_1_3Src, alt: "shutte"},
+                {src: gallery_1_4Src, alt: "shutte"},
+            ]
+        },
+        {
+            projectName: "Project 3",
+            images: [
+                {src: gallery_1_1Src, alt: "shutte"},
+                {src: gallery_1_2Src, alt: "shutte"},
+                {src: gallery_1_3Src, alt: "shutte"},
+                {src: gallery_1_4Src, alt: "shutte"},
+            ]
+        },
+        {
+            projectName: "Project 4",
+            images: [
+                {src: gallery_1_1Src, alt: "shutte"},
+                {src: gallery_1_2Src, alt: "shutte"},
+                {src: gallery_1_3Src, alt: "shutte"},
+                {src: gallery_1_4Src, alt: "shutte"},
+            ]
+        },
+        {
+            projectName: "Project 5",
+            images: [
+                {src: gallery_1_1Src, alt: "shutte"},
+                {src: gallery_1_2Src, alt: "shutte"},
+                {src: gallery_1_3Src, alt: "shutte"},
+                {src: gallery_1_4Src, alt: "shutte"},
+            ]
+        },
+        {
+            projectName: "Project 6",
+            images: [
+                {src: gallery_1_1Src, alt: "shutte"},
+                {src: gallery_1_2Src, alt: "shutte"},
+                {src: gallery_1_3Src, alt: "shutte"},
+                {src: gallery_1_4Src, alt: "shutte"},
+            ]
+        },
+    ];
+
+    let selectedProject = 0;
+
+    const openProject = (projectIndex) => {
+        selectedProject = projects[projectIndex];
+    }
+
+    const closeProject = () => selectedProject = 0;
 </script>
 
 <main>
     <h1 class="fs-heading">Our Gallery</h1>
     <div>
-        <div class="group">
-            <picture><img src="{gallery_1_2Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_3Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_4Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
-            <p>Project 1</p>
-        </div>
-        <div class="group">
-            <picture><img src="{gallery_1_2Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_3Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_4Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
-            <p>Project 2</p>
-        </div>
+        <button class="group" on:click={() => openProject(0)}>
+            {#each projects[0].images as { src, alt }}
+                <picture><img src="{src}" alt="{alt}"></picture>
+            {/each}
+            <p>{projects[0].projectName}</p>
+        </button>
+        <button class="group" on:click={() => openProject(1)}>
+            {#each projects[1].images as { src, alt }}
+                <picture><img src="{src}" alt="{alt}"></picture>
+            {/each}
+            <p>{projects[1].projectName}</p>
+        </button>
         <h2 class="fs-xl">Explore the results of our work</h2>
     </div>
     <div>
-        <div class="group">
-            <picture><img src="{gallery_1_2Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_3Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_4Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
-            <p>Project 3</p>
-        </div>
-        <div class="group">
-            <picture><img src="{gallery_1_2Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_3Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_4Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
-            <p>Project 4</p>
-        </div>
+        <button class="group" on:click={() => openProject(2)}>
+            {#each projects[2].images as { src, alt }}
+                <picture><img src="{src}" alt="{alt}"></picture>
+            {/each}
+            <p>{projects[2].projectName}</p>
+        </button>
+        <button class="group" on:click={() => openProject(3)}>
+            {#each projects[3].images as { src, alt }}
+                <picture><img src="{src}" alt="{alt}"></picture>
+            {/each}
+            <p>{projects[3].projectName}</p>
+        </button>
         <h2 class="fs-xl">Experience what our shutters feel like</h2>
     </div>
     <div>
-        <div class="group">
-            <picture><img src="{gallery_1_2Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_3Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_4Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
-            <p>Project 5</p>
-        </div>
-        <div class="group">
-            <picture><img src="{gallery_1_2Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_3Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_4Src}" alt="shutter"></picture>
-            <picture><img src="{gallery_1_1Src}" alt="shutter"></picture>
-            <p>Project 6</p>
-        </div>
+        <button class="group" on:click={() => openProject(4)}>
+            {#each projects[4].images as { src, alt }}
+                <picture><img src="{src}" alt="{alt}"></picture>
+            {/each}
+            <p>{projects[4].projectName}</p>
+        </button>
+        <button class="group" on:click={() => openProject(5)}>
+            {#each projects[5].images as { src, alt }}
+                <picture><img src="{src}" alt="{alt}"></picture>
+            {/each}
+            <p>{projects[5].projectName}</p>
+        </button>
         <h2 class="fs-xl">Your doors and windows are in good hands</h2>
     </div>
-    <div class="box"></div>
+    <div class="cta">
+        <h3 class="fs-xl">It's time to take action</h3>
+        <p>Use our price calculator and get your FREE quote now</p>
+        <a href="/" class="bg-yellow text-navy">Get Started</a>
+    </div>
 </main>
+{#if selectedProject}
+    <button transition:fade={{duration: 150}} class="slider-wrapper" on:click={e => {
+        if(e.target.classList.contains("slider-wrapper")) {
+            closeProject();
+        }
+    }}>
+        <div class="slider">
+            <p class="fs-500">{selectedProject.projectName}</p>
+            <Splide options={ { rewind: true, width: 1200 } } aria-label="testimonials">
+                {#each selectedProject.images as { src, alt }}
+                    <SplideSlide>
+                        <picture><img src="{src}" alt="{alt}"></picture>
+                    </SplideSlide>
+                {/each}
+            </Splide>
+        </div>
+    </button>
+{/if}
 <div id="loader">
     Loading... 
 </div>
@@ -182,12 +268,43 @@
         text-align: center;
     }
 
-    picture {
+    .group picture {
         width: 120px;
     }
 
+    .slider {
+        max-width: 1200px;
+        margin: auto;
+    }
+
+    .slider > p {
+        margin-bottom: 1rem;
+    }
+
+    .slider picture {
+        width: 40%;
+        max-width: 350px;
+        margin: auto;
+    }
+
+    .slider-wrapper {
+        position: fixed;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(11, 23, 29, 0.9);
+        text-align: center;
+    }
+
+    button {
+        padding: 0;
+        color: var(--clr-white);
+    }
+
     @media (min-width: 768px) {
-        picture {
+        .group picture {
             width: 200px;
         }
         
@@ -201,9 +318,25 @@
             gap: 5rem;
         }
     }
+
+    .cta {
+        min-height: 50vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--spacing);
+        padding: var(--spacing);
+        text-align: center;
+    }
+
+    .cta a {
+        padding: .6rem 1.2rem;
+        text-decoration: none;
+    }
     
     @media (min-width: 1024px) {
-        picture {
+        .group picture {
             width: 260px;
         }
 
