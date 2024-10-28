@@ -8,6 +8,7 @@
     import customArchSrc from "$lib/assets/pricing/custom-arch.webp";
 
     import { animate, scroll } from "motion";
+    import { fade } from "svelte/transition";
 	import { onMount } from "svelte";
 
     onMount(() => {
@@ -18,6 +19,8 @@
             }
         )
     })
+
+    let selectedOptionSrc = bayWindowSrc;
 </script>
 
 <main>
@@ -84,13 +87,16 @@
     <div class="options-container">
         <h2 class="fs-xl">Window types we can cover with our California shutters</h2>
         <div class="interactive-display">
-            <picture><img src="{bayWindowSrc}" alt="DELETE ME"></picture>
+            <!-- <picture><img src="{bayWindowSrc}" alt="DELETE ME"></picture> -->
+            {#key selectedOptionSrc}
+                <picture><img src="{selectedOptionSrc}" alt="selected option"></picture>
+            {/key}
             <div class="options">
-                <button class="text-white">Bay windows</button>
-                <button class="text-white">French doors</button>
-                <button class="text-white">Patio doors</button>
-                <button class="text-white">Sliding doors</button>
-                <button class="text-white">Custom arches</button>
+                <button class:active={selectedOptionSrc === bayWindowSrc} on:click={() => selectedOptionSrc = bayWindowSrc} class="text-white">Bay windows</button>
+                <button class:active={selectedOptionSrc === frenchDoorSrc} on:click={() => selectedOptionSrc = frenchDoorSrc} class="text-white">French doors</button>
+                <button class:active={selectedOptionSrc === patioDoorSrc} on:click={() => selectedOptionSrc = patioDoorSrc} class="text-white">Patio doors</button>
+                <button class:active={selectedOptionSrc === slidingDoorSrc} on:click={() => selectedOptionSrc = slidingDoorSrc} class="text-white">Sliding doors</button>
+                <button class:active={selectedOptionSrc === customArchSrc} on:click={() => selectedOptionSrc = customArchSrc} class="text-white">Custom arches</button>
             </div>
         </div>
     </div>
@@ -248,6 +254,7 @@
     .options > * {
         background-color: #203c4c;
         flex: 1;
+        transition: background-color 300ms ease-in-out;
     }
 
     .options > *:not(*:last-of-type) {
@@ -268,6 +275,10 @@
     .cta a {
         padding: .6rem 1.2rem;
         text-decoration: none;
+    }
+
+    button.active {
+        background-color: var(--clr-blue);
     }
 
     @media (min-width: 768px) {
