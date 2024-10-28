@@ -69,13 +69,6 @@
             )
         })
 
-        // scroll(
-        //     animate(mainFeaturesImagesDouble, { y: [-40, 40] }), {
-        //         target: document.querySelector(".main-features"),
-        //         offset: ["start end", "end start"]
-        //     }
-        // )
-
         // Making the faq questions interactive
         const faqContainer = document.querySelector(".faq > div");
         faqContainer.addEventListener("click", e => {
@@ -471,13 +464,17 @@
         padding: var(--spacing);
     }
 
+    .main-features > * {
+        margin-bottom: 3rem;
+    }
+
     .main-features .double {
         display: flex;
         gap: var(--spacing);
         justify-content: center;
         min-height: 80vh;
         position: relative;
-        padding-block: 3rem;
+        padding-block: var(--spacing);
     }
 
     .main-features .double > div {
@@ -681,8 +678,9 @@
         
         .main-features .double > div,
         .main-features .frame {
-            max-width: 40vw;
+            width: 40vw;
             min-width: 200px;
+            max-width: 400px;
         }
     }
 </style>
