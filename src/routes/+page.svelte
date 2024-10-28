@@ -700,6 +700,7 @@
         .card {
             flex-direction: column-reverse;
             padding: 2rem;
+            font-size: var(--fs-xs);
         }
 
         .card .quote-icon {

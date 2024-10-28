@@ -10,7 +10,7 @@
         <li><a href="/">About us</a></li>
         <li><a href="/gallery">Gallery</a></li>
         <li><a href="/">Blog</a></li>
-        <li><a href="/">Pricing</a></li>
+        <li><a href="/pricing">Pricing</a></li>
         <li><a href="/">Contact us</a></li>
     </ul>
     <button>Btn</button>
