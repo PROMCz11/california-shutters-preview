@@ -69,6 +69,17 @@
             )
         })
 
+        const mainFeaturesImagesSingle = document.querySelectorAll(".main-features .single picture");
+        mainFeaturesImagesSingle.forEach(image => {
+            scroll(
+                animate(image, { y: [-50, 50] }), {
+                    target: image.parentElement.parentElement,
+                    offset: ["start end", "end start"]
+                }
+            )
+        })
+
+
         // Making the faq questions interactive
         const faqContainer = document.querySelector(".faq > div");
         faqContainer.addEventListener("click", e => {
@@ -227,6 +238,26 @@
                     <p>We do not use composite or makeshift woods to construct even our lowest tier product.</p>
                 </div>
             </div>
+        </div>
+        <h2 class="fs-xl">Highest Quality UV Resistant Wood Finish</h2>
+        <div class="single">
+            <p>Our California shutters are sealed with the best wood finish available on the market. We are not like other companies who use water based paint-primer mixes to cover their products for fast & cheap delivery. Our shutters are always painted and primed each at least once. For our higher-level products, we prime up to three times so to provide a smoother and more precise finish.</p>
+            <div>
+                <div class="frame"></div>
+                <picture>
+                    <img src="{uvResistantSrc}" alt="painting wood with uv solution">
+                </picture>
+            </div>
+        </div>
+        <h2 class="fs-xl">Unlimited Lifetime Warranty Guaranteed</h2>
+        <div class="single alternate">
+            <div>
+                <div class="frame"></div>
+                <picture>
+                    <img src="{warrantySrc}" alt="shutters">
+                </picture>
+            </div>
+            <p>Most other companies offer lifetime warranties but many of them do not offer them unlimitedly. What does that mean? I'm glad you've asked! This simply means that if anything - I mean anything - happens to your shutters that was out of your control, we will simply replace it or repair it on the spot at no cost to you. And the best part is this warranty is good for 25 years!</p>
         </div>
     </section>
     <!-- <div class="box"></div> -->
@@ -501,9 +532,41 @@
     }
 
     .main-features .double > div,
-    .main-features .frame {
+    .main-features .frame,
+    .main-features .single > div {
         max-width: 30vw;
         /* aspect-ratio: 3 / 2; */
+    }
+
+    .main-features .single .frame,
+    .main-features .single > div {
+        max-width: 100%;
+        max-width: 400px;
+    }
+
+    /* .main-features .single * {
+        border: 1px solid red;
+    } */
+
+    .main-features .single {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+        justify-items: center;
+        padding: 3rem;
+    }
+
+    .main-features .single > div {
+        position: relative;
+        align-self: center;
+    }
+
+    .main-features .single picture {
+        translate: -10% -10%;
+    }
+
+    .main-features .single.alternate picture {
+        translate: 10% -10%;
     }
 
     .free-installation {
@@ -623,6 +686,14 @@
         .background-collage picture {
             max-width: 200px;
         }
+
+        .main-features .single {
+            grid-template-columns: 1fr;
+        }
+
+        .main-features .single > div {
+            order: -1;
+        }
     }
 
     @media (max-width: 768px) {
@@ -645,6 +716,10 @@
 
         .testimonials .slider {
             max-width: 80vw;
+        }
+
+        .main-features .double > div > div img {
+            width: 30px;
         }
     }
 
@@ -681,6 +756,11 @@
             width: 40vw;
             min-width: 200px;
             max-width: 400px;
+        }
+
+        .main-features .single .frame,
+        .main-features .single > div {
+            width: 100%;
         }
     }
 </style>
