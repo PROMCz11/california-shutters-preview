@@ -158,7 +158,7 @@
 
     .features {
         padding-top: var(--spacing);
-        border-top: 1px solid var(--clr-navy);
+        border-top: 1px solid #182d384d;
         margin-top: var(--spacing);
     }
 
