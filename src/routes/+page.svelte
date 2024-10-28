@@ -636,7 +636,7 @@
     }
 
     .faq h2 {
-        /* text-align: center; */
+        text-align: center;
         padding: var(--spacing);
     }
 
