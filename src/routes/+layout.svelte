@@ -15,6 +15,7 @@
 </script>
 
 <nav>
+    <ProgressBar color="#FFFFFF"/>
     <a href="/">
         <picture>
             <source srcset="{navbarLogoSrc}" media="(min-width: 1150px)">
@@ -32,7 +33,6 @@
     </ul>
     <button>Free Estimate</button>
     <button class="menu-open" on:click={() => isMenuActive = true}><img src="{hamburgerIconSrc}" alt="menu icon"></button>
-    <ProgressBar color="#FFFFFF"/>
 </nav>
 
 <slot></slot>
@@ -71,7 +71,6 @@
         background-color: transparent;
         border-radius: 0;
         padding: .6rem 1.2rem;
-        /* Rebuilding */
     }
 
     button.menu-open, button.menu-close {
