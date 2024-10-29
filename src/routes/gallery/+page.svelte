@@ -266,6 +266,7 @@
         translate: -50% -50%;
         width: 100%;
         text-align: center;
+        max-width: max-content;
     }
 
     .group picture {

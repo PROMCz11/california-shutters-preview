@@ -24,7 +24,7 @@
     </a>
     <ul class="fs-300" class:active={isMenuActive}>
         <li><a href="/">Home</a></li>
-        <li><a href="/">About us</a></li>
+        <li><a href="/about-us">About us</a></li>
         <li><a href="/gallery">Gallery</a></li>
         <li><a href="/">Blog</a></li>
         <li><a href="/pricing">Pricing</a></li>

@@ -171,3 +171,7 @@ button {
     cursor: pointer;
     color: black;
 }
+
+img, .frame {
+    border-radius: .2rem;
+}
