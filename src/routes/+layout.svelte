@@ -74,8 +74,10 @@
     }
 
     button.menu-open, button.menu-close {
-        /* padding: 0 1rem; */
         display: none;
+        margin: 0;
+        border: 0;
+        padding: 0;
     }
 
     @media (max-width: 1150px) {
