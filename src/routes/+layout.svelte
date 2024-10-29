@@ -71,6 +71,7 @@
         background-color: transparent;
         border-radius: 0;
         padding: .6rem 1.2rem;
+        /* Rebuilding */
     }
 
     button.menu-open, button.menu-close {
