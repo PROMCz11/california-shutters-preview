@@ -15,7 +15,7 @@
 </script>
 
 <nav>
-    <ProgressBar color="#FFFFFF"/>
+    <!-- <ProgressBar color="#FFFFFF"/> -->
     <a href="/">
         <picture>
             <source srcset="{navbarLogoSrc}" media="(min-width: 1150px)">
