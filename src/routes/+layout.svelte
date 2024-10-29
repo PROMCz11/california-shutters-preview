@@ -65,7 +65,7 @@
         text-decoration: none;
     }
 
-    nav > button:not(.menu-open) {
+    nav > button {
         margin-left: auto;
         border: 1px solid var(--clr-navy);
         background-color: transparent;
