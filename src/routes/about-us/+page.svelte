@@ -5,6 +5,9 @@
     import rollerBlindsLogoSrc from "$lib/assets/about-us/roller-blinds-toronto.svg";
     import shutterBoysLogoSrc from "$lib/assets/about-us/shutter-boys.svg";
 
+    import aboutUsMain1Src from "$lib/assets/about-us/about-us-main-1.png";
+    import aboutUsMain2Src from "$lib/assets/about-us/about-us-main-2.png";
+
     import { animate, scroll } from "motion";
 	import { onMount } from "svelte";
 
@@ -15,6 +18,20 @@
         //         offset: ["end 50%", "start end"] // Should be more optimized later
         //     }
         // )
+
+        scroll(
+            animate(".main-1 picture img", { y: [-50, 50] }), {
+                target: document.querySelector(".main-1"),
+                offset: ["start end", "end start"]
+            }
+        )
+
+        scroll(
+            animate(".main-2 picture img", { y: [-50, 50] }), {
+                target: document.querySelector(".main-2"),
+                offset: ["start end", "end start"]
+            }
+        )
     })
 </script>
 
@@ -30,7 +47,14 @@
         <img src="{rollerBlindsLogoSrc}" alt="roller blinds company logo">
         <img src="{ADevineDesignLogoSrc}" alt="a devine design company logo">
     </div>
-    
+    <div class="main-1">
+        <picture><img src="{aboutUsMain1Src}" alt="a group of people discussing something"><div class="frame"></div></picture>
+        <p>With a rich family history and a dedication to excellence, we deliver our products through meticulous manufacturing processes. Every shutter we create is crafted with precision and care, ensuring both aesthetic appeal and long-term durability. Our team is committed to engaging closely with our customers, providing a highly personalized experience, whether we're working with homeowners, designers, or builders.</p>
+    </div>
+    <div class="main-2">
+        <p>When you choose California Shutters Toronto, you're investing in premium window solutions that require minimal maintenance and offer lasting quality. Our products not only enhance the beauty and functionality of your space but are also backed by a 25-year warranty. Homeowners save time with the reliability of our products, while builders and designers benefit from our expertise in customization, ensuring accurate and professional results every time.</p>
+        <picture><img src="{aboutUsMain2Src}" alt="a man and a woman discussing something"><div class="frame"></div></picture>
+    </div>
 </main>
 <div class="box"></div>
 
@@ -51,7 +75,7 @@
         justify-items: center;
     }
 
-    article > * {
+    article > *, .main-1 > *, .main-2 > * {
         max-width: 700px;
     }
 
@@ -103,6 +127,26 @@
         max-width: 200px;
     }
 
+    .main-1, .main-2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing);
+        padding: var(--spacing);
+        max-width: 1200px;
+        margin: auto;
+        align-items: center;
+        justify-items: center;
+        margin-block: var(--spacing);
+    }
+
+    .main-1 picture, .main-2 picture {
+        position: relative;
+    }
+
+    .main-1 picture img, .main-2 picture img {
+        translate: -5% -5%;
+    }
+
     @media (max-width: 700px) {
         .logos {
             flex-direction: column;
@@ -119,6 +163,17 @@
         }
 
         article h1 {
+            order: -1;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .main-1, .main-2 {
+            grid-template-columns: 1fr;
+            margin-block: 3rem;
+        }
+
+        .main-2 picture {
             order: -1;
         }
     }
