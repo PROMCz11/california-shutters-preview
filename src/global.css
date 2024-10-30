@@ -175,3 +175,13 @@ button {
 img, .frame {
     border-radius: .2rem;
 }
+
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    width: 100%;
+    z-index: -1;
+    border: 3px solid var(--clr-yellow);
+}

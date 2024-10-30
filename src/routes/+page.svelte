@@ -515,14 +515,7 @@
     }
 
     .main-features .frame {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        translate: -50% -50%;
-        width: 100%;
         aspect-ratio: 3 / 2;
-        z-index: -1;
-        border: 3px solid var(--clr-yellow);
     }
 
     .main-features .double > div > div {

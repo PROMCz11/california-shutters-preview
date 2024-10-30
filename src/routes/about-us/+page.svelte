@@ -4,11 +4,23 @@
     import ADevineDesignLogoSrc from "$lib/assets/about-us/a-devine-design.svg";
     import rollerBlindsLogoSrc from "$lib/assets/about-us/roller-blinds-toronto.svg";
     import shutterBoysLogoSrc from "$lib/assets/about-us/shutter-boys.svg";
+
+    import { animate, scroll } from "motion";
+	import { onMount } from "svelte";
+
+    onMount(() => {
+        // scroll(
+        //     animate("article picture img", { y: [-100, 100] }), {
+        //         target: document.querySelector("article picture img"),
+        //         offset: ["end 50%", "start end"] // Should be more optimized later
+        //     }
+        // )
+    })
 </script>
 
 <main>
     <article>
-        <picture><img src="{aboutUsHeadingSrc}" alt="shutter"></picture>
+        <picture><img src="{aboutUsHeadingSrc}" alt="shutter"><div class="frame"></div></picture>
         <h1 class="fs-xl">We cover your windows with a heavenly touch</h1>
         <p>Many years ago, our founder had a vision to furnish every home in Toronto and surrounding regions with the highest quality wood shutter available on the market. 25 years to that day, and our shutters are finally filling homes across the nation! We've successfully served thousands of delighted customers, and we are ready to give you the same service, quality and price that we've always been known for.</p>
     </article>
@@ -18,6 +30,7 @@
         <img src="{rollerBlindsLogoSrc}" alt="roller blinds company logo">
         <img src="{ADevineDesignLogoSrc}" alt="a devine design company logo">
     </div>
+    
 </main>
 <div class="box"></div>
 
@@ -53,6 +66,17 @@
     article picture {
         grid-row: span 2;
         max-width: 500px;
+        position: relative;
+        margin-top: 1rem;
+    }
+
+    article picture > img {
+        translate: -5% -5%;
+    }
+
+    .frame {
+        width: 100%;
+        height: 100%;
     }
 
     main > p {
