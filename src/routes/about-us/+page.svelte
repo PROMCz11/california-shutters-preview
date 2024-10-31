@@ -143,7 +143,11 @@
         position: relative;
     }
 
-    .main-1 picture img, .main-2 picture img {
+    .main-1 picture img {
+        translate: 5% 5%;
+    }
+    
+    .main-2 picture img {
         translate: -5% -5%;
     }
 
