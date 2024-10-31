@@ -1,5 +1,5 @@
 <script>
-    import "../../src/global.css";
+    import "../../../src/global.css";
     import navbarLogoSrc from "$lib/assets/shared/navbar-logo.svg";
     import mobileNavbarLogoSrc from "$lib/assets/shared/mobile-navbar-logo.svg";
     import hamburgerIconSrc from "$lib/assets/shared/hamburger-icon.svg";
