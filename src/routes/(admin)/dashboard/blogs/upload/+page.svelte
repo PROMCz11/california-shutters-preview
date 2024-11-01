@@ -3,9 +3,12 @@
 </script>
 
 <main>
-    <div class="article"></div>
+    <div class="article-wrapper">
+        <div class="article">
+            <input type="text" placeholder="Enter content...">
+        </div>
+    </div>
     <div class="controls">
-        <p>Add a block</p>
         <div class="types">
             <button>Main title</button>
             <button>Section title</button>
@@ -23,27 +26,21 @@
         display: flex;
     }
     
-    button {
-        padding: .2rem .4rem;
-        border: 1px solid black;
-        border-radius: .5rem;
-        color: white;
-        background-color: #21658A;
-        cursor: pointer;
-    }
-    
     .types {
         display: flex;
         flex-direction: column;
         gap: .5rem;
     }
 
-    /* main > * {
-        border: 1px solid red;
-    } */
-
-    main .article {
+    .article-wrapper {
         flex: 1;
+        background-color: hsl(0, 0%, 8%);
+        padding: .5rem;
+    }
+
+    .article {
+        max-width: 600px;
+        margin: auto;
     }
 
     .controls {
@@ -51,9 +48,12 @@
         position: sticky;
         top: 0;
         height: 100vh;
-        border-left: 1px solid;
         display: flex;
         flex-direction: column;
         gap: .5rem;
+    }
+
+    input:focus {
+        outline: 1px solid white;
     }
 </style>
