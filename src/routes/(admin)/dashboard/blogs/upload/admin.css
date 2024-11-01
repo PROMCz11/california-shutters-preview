@@ -93,3 +93,7 @@ select {
 /* ------------------- */
 /* Styles              */
 /* ------------------- */
+
+.hide {
+    display: none !important;
+}

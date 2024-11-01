@@ -50,7 +50,7 @@
             <button class="tag secondary">Premium</button>
         </div>
     </div>
-    <div class="confirmation-modal-wrapper">
+    <div class="confirmation-modal-wrapper hide">
         <div class="confirmation-modal">
             <p>Success!</p>
             <button class="secondary">Return</button>
