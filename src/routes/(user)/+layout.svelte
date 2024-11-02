@@ -15,7 +15,7 @@
 </script>
 
 <nav>
-    <ProgressBar color="#FFFFFF"/>
+    <ProgressBar color="#21658A"/>
     <a href="/">
         <picture>
             <source srcset="{navbarLogoSrc}" media="(min-width: 1150px)">
@@ -26,7 +26,7 @@
         <li><a href="/">Home</a></li>
         <li><a href="/about-us">About us</a></li>
         <li><a href="/gallery">Gallery</a></li>
-        <li><a href="/">Blog</a></li>
+        <li><a href="/blog">Blog</a></li>
         <li><a href="/pricing">Pricing</a></li>
         <li><a href="/">Contact us</a></li>
         <button class="menu-close" on:click={() => isMenuActive = false}><img src="{closeIconSrc}" alt="close icon"></button>

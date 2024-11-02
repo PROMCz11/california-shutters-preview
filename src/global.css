@@ -74,7 +74,7 @@ select {
     --clr-yellow: #FFB621;
 
     /* Global spacing variable for mobile */
-    --spacing: 1rem;
+    --spacing: 1rem; 
 }
   
 /* Tablet */
@@ -108,6 +108,16 @@ select {
 @font-face {
     font-family: "Nimbus Sans L";
     src: url("lib/fonts/nimbus-sans-l-regular-webfont.woff2") format("woff2");
+}
+
+:root {
+    --main-padding-top: 9.5rem;
+}
+
+@media (max-width: 1150px) {
+    :root {
+        --main-padding-top: 6.5rem;
+    }
 }
 
 /* ------------------- */

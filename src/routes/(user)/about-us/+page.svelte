@@ -61,7 +61,8 @@
 <style>
     main {
         padding: var(--spacing);
-        padding-top: 9.5rem;
+        /* padding-top: 9.5rem; */
+        padding-top: var(--main-padding-top);
         max-width: 1150px;
         margin: auto;
     }
@@ -158,9 +159,9 @@
     }
     
     @media (max-width: 1150px) {
-        main {
+        /* main {
             padding-top: 6.5rem;
-        }
+        } */
 
         article {
             grid-template-columns: 1fr;
