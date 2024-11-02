@@ -277,7 +277,7 @@
         <div class="slider">
             <Splide options={ { rewind: true, width: 1200 } } aria-label="testimonials">
                 <SplideSlide>
-                <div class="card fs-400 bg-navy text-white">
+                <div class="card fs-400 bg-navy text-white text-only">
                     <div>
                         <img class="quote-icon" src="{quoteIconSrc}" alt="quote icon">
                         <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
@@ -286,9 +286,9 @@
                             <span style="color: #C5C6D1;">John D.</span>
                         </div>
                     </div>
-                    <picture>
+                    <!-- <picture>
                         <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
-                    </picture>
+                    </picture> -->
                 </div>
                 </SplideSlide>
                 <SplideSlide>
@@ -605,6 +605,8 @@
         gap: 1rem;
         padding: 3rem;
         align-items: center;
+        height: 100%;
+        padding-inline: 6rem;
     }
 
     .card > div {
@@ -694,6 +696,11 @@
             flex-direction: column-reverse;
             padding: 2rem;
             font-size: var(--fs-xs);
+            justify-content: center;
+        }
+
+        .card.text-only {
+            padding-inline: 4rem;
         }
 
         .card .quote-icon {
