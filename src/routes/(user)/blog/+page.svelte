@@ -90,9 +90,9 @@
     }
 
     /* When the user requests more blogs and the server returns the last batch, it should also return a message indicating no more, which will update the state of the button, call it "canLoadMore = false" and it will also be returned on the initial page load */
-    .load-more-wrapper button.disabled {
+    /* .load-more-wrapper button.disabled {
         color: #182D3816;
-    }
+    } */
 
     .load-more-wrapper button:hover {
         background-color: #182D3814;
