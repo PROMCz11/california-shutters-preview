@@ -40,6 +40,8 @@
     import { animate, scroll, inView, timeline } from "motion";
 	import { onMount } from "svelte";
 
+    import Cta from "$lib/components/Cta.svelte";
+
     onMount(() => {
         const collageImgs = document.querySelectorAll(".background-collage picture");
         const heroContent = document.querySelector(".content");
@@ -380,7 +382,7 @@
             </div>
         </div>
     </section>
-    <div class="box"></div>
+    <Cta />
 </main>
 <div id="loader">
     Loading... 
@@ -628,6 +630,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        padding-bottom: calc(var(--spacing) * 2);
     }
 
     .faq h2 {

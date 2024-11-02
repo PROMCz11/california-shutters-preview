@@ -1,5 +1,6 @@
 <script>
     import articlePlaceholderSrc from "$lib/assets/blog/blog-article-placeholder.webp";
+	import Cta from "$lib/components/Cta.svelte";
 </script>
 
 <main>
@@ -45,7 +46,7 @@
     <div class="load-more-wrapper bg-white">
         <button class="text-navy">+ Load more</button>
     </div>
-    <div class="box"></div>
+    <Cta />
 </main>
 
 <style>
@@ -79,6 +80,7 @@
 
     .load-more-wrapper {
         padding-block: var(--spacing);
+        padding-bottom: calc(var(--spacing) * 2);
         max-width: 1500px;
         margin: auto;
     }
