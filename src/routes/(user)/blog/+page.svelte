@@ -87,18 +87,19 @@
     .load-more-wrapper button {
         display: block;
         margin: auto;
+        border-radius: .5rem;
     }
 
     .load-more-wrapper button.disabled {
-        /* color: ; */
+        color: #182D3816;
     }
 
     .load-more-wrapper button:hover {
-        /* background-color: ; */
+        background-color: #182D3814;
     }
 
     .load-more-wrapper button:active {
-        /* background-color: ; */
+        background-color: #182D381A;
     }
 
     @media (max-width: 1150px) {
