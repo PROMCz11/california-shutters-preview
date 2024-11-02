@@ -49,10 +49,6 @@
 </main>
 
 <style>
-    main {
-        /* padding-top: var(--main-padding-top); */
-    }
-
     main > h1 {
         padding-top: var(--main-padding-top);
         padding-bottom: calc(var(--main-padding-top) / 2);
@@ -93,6 +89,7 @@
         border-radius: .5rem;
     }
 
+    /* When the user requests more blogs and the server returns the last batch, it should also return a message indicating no more, which will update the state of the button, call it "canLoadMore = false" and it will also be returned on the initial page load */
     .load-more-wrapper button.disabled {
         color: #182D3816;
     }
