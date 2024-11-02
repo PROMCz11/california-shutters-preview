@@ -3,7 +3,7 @@
 </script>
 
 <main>
-    <h1>Explore Further</h1>
+    <h1 class="bg-white text-navy">Explore Further</h1>
     <div class="blogs bg-white text-navy">
         <a href="/blog" class="blog text-navy">
             <picture><img src="{articlePlaceholderSrc}" alt="this is the description form the app"></picture>
@@ -50,12 +50,15 @@
 
 <style>
     main {
-        padding-top: var(--main-padding-top);
+        /* padding-top: var(--main-padding-top); */
     }
 
     main > h1 {
-        margin-bottom: calc(var(--main-padding-top) / 2);
+        padding-top: var(--main-padding-top);
+        padding-bottom: calc(var(--main-padding-top) / 2);
         text-align: center;
+        max-width: 1500px;
+        margin: auto;
     }
 
     .blogs {
