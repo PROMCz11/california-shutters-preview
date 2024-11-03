@@ -140,6 +140,7 @@
         display: grid;
         place-content: center;
     }
+    
     input[type="radio"]::before {
         content: "";
         width: 0.65em;

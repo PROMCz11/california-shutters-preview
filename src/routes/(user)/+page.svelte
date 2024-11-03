@@ -1,14 +1,25 @@
 <script>
-    import heroImg1Src from "$lib/assets/home/IMG_3573.webp";
-    import heroImg2Src from "$lib/assets/home/IMG_3725.webp";
-    import heroImg3Src from "$lib/assets/home/IMG_4027.webp";
-    import heroImg4Src from "$lib/assets/home/IMG_4078.webp";
-    import heroImg5Src from "$lib/assets/home/IMG_4396.webp";
-    import heroImg6Src from "$lib/assets/home/IMG_4539.webp";
-    import heroImg7Src from "$lib/assets/home/IMG_4575 3.webp";
-    import heroImg8Src from "$lib/assets/home/IMG_4577.webp";
-    import heroImg9Src from "$lib/assets/home/IMG_4079.webp";
-    import heroImg10Src from "$lib/assets/home/IMG_4542.webp";
+    // import heroImg1Src from "$lib/assets/home/IMG_3573.webp";
+    // import heroImg2Src from "$lib/assets/home/IMG_3725.webp";
+    // import heroImg3Src from "$lib/assets/home/IMG_4027.webp";
+    // import heroImg4Src from "$lib/assets/home/IMG_4078.webp";
+    // import heroImg5Src from "$lib/assets/home/IMG_4396.webp";
+    // import heroImg6Src from "$lib/assets/home/IMG_4539.webp";
+    // import heroImg7Src from "$lib/assets/home/IMG_4575 3.webp";
+    // import heroImg8Src from "$lib/assets/home/IMG_4577.webp";
+    // import heroImg9Src from "$lib/assets/home/IMG_4079.webp";
+    // import heroImg10Src from "$lib/assets/home/IMG_4542.webp";
+    
+    import heroImg1Src from "$lib/assets/home/heading1.webp";
+    import heroImg2Src from "$lib/assets/home/heading2.webp";
+    import heroImg3Src from "$lib/assets/home/heading3.webp";
+    import heroImg4Src from "$lib/assets/home/heading4.webp";
+    import heroImg5Src from "$lib/assets/home/heading5.webp";
+    import heroImg6Src from "$lib/assets/home/heading6.webp";
+    import heroImg7Src from "$lib/assets/home/heading7.webp";
+    import heroImg8Src from "$lib/assets/home/heading8.webp";
+    import heroImg9Src from "$lib/assets/home/heading9.webp";
+    import heroImg10Src from "$lib/assets/home/heading10.webp";
 
     import gearSrc from "$lib/assets/home/gear.svg";
     import qualitySrc from "$lib/assets/home/quality.svg";
