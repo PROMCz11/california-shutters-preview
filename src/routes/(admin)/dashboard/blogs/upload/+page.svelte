@@ -29,11 +29,15 @@
             }
         });
     })
+
+    const upload = () => {
+        editor.save().then((res) => console.log(res))
+    }
 </script>
 
 <main>
     <div class="controls">
-        <button class="primary">Upload</button>
+        <button on:click={upload} class="primary">Upload</button>
         <button class="secondary">Cancel</button>
     </div>
     <div class="editor-wrapper">

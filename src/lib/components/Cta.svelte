@@ -99,6 +99,8 @@
 
     form > div > div {
         margin-inline-start: var(--spacing);
+        display: flex;
+        flex-wrap: wrap;
     }
 
     form > div > p {
@@ -110,6 +112,9 @@
     div:has( > input[type="radio"]) {
         display: inline-block;
         margin-right: var(--spacing);
+        display: grid;
+        grid-template-columns: 1.2em auto;
+        gap: 0.5em;
     }
 
     input[type="text"], input[type="number"] {
@@ -122,6 +127,31 @@
 
     input[type="text"]::placeholder, input[type="number"]::placeholder {
         color: var(--clr-blue);
+    }
+
+    input[type="radio"] {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: transparent;
+        width: 1.15em;
+        height: 1.15em;
+        border-radius: 50%;
+        border: 0.15em solid var(--clr-blue);
+        display: grid;
+        place-content: center;
+    }
+    input[type="radio"]::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        border-radius: 50%;
+        transform: scale(0);
+        transition: 90ms transform ease-in-out;
+        box-shadow: inset 1em 1em var(--clr-yellow);
+    }
+
+    input[type="radio"]:checked::before {
+        transform: scale(1);
     }
 
     form > button {
