@@ -1,25 +1,25 @@
 <script>
-    import heroImg1Src from "$lib/assets/home/IMG_3573.webp";
-    import heroImg2Src from "$lib/assets/home/IMG_3725.webp";
-    import heroImg3Src from "$lib/assets/home/IMG_4027.webp";
-    import heroImg4Src from "$lib/assets/home/IMG_4078.webp";
-    import heroImg5Src from "$lib/assets/home/IMG_4396.webp";
-    import heroImg6Src from "$lib/assets/home/IMG_4539.webp";
-    import heroImg7Src from "$lib/assets/home/IMG_4575 3.webp";
-    import heroImg8Src from "$lib/assets/home/IMG_4577.webp";
-    import heroImg9Src from "$lib/assets/home/IMG_4079.webp";
-    import heroImg10Src from "$lib/assets/home/IMG_4542.webp";
+    // import heroImg1Src from "$lib/assets/home/IMG_3573.webp";
+    // import heroImg2Src from "$lib/assets/home/IMG_3725.webp";
+    // import heroImg3Src from "$lib/assets/home/IMG_4027.webp";
+    // import heroImg4Src from "$lib/assets/home/IMG_4078.webp";
+    // import heroImg5Src from "$lib/assets/home/IMG_4396.webp";
+    // import heroImg6Src from "$lib/assets/home/IMG_4539.webp";
+    // import heroImg7Src from "$lib/assets/home/IMG_4575 3.webp";
+    // import heroImg8Src from "$lib/assets/home/IMG_4577.webp";
+    // import heroImg9Src from "$lib/assets/home/IMG_4079.webp";
+    // import heroImg10Src from "$lib/assets/home/IMG_4542.webp";
     
-    // import heroImg1Src from "$lib/assets/home/heading1.webp";
-    // import heroImg2Src from "$lib/assets/home/heading2.webp";
-    // import heroImg3Src from "$lib/assets/home/heading3.webp";
-    // import heroImg4Src from "$lib/assets/home/heading4.webp";
-    // import heroImg5Src from "$lib/assets/home/heading5.webp";
-    // import heroImg6Src from "$lib/assets/home/heading6.webp";
-    // import heroImg7Src from "$lib/assets/home/heading7.webp";
-    // import heroImg8Src from "$lib/assets/home/heading8.webp";
-    // import heroImg9Src from "$lib/assets/home/heading9.webp";
-    // import heroImg10Src from "$lib/assets/home/heading10.webp";
+    import heroImg1Src from "$lib/assets/home/heading-1.webp";
+    import heroImg2Src from "$lib/assets/home/heading-2.webp";
+    import heroImg3Src from "$lib/assets/home/heading-3.webp";
+    import heroImg4Src from "$lib/assets/home/heading-4.webp";
+    import heroImg5Src from "$lib/assets/home/heading-5.webp";
+    import heroImg6Src from "$lib/assets/home/heading-6.webp";
+    import heroImg7Src from "$lib/assets/home/heading-7.webp";
+    import heroImg8Src from "$lib/assets/home/heading-8.webp";
+    import heroImg9Src from "$lib/assets/home/heading-9.webp";
+    import heroImg10Src from "$lib/assets/home/heading-10.webp";
 
     import gearSrc from "$lib/assets/home/gear.svg";
     import qualitySrc from "$lib/assets/home/quality.svg";
@@ -146,7 +146,7 @@
                 </picture>
             </div>
             <div class="reverse-shift">
-                <picture>
+                <picture style="scale: 1.5;">
                     <img src="{heroImg3Src}" alt="background shutter">
                 </picture>
                 <picture>
@@ -157,7 +157,7 @@
                 <picture>
                     <img src="{heroImg5Src}" alt="background shutter">
                 </picture>
-                <picture>
+                <picture style="scale: 1.5;">
                     <img src="{heroImg6Src}" alt="background shutter">
                 </picture>
             </div>
@@ -165,7 +165,7 @@
                 <picture>
                     <img src="{heroImg7Src}" alt="background shutter">
                 </picture>
-                <picture>
+                <picture style="scale: 1.5;">
                     <img src="{heroImg8Src}" alt="background shutter">
                 </picture>
             </div>
@@ -173,7 +173,7 @@
                 <picture>
                     <img src="{heroImg9Src}" alt="background shutter">
                 </picture>
-                <picture>
+                <picture style="scale: 1.5;">
                     <img src="{heroImg10Src}" alt="background shutter">
                 </picture>
             </div>
@@ -456,6 +456,7 @@
     .background-collage > div {
         display: flex;
         justify-content: space-between;
+        align-items: center;
         width: 100%;
         max-width: 90vw;
     }
