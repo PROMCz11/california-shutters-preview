@@ -1,7 +1,7 @@
 import { json } from "@sveltejs/kit";
 
 export const GET = async () => {
-    const dataFromDB = await platform.env.testing.prepare("SELECT * FROM blog");
+    const dataFromDB = await platform.env.testing.prepare("SELECT * FROM blog").all();
     if(!dataFromDB) {
         return json({ status: false });
     }
