@@ -1,7 +1,6 @@
-// src/routes/api/+server.js
-import { json } from '@sveltejs/kit';
+import { json } from "@sveltejs/kit";
 
-export async function  GET() {
-    const message='hello zein shaban'
-	return json({ message });
+export const GET = async () => {
+    const dataFromDB = await platform.env.DB.prepare("SELECT * FROM blog");
+    return json(dataFromDB);
 }
