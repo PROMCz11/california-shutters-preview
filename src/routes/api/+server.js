@@ -12,7 +12,7 @@ export async function GET({ platform }) {
     const query = `SELECT * FROM blog;`;
     
     try {
-      const result = await platform.env.DB.prepare(query).all();
+      const result = await platform.env.testing.prepare(query).all();
       return new Response(JSON.stringify(result), { status: 200 });
     } catch (error) {
       console.error('Error fetching all blog entries:', error);
