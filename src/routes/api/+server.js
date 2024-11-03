@@ -16,6 +16,6 @@ export async function GET({ platform }) {
       return new Response(JSON.stringify(result), { status: 200 });
     } catch (error) {
       console.error('Error fetching all blog entries:', error);
-      return new Response('Error fetching data', { status: 500 });
+      return new Response('Error fetching data: ' + error, { status: 500 });
     }
   }  
