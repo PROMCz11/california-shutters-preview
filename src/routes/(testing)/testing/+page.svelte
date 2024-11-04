@@ -22,11 +22,30 @@
     }
 
     let status = "No data yet"
+    let nameFromInput;
+
+    const addName = () => {
+        fetch("../api", {
+            method: "POST",
+            body: JSON.stringify({ name: nameFromInput }),
+            headers: {"Content-Type": "application/json"}
+        })
+        .then(res => res.json())
+        .then(json => {
+            console.log(json);
+        })
+        .catch(err => console.log(err))
+    }
 </script>
 
 <main>
     <button on:click={fetchAPI}>Fetch /api</button>
     <p>Status: {status}</p>
+
+    <div>
+        <input bind:value={nameFromInput} type="text" placeholder="Add name to the DB">
+        <button on:click={addName}>Add</button>
+    </div>
 </main>
 
 <style>
