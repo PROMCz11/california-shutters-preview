@@ -1,6 +1,0 @@
-name = "california-shutters-preview"
-
-[[d1_databases]]
-binding = "testing"
-database_name = "testing-first-id"
-database_id = "2d72ad96-f0db-4e1d-b723-bd1398daab12"
