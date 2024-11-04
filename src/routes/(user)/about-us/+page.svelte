@@ -181,6 +181,14 @@
         .main-2 picture {
             order: -1;
         }
+
+        .main-1 picture img {
+            translate: -5% -5%;
+        }
+
+        .main-2 picture img {
+            translate: 5% -5%;
+        }
     }
 
 </style>
