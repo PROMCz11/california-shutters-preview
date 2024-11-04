@@ -10,7 +10,7 @@ export const POST = async ({ platform, request }) => {
   const name = requestData.name;
   // const query = `INSERT INTO blog (title, blocks) VALUES (?, ?)`;
   // const result = await platform.env.DB.prepare(query).bind(title, blocks).run();
-  await env.DB.prepare(`INSERT INTO blogs(text) VALUES ("${name}")`).run();
+  await platform.env.DB.prepare(`INSERT INTO blogs(text) VALUES ("${name}")`).run();
   const results = await platform.env.DB.prepare("SELECT * FROM blogs").all();
   return json({ data: results });
 }
