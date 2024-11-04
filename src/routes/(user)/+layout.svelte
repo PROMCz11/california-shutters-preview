@@ -4,6 +4,9 @@
     import mobileNavbarLogoSrc from "$lib/assets/shared/mobile-navbar-logo.svg";
     import hamburgerIconSrc from "$lib/assets/shared/hamburger-icon.svg";
     import closeIconSrc from "$lib/assets/shared/close-icon.svg";
+    import stackedLogoSrc from "$lib/assets/shared/stacked-logo.svg";
+    import facebookIconSrc from "$lib/assets/shared/facebook.svg";
+    import instagramIconSrc from "$lib/assets/shared/instagram.svg";
     import { navigating } from "$app/stores";
     import { ProgressBar } from "@prgm/sveltekit-progress-bar";
 
@@ -36,6 +39,16 @@
 </nav>
 
 <slot></slot>
+
+<footer class="fs-xs">
+    <img src="{stackedLogoSrc}" alt="logo">
+    <div>
+        <p class="text-white">416-835-1312</p>
+        <p>180finchdeene sq Toronto Unit 13</p>
+    </div>
+    <p>Info@californiashutterstoronto.com</p>
+    <div class="socials"><img src="{instagramIconSrc}" alt="instagram icon"><p>californiashutterstoronto</p><img src="{facebookIconSrc}" alt="facebook icon"></div>
+</footer>
 
 <style>
     nav {
@@ -80,6 +93,29 @@
         padding: 0;
     }
 
+    footer {
+        padding: var(--spacing);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing);
+        align-items: end;
+        justify-items: center;
+    }
+
+    footer > img {
+        grid-column: span 3;
+    }
+
+    footer .socials {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    footer .socials img {
+        max-width: 20px
+    }
+
     @media (max-width: 1150px) {
         ul {
             position: fixed;
@@ -113,6 +149,18 @@
             top: .5rem;
             right: .5rem;
             padding: 0;
+        }
+    }
+
+    @media (max-width: 850px) {
+        footer {
+            grid-template-columns: 1fr;
+            gap: calc(var(--spacing) * 2 - .5rem);
+            text-align: center;
+        }
+
+        footer > img {
+            grid-column: unset;
         }
     }
 </style>

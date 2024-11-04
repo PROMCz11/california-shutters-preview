@@ -168,11 +168,12 @@
     }
 
     .secondary-cta > div {
-        min-height: 30vh;
+        min-height: 40vh;
         display: flex;
         justify-content: center;
         align-items: center;
         background-position: center center;
         background-size: cover;
+        border-radius: .2rem;
     }
 </style>
