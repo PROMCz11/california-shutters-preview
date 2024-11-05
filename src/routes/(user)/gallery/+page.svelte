@@ -183,7 +183,6 @@
 <style>
     main {
         padding: 10vw;
-        /* padding-top: 10rem; */
     }
 
     main > h1 {
@@ -212,12 +211,12 @@
         position: relative;
         min-height: 180px;
         min-width: 120px;
-        transition: all 150ms ease-in-out;
+        transition: all 250ms ease;
         cursor: pointer;
     }
 
     .group:hover {
-        scale: 0.95;
+        scale: 1.1;
     }
 
     .group picture {
@@ -225,7 +224,7 @@
         top: 50%;
         left: 50%;
         translate: -50% -50%;
-        transition: all 150ms ease-in-out;
+        transition: all 250ms ease;
     }
 
     .group p {
