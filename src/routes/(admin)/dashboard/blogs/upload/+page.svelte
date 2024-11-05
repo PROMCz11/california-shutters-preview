@@ -32,12 +32,26 @@
         });
     })
 
-    const upload = () => {
-        editor.save().then((res) => console.log(res))
+    const upload = async () => {
+        rawBlog = await editor.save();
+        const blog = createBlog();
+        // Fetch a request to the server
     }
 
     let metaDescription, blogTitle;
     let tags = [];
+    let rawBlog;
+    
+    const createBlog = () => {
+        const blog = {
+            rawBlog: rawBlog,
+            metaDescription: metaDescription,
+            blogTitle: blogTitle,
+            tags: tags
+        }
+
+        return blog;
+    }
 </script>
 
 <main>
