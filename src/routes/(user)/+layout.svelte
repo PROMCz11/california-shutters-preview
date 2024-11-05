@@ -10,15 +10,32 @@
     import { navigating } from "$app/stores";
     import { ProgressBar } from "@prgm/sveltekit-progress-bar";
 
+    import { inView } from "motion";
+    let isShadowCTAActive = false;
+    onMount(() => {
+        inView(".note", () => {
+            isShadowCTAActive = true;
+        })
+    })
+    
+    import { isHomepage } from "$lib/stores";
+
+    import { page } from "$app/stores";
+	import { onMount } from "svelte";
+
     $: if($navigating) {
         isMenuActive = false;
+        $isHomepage = false;
+        if($navigating.to.route.id === "/(user)") {
+            $isHomepage = true;
+        }
     }
 
     let isMenuActive = false;
 </script>
 
-<nav>
-    <ProgressBar color="#21658A"/>
+<nav class="bg-navy" class:home-page={$isHomepage}>
+    <ProgressBar color="#FFB621"/>
     <a href="/">
         <picture>
             <source srcset="{navbarLogoSrc}" media="(min-width: 1150px)">
@@ -34,7 +51,7 @@
         <li><a href="/">Contact us</a></li>
         <button class="menu-close" on:click={() => isMenuActive = false}><img src="{closeIconSrc}" alt="close icon"></button>
     </ul>
-    <button>Free Estimate</button>
+    <a class="button" class:active={isShadowCTAActive} href="/"><button class="fs-xs">Free Estimate</button></a>
     <button class="menu-open" on:click={() => isMenuActive = true}><img src="{hamburgerIconSrc}" alt="menu icon"></button>
 </nav>
 
@@ -52,7 +69,6 @@
 
 <style>
     nav {
-        background-color: var(--clr-yellow);
         display: flex;
         align-items: center;
         gap: var(--spacing);
@@ -74,16 +90,20 @@
     }
 
     a {
-        color: var(--clr-navy);
+        color: var(--clr-white);
         text-decoration: none;
     }
 
-    nav > button {
+    nav a.button {
         margin-left: auto;
+    }
+
+    nav > a > button {
         border: 1px solid var(--clr-navy);
-        background-color: transparent;
-        border-radius: 0;
-        padding: .6rem 1.2rem;
+        padding: .3rem .6rem;
+        border: 1px solid transparent;
+        background-color: var(--clr-yellow);
+        color: var(--clr-navy);
     }
 
     button.menu-open, button.menu-close {
@@ -116,6 +136,22 @@
         max-width: 20px
     }
 
+    nav.home-page > a > button {
+        transition: all 200ms ease-in-out;
+    }
+
+    nav.home-page > a > button {
+        background-color: transparent;
+        border: 1px solid var(--clr-white);
+        color: var(--clr-white);
+    }
+
+    nav.home-page > a.active > button {
+        background-color: var(--clr-yellow);
+        border: 1px solid transparent;
+        color: var(--clr-navy);
+    }
+
     @media (max-width: 1150px) {
         ul {
             position: fixed;
@@ -123,7 +159,7 @@
             right: 0;
             bottom: 0;
             width: 200px;
-            background-color: var(--clr-yellow);
+            background-color: var(--clr-navy);
             flex-direction: column;
             align-items: start;
             z-index: 10;

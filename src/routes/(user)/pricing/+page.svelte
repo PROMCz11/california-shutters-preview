@@ -185,6 +185,7 @@
         padding: .6rem 1.2rem;
         text-decoration: none;
         display: block;
+        border-radius: .2rem;
     }
 
     .prices-cta {
@@ -275,6 +276,7 @@
     .cta a {
         padding: .6rem 1.2rem;
         text-decoration: none;
+        border-radius: .2rem;
     }
 
     button.active {

@@ -48,10 +48,14 @@
     import { Splide, SplideSlide } from '@splidejs/svelte-splide';
     import '@splidejs/svelte-splide/css';
 
-    import { animate, scroll, inView, timeline } from "motion";
+    import { animate, scroll, inView } from "motion";
 	import { onMount } from "svelte";
 
     import Cta from "$lib/components/Cta.svelte";
+
+    import { isHomepage } from "$lib/stores";
+
+    $isHomepage = true;
 
     onMount(() => {
         const collageImgs = document.querySelectorAll(".background-collage picture");
