@@ -56,7 +56,6 @@
         <picture><img src="{aboutUsMain2Src}" alt="a man and a woman discussing something"><div class="frame"></div></picture>
     </div>
 </main>
-<div class="box"></div>
 
 <style>
     main {
@@ -114,6 +113,7 @@
         justify-content: space-between;
         align-items: center;
         gap: var(--spacing);
+        margin-block: calc(var(--spacing) * 3);
     }
 
     .logos img:nth-of-type(1) {
@@ -155,6 +155,8 @@
     @media (max-width: 700px) {
         .logos {
             flex-direction: column;
+            gap: 3rem;
+            margin-block: 6rem;
         }
     }
     

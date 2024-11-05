@@ -43,7 +43,9 @@
 
     import quoteIconSrc from "$lib/assets/home/quote-icon.svg";
     import fiveStarsSrc from "$lib/assets/home/five-stars.svg";
-    import testimonialsPlaceholderSrc from "$lib/assets/home/testimonials-placeholder.webp";
+    import testimonial1Src from "$lib/assets/home/testimonial-1.webp";
+    import testimonial2Src from "$lib/assets/home/testimonial-2.webp";
+    import testimonial3Src from "$lib/assets/home/testimonial-3.webp";
 
     import { Splide, SplideSlide } from '@splidejs/svelte-splide';
     import '@splidejs/svelte-splide/css';
@@ -303,9 +305,6 @@
                             <span style="color: #C5C6D1;">Maggie Kisiel</span>
                         </div>
                     </div>
-                    <!-- <picture>
-                        <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
-                    </picture> -->
                 </div>
                 </SplideSlide>
                 <SplideSlide>
@@ -319,7 +318,7 @@
                         </div>
                     </div>
                     <picture>
-                        <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
+                        <img src="{testimonial1Src}" alt="placeholder">
                     </picture>
                 </div>
                 </SplideSlide>
@@ -334,7 +333,7 @@
                         </div>
                     </div>
                     <picture>
-                        <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
+                        <img src="{testimonial3Src}" alt="placeholder">
                     </picture>
                 </div>
                 </SplideSlide>
@@ -348,9 +347,6 @@
                             <span style="color: #C5C6D1;">Margo Ing</span>
                         </div>
                     </div>
-                    <picture>
-                        <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
-                    </picture>
                 </div>
                 </SplideSlide>
                 <SplideSlide>
@@ -367,7 +363,7 @@
                         </div>
                     </div>
                     <picture>
-                        <img src="{testimonialsPlaceholderSrc}" alt="placeholder">
+                        <img src="{testimonial2Src}" alt="placeholder">
                     </picture>
                 </div>
                 </SplideSlide>
