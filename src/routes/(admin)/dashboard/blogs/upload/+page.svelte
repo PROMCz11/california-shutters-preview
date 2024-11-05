@@ -38,16 +38,18 @@
         // Fetch a request to the server
     }
 
-    let metaDescription, blogTitle;
+    let metaDescription, blogTitle, blogImgURL, blogImgDesc;
     let tags = [];
     let rawBlog;
     
     const createBlog = () => {
         const blog = {
-            rawBlog: rawBlog,
-            metaDescription: metaDescription,
             blogTitle: blogTitle,
-            tags: tags
+            blogImgURL: blogImgURL,
+            blogImgDesc: blogImgDesc,
+            metaDescription: metaDescription,
+            tags: tags,
+            rawBlog: rawBlog,
         }
 
         return blog;
@@ -61,6 +63,8 @@
     </div>
     <div class="editor-wrapper">
         <input bind:value={blogTitle} type="text" placeholder="Blog title">
+        <input bind:value={blogImgURL} type="text" placeholder="Main img URL">
+        <input bind:value={blogImgDesc} type="text" placeholder="Main img URL">
         <div id="editor"></div>
         <textarea bind:value={metaDescription} placeholder="Meta Description"></textarea>
     </div>
