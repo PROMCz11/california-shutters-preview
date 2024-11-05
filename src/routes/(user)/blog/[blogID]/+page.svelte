@@ -146,14 +146,16 @@
     </div> -->
     <div class="recent-posts">
         <h2 class="fs-500">Recent Posts</h2>
-        <a class="text-navy" href="./">
-            <img src="{blogPlaceholderSrc}" alt="placeholder">
-            <p class="fs-xs">15 Advantages of California Shutters You Need To Know Now (in 2023)</p>
-        </a>
-        <a class="text-navy" href="./">
-            <img src="{blogPlaceholderSrc}" alt="placeholder">
-            <p class="fs-xs">15 Advantages of California Shutters You Need To Know Now (in 2023)</p>
-        </a>
+        <div>
+            <a class="text-navy" href="./">
+                <img src="{blogPlaceholderSrc}" alt="placeholder">
+                <p class="fs-xs">15 Advantages of California Shutters You Need To Know Now (in 2023)</p>
+            </a>
+            <a class="text-navy" href="./">
+                <img src="{blogPlaceholderSrc}" alt="placeholder">
+                <p class="fs-xs">15 Advantages of California Shutters You Need To Know Now (in 2023)</p>
+            </a>
+        </div>
     </div>
 </main>
 <Cta />
@@ -198,7 +200,7 @@
         display: block;
     }
 
-    .recent-posts > * {
+    .recent-posts div > * {
         margin-bottom: 1rem;
     }
 
@@ -234,6 +236,12 @@
             width: 100%;
             padding: var(--spacing);
             margin-top: var(--spacing);
+        }
+
+        .recent-posts > div {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--spacing);
         }
 
         .recent-posts h2 {
