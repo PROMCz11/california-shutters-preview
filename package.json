@@ -32,8 +32,6 @@
 		"@splidejs/svelte-splide": "^0.2.9",
 		"@sveltejs/adapter-static": "^3.0.5",
 		"jsonwebtoken": "^9.0.2",
-		"mongoose": "^8.8.0",
-		"motion": "^10.18.0",
-		"wrangler": "^3.84.1"
+		"motion": "^10.18.0"
 	}
 }
