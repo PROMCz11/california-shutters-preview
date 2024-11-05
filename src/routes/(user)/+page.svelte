@@ -312,7 +312,7 @@
                 <div class="card fs-400 bg-navy text-white">
                     <div>
                         <img class="quote-icon" src="{quoteIconSrc}" alt="quote icon">
-                        <p>We are very happy with the work received from California Shutters Mississauga. We took advantage of their Black Friday pricing to furnish our entire townhome with their Diamond level shutter. (We found this product was much nicer than the other one's we were quoted for because of the uniqueness of the crown moulding that is built into it!). The shutters were delivered within 3 weeks, and still look just like new! If you're looking for a custom wood or vinyl shutter company in the Greater Toronto Area, this is the only team you should go with!</p>
+                        <p>We furnished our entire townhome with their Diamond level shutter. The shutters were delivered within 3 weeks. If you're looking for a custom wood or vinyl shutter company in the Greater Toronto Area, this is the only team you should go with!</p>
                         <div>
                             <img class="stars-icon" src="{fiveStarsSrc}" alt="five stars">
                             <span style="color: #C5C6D1;">Samantha Wanthers</span>
@@ -342,7 +342,7 @@
                 <div class="card fs-400 bg-navy text-white">
                     <div>
                         <img class="quote-icon" src="{quoteIconSrc}" alt="quote icon">
-                        <p>Great company.  From start to finish team took excellent care of my parents.  Marco took the time to explain the different types of shutters the pros and cons of each.  Tony and team installed the shutters perfectly.  Kim was right on top of all the administrative details.  Thank you all!</p>
+                        <p>From start to finish team took excellent care of my parents.  Marco took the time to explain the different types of shutters the pros and cons of each.  Tony and team installed the shutters perfectly.  Kim was right on top of all the administrative details.</p>
                         <div>
                             <img class="stars-icon" src="{fiveStarsSrc}" alt="five stars">
                             <span style="color: #C5C6D1;">Margo Ing</span>
@@ -357,10 +357,13 @@
                 <div class="card fs-400 bg-navy text-white">
                     <div>
                         <img class="quote-icon" src="{quoteIconSrc}" alt="quote icon">
-                        <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
+                        <p>I've had my shutters between 15 -20 years now.
+                            It must be noted that my shutters are exposed to lots of continuous heat because they face the sun all day without obstruction from trees, fences, buildings etc.... (Direct sunlight)
+                            
+                            They look brand new. No chipping of paint and no discolouring. Fantastic, Solid, and Beautiful.</p>
                         <div>
                             <img class="stars-icon" src="{fiveStarsSrc}" alt="five stars">
-                            <span style="color: #C5C6D1;">John D.</span>
+                            <span style="color: #C5C6D1;">Paul Therriault</span>
                         </div>
                     </div>
                     <picture>
@@ -638,6 +641,10 @@
         justify-content: end;
         width: 100%;
         padding-right: 1rem;
+    }
+
+    .card picture {
+        max-width: 330px;
     }
 
     .faq {
