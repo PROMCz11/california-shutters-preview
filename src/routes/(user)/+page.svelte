@@ -297,10 +297,10 @@
                 <div class="card fs-400 bg-navy text-white text-only">
                     <div>
                         <img class="quote-icon" src="{quoteIconSrc}" alt="quote icon">
-                        <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
+                        <p>I'm so happy that I have chosen Marco's company to made and installed my shutters. Marco presented me with several options to suit my budget and taste; excellent communication style; great organization (I had shutters installed within 2 weeks). Very professional and efficient.<br>The shutters look and work beautifully…very elegant…truly recommend Marco's company. Thank you</p>
                         <div>
                             <img class="stars-icon" src="{fiveStarsSrc}" alt="five stars">
-                            <span style="color: #C5C6D1;">John D.</span>
+                            <span style="color: #C5C6D1;">Maggie Kisiel</span>
                         </div>
                     </div>
                     <!-- <picture>
@@ -312,10 +312,10 @@
                 <div class="card fs-400 bg-navy text-white">
                     <div>
                         <img class="quote-icon" src="{quoteIconSrc}" alt="quote icon">
-                        <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
+                        <p>We are very happy with the work received from California Shutters Mississauga. We took advantage of their Black Friday pricing to furnish our entire townhome with their Diamond level shutter. (We found this product was much nicer than the other one's we were quoted for because of the uniqueness of the crown moulding that is built into it!). The shutters were delivered within 3 weeks, and still look just like new! If you're looking for a custom wood or vinyl shutter company in the Greater Toronto Area, this is the only team you should go with!</p>
                         <div>
                             <img class="stars-icon" src="{fiveStarsSrc}" alt="five stars">
-                            <span style="color: #C5C6D1;">John D.</span>
+                            <span style="color: #C5C6D1;">Samantha Wanthers</span>
                         </div>
                     </div>
                     <picture>
@@ -327,10 +327,10 @@
                 <div class="card fs-400 bg-navy text-white">
                     <div>
                         <img class="quote-icon" src="{quoteIconSrc}" alt="quote icon">
-                        <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
+                        <p>I loved the shutters they installed in my house back in 2019. A few years pass, still in great shape. One of the best investments I have done for my house. Recommended!!</p>
                         <div>
                             <img class="stars-icon" src="{fiveStarsSrc}" alt="five stars">
-                            <span style="color: #C5C6D1;">John D.</span>
+                            <span style="color: #C5C6D1;">JeanMay Wang</span>
                         </div>
                     </div>
                     <picture>
@@ -342,10 +342,10 @@
                 <div class="card fs-400 bg-navy text-white">
                     <div>
                         <img class="quote-icon" src="{quoteIconSrc}" alt="quote icon">
-                        <p>High quality product and fantastic customer service! The shutters not only look amazing, but help with insulation in the winter and keeping the heat out in the summer. Would highly recommend. Thanks for such a great job, it was a pleasure dealing with you!</p>
+                        <p>Great company.  From start to finish team took excellent care of my parents.  Marco took the time to explain the different types of shutters the pros and cons of each.  Tony and team installed the shutters perfectly.  Kim was right on top of all the administrative details.  Thank you all!</p>
                         <div>
                             <img class="stars-icon" src="{fiveStarsSrc}" alt="five stars">
-                            <span style="color: #C5C6D1;">John D.</span>
+                            <span style="color: #C5C6D1;">Margo Ing</span>
                         </div>
                     </div>
                     <picture>
@@ -637,6 +637,7 @@
         gap: 1rem;
         justify-content: end;
         width: 100%;
+        padding-right: 1rem;
     }
 
     .faq {

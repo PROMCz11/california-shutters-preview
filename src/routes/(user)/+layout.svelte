@@ -11,8 +11,15 @@
     import { ProgressBar } from "@prgm/sveltekit-progress-bar";
 
     import { inView } from "motion";
+    import { afterNavigate } from '$app/navigation';
     let isShadowCTAActive = false;
     onMount(() => {
+        inView(".note", () => {
+            isShadowCTAActive = true;
+        })
+    })
+
+    afterNavigate(() => {
         inView(".note", () => {
             isShadowCTAActive = true;
         })
@@ -20,7 +27,6 @@
     
     import { isHomepage } from "$lib/stores";
 
-    import { page } from "$app/stores";
 	import { onMount } from "svelte";
 
     $: if($navigating) {
@@ -28,7 +34,12 @@
         $isHomepage = false;
         if($navigating.to.route.id === "/(user)") {
             $isHomepage = true;
+            isShadowCTAActive = false;
+            inView(".note", () => {
+                isShadowCTAActive = true;
+            })
         }
+        
     }
 
     let isMenuActive = false;
