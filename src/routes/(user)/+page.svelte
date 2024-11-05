@@ -592,10 +592,11 @@
     }
 
     .free-installation .reversed {
-        -moz-transform: scale(-1, -1);
+        /* -moz-transform: scale(-1, -1);
         -o-transform: scale(-1, -1);
         -webkit-transform: scale(-1, -1);
-        transform: scale(-1, -1);
+        transform: scale(-1, -1); */
+        transform: scaleX(-1);
     }
 
     .free-installation > div {
