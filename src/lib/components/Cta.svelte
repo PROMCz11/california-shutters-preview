@@ -1,6 +1,56 @@
 <script>
     import desktopBgSrc from "$lib/assets/cta/gallery-cta-desktop.webp";
     import mobileBgSrc from "$lib/assets/cta/gallery-cta-mobile.webp";
+	import { onMount } from "svelte";
+
+    const submitQuote = () => {
+        // let shutterType = "";
+        // if(document.getElementById("composite").checked) {
+        //     shutterType = "composite";
+        // }
+
+        // else if(document.getElementById("select-wood/vinyl").checked) {
+        //     shutterType = "select-wood/vinyl";
+        // }
+        
+        // else if(document.getElementById("premium-wood/vinyl").checked) {
+        //     shutterType = "premium-wood/vinyl";
+        // }
+
+        let shutterType;
+        Array.from(document.querySelectorAll(".shutter-type > div input")).forEach(radioInput => {
+            if(radioInput.checked) {
+                shutterType = radioInput.id;
+            }
+        });
+        
+        let squareFootage;
+        Array.from(document.querySelectorAll(".square-footage > div input")).forEach(radioInput => {
+            if(radioInput.checked) {
+                squareFootage = radioInput.id;
+            }
+        });
+
+        const numberOfWindows = document.getElementById("number-of-windows").value;
+        const phoneNumber = document.getElementById("phone-number").value;
+        const windowDimensions = document.getElementById("window-dimensions").value;
+        const email = document.getElementById("email").value;
+        const name = document.getElementById("name").value;
+
+        const quote = {
+            name: name,
+            email: email,
+            phoneNumber: phoneNumber,
+            shutterType: shutterType,
+            squareFootage: squareFootage,
+            numberOfWindows: numberOfWindows,
+            windowDimensions: windowDimensions,
+            avgCostPerWindow: "Nothing yet"
+        }
+
+        console.log(quote);
+        
+    }
 </script>
 
 <div class="main">
@@ -10,7 +60,7 @@
     </div>
     <div class="primary-cta">
         <h2 class="text-500">Average cost per window is ~$1,800 - $2,250</h2>
-        <form action="">
+        <div class="form" action="">
             <div class="shutter-type">
                 <p>Choose shutter type</p>
                 <div>
@@ -55,18 +105,26 @@
             </div>
             <div class="number-of-windows">
                 <p>Provide the number of windows</p>
-                <input type="number" placeholder="4">
+                <input type="number" placeholder="4" id="number-of-windows">
+            </div>
+            <div class="email">
+                <p>What's your email?</p>
+                <input type="text" placeholder="Enter your email" id="email">
+            </div>
+            <div class="name">
+                <p>What's your name?</p>
+                <input type="text" placeholder="Enter your name" id="name">
             </div>
             <div class="phone-number">
                 <p>What's your number?</p>
-                <input type="text" placeholder="Number input">
+                <input type="text" placeholder="Number input" id="phone-number">
             </div>
             <div class="window-dimensions">
                 <p>What are your specific window dimensions?</p>
-                <input type="text" placeholder="Window dimensions">
+                <input type="text" placeholder="Window dimensions" id="window-dimensions">
             </div>
-            <button class="bg-yellow text-navy">Confirm my quote</button>
-        </form>
+            <button on:click={submitQuote} class="bg-yellow text-navy">Confirm my quote</button>
+        </div>
     </div>
     <div class="secondary-cta">
         <div style="background-image: url({desktopBgSrc})">
@@ -91,19 +149,19 @@
         margin-block: var(--spacing);
     }
 
-    form > div {
+    .form > div {
         margin-inline: auto;
         margin-block: var(--spacing);
         max-width: 900px;
     }
 
-    form > div > div {
+    .form > div > div {
         margin-inline-start: var(--spacing);
         display: flex;
         flex-wrap: wrap;
     }
 
-    form > div > p {
+    .form > div > p {
         margin-bottom: calc(var(--spacing) / 2 - .2rem);
         font-weight: 600;
     }
@@ -155,7 +213,7 @@
         transform: scale(1);
     }
 
-    form > button {
+    .form > button {
         margin-inline: auto;
         display: block;
     }

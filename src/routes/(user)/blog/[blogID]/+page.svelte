@@ -4,7 +4,7 @@
 
     import blogPlaceholderSrc from "$lib/assets/blog/blog-article-placeholder.webp";
 
-    let blogID = $page.params.blogID;
+    let blogID = $page.params.blogID; // This will be on the +page.js file
 
     const blog = {
         "rawBlog": {
