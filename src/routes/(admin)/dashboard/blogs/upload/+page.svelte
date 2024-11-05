@@ -2,6 +2,7 @@
     import EditorJS from '@editorjs/editorjs';
     import Header from '@editorjs/header';
     import List from "@editorjs/list";
+    import SimpleImage from "@editorjs/simple-image";
 	import { onMount } from 'svelte';
 
     let editor;
@@ -25,7 +26,8 @@
                     config: {
                         defaultStyle: 'unordered'
                     }
-                }
+                },
+                image: SimpleImage,
             }
         });
     })
@@ -33,6 +35,9 @@
     const upload = () => {
         editor.save().then((res) => console.log(res))
     }
+
+    let metaDescription, blogTitle;
+    let tags = [];
 </script>
 
 <main>
@@ -41,17 +46,24 @@
         <button class="secondary">Cancel</button>
     </div>
     <div class="editor-wrapper">
-        <input type="text" placeholder="Blog title">
+        <input bind:value={blogTitle} type="text" placeholder="Blog title">
         <div id="editor"></div>
+        <textarea bind:value={metaDescription} placeholder="Meta Description"></textarea>
     </div>
     <div class="tags-container">
         <h3>Tags</h3>
-        <input type="text" placeholder="Add tag">
+        <input type="text" placeholder="Add tag" on:keydown={e => {
+            if(e.key === "Enter") {
+                tags = [...tags, e.target.value];
+                e.target.value = "";
+            }
+        }}>
         <div class="tags">
-            <button class="tag secondary">Shutters</button>
-            <button class="tag secondary">Fun</button>
-            <button class="tag secondary">Wood</button>
-            <button class="tag secondary">Premium</button>
+            {#each tags as tag}
+                <button on:click={e => {
+                    tags = tags.filter(tag => tag != e.target.textContent);
+                }} class="tag secondary">{tag}</button>
+            {/each}
         </div>
     </div>
     <div class="confirmation-modal-wrapper hide">
@@ -85,6 +97,7 @@
         width: 100%;
         max-width: 800px;
         border: 1px solid #a1a1a166;
+        padding: 1rem;
     }
 
     #editor {
@@ -190,5 +203,14 @@
     .confirmation-modal button {
         margin-top: .5rem;
         border: 0;
+    }
+
+    textarea {
+        width: 100%;
+        max-width: 800px;
+        border-radius: .5rem;
+        border: 1px solid #a1a1a166;
+        margin-block: 1rem;
+        padding: 1rem;
     }
 </style>
