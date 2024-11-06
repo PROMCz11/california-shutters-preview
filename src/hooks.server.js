@@ -9,14 +9,23 @@ export async function handle({ event, resolve }) {
 		event.url.pathname.startsWith('/api/blogs/delete')
 	) {
 		try {
-			console.log(event.cookies)
+			console.log(event.cookies.get('sessionToken'));
 			if (event.cookies.get('sessionToken')) {
 				const authToken = event.cookies.get('session').split(' ')[1];
 				const { payload } = await jwt.verify(authToken, JWT_SECRET);
+				console.log(
+					(
+						await event.platform.env.DB.prepare(
+							`SELECT * FROM admins where email="${payload.email}"`
+						).all()
+					).results
+				);
 				if (
-					(await event.platform.env.DB.prepare(
-						`SELECT * FROM admins where email="${payload.email}"`
-					).all()).results
+					(
+						await event.platform.env.DB.prepare(
+							`SELECT * FROM admins where email="${payload.email}"`
+						).all()
+					).results
 				) {
 					const response = await resolve(event);
 					return response;
