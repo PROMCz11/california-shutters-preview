@@ -5,9 +5,9 @@
     import SimpleImage from "@editorjs/simple-image";
 	import { onMount } from 'svelte';
 
-    export let data;
-    const { authToken } = data;
-    console.log(authToken);
+    // export let data;
+    // const { authToken } = data;
+    // console.log(authToken);
 
     let editor;
 
