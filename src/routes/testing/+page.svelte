@@ -1,6 +1,13 @@
-<!-- <script>
+<script>
     const getBlogs = () => {
-        fetch("https://603c3ce7.california-shutters-preview.pages.dev/api/blogs")
+        fetch("../api/admin/login", {
+            method: "POST",
+            body: JSON.stringify({
+                email: "admin@gmail.com",
+                password: ""
+            }),
+            headers: { "Content-Type": "application/json" }
+        })
         .then(res => res.json())
         .then(json => console.log(json))
         .catch(err => console.log(err));
@@ -15,6 +22,4 @@
     main {
         padding: .5rem;
     }
-</style> -->
-
-Delete me
+</style>
