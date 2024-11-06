@@ -32,11 +32,11 @@
         });
     })
 
-    const upload = async () => {
-        rawBlog = await editor.save();
-        const blog = createBlog();
-        // Fetch a request to the server
-    }
+    // const upload = async () => {
+    //     rawBlog = await editor.save();
+    //     const blog = createBlog();
+    //     // Fetch a request to the server
+    // }
 
     let metaDescription, blogTitle, blogImgURL, blogImgDesc;
     let tags = [];
@@ -54,11 +54,24 @@
 
         return blog;
     }
+
+    const uploadBlog = async () => {
+        rawBlog = await editor.save();
+        const blog = createBlog();
+        fetch("../../../../api/blogs/create", {
+            method: "POST",
+            body: JSON.stringify(blog),
+            headers: { "Content-Type": "application/json" }
+        })
+        .then(res => res.json())
+        .then(json => console.log(json))
+        .catch(err => console.log(err))
+    }
 </script>
 
 <main>
     <div class="controls">
-        <button on:click={upload} class="primary">Upload</button>
+        <button on:click={uploadBlog} class="primary">Upload</button>
         <button class="secondary">Cancel</button>
     </div>
     <div class="editor-wrapper">
