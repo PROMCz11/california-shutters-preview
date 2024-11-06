@@ -5,6 +5,10 @@
     import SimpleImage from "@editorjs/simple-image";
 	import { onMount } from 'svelte';
 
+    export let data;
+    const { authToken } = data;
+    console.log(authToken);
+
     let editor;
 
     onMount(() => {
@@ -55,13 +59,25 @@
         return blog;
     }
 
+    const getAuthToken = () => {
+    const cookies = document.cookie.split('; ');
+    for (let i = 0; i < cookies.length; i++) {
+        const [name, value] = cookies[i].split('=');
+        if (name === 'authToken') {
+        return decodeURIComponent(value);
+        }
+    }
+    return null;
+    }
+
+
     const uploadBlog = async () => {
         rawBlog = await editor.save();
         const blog = createBlog();
         fetch("../../../../api/blogs/create", {
             method: "POST",
             body: JSON.stringify(blog),
-            headers: { "Content-Type": "application/json" }
+            headers: { "Content-Type": "application/json", "Authorization": `Bearer ${getAuthToken()}` }
         })
         .then(res => res.json())
         .then(json => console.log(json))
