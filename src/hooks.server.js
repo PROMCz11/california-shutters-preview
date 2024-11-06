@@ -12,13 +12,6 @@ export async function handle({ event, resolve }) {
 			if (event.cookies.get('sessionToken')) {
 				const authToken = event.cookies.get('sessionToken').split(' ')[1];
 				const { payload } = await jwt.verify(authToken, JWT_SECRET);
-				console.log(
-					(
-						await event.platform.env.DB.prepare(
-							`SELECT * FROM admins where email="${payload.email}"`
-						).all()
-					).results
-				);
 				if (
 					(
 						await event.platform.env.DB.prepare(
