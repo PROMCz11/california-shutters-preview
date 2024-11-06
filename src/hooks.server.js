@@ -9,9 +9,8 @@ export async function handle({ event, resolve }) {
 		event.url.pathname.startsWith('/api/blogs/delete')
 	) {
 		try {
-			console.log(event.cookies.get('sessionToken'));
 			if (event.cookies.get('sessionToken')) {
-				const authToken = event.cookies.get('session').split(' ')[1];
+				const authToken = event.cookies.get('sessionToken').split(' ')[1];
 				const { payload } = await jwt.verify(authToken, JWT_SECRET);
 				console.log(
 					(
