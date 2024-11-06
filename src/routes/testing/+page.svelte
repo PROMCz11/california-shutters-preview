@@ -4,7 +4,7 @@
             method: "POST",
             body: JSON.stringify({
                 email: "admin@gmail.com",
-                password: ""
+                password: "8fY$3kL!9zQ@7wX"
             }),
             headers: { "Content-Type": "application/json" }
         })
