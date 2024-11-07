@@ -13,6 +13,7 @@ export const GET = async ({ platform }) => {
 			newItem.title = item.blog.blogTitle;
 			newItem.date = item.blog.rawBlog.time;
 			newItem.metaDescription = item.blog.metaDescription;
+			return newItem
 		});
 		return json({ status: true, data: { allBlogs } });
 	} catch (error) {
