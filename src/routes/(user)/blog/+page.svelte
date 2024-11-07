@@ -16,7 +16,7 @@
     <h1 class="bg-white text-navy">Explore Further</h1>
     <div class="blogs bg-white text-navy">
         {#each blogs as { title, blogID, date, blogImgURL, blogImgDesc, metaDescription }}
-            <a href="./{blogID}" class="blog text-navy">
+            <a href="{blogID}" class="blog text-navy">
                 <picture><img src="{blogImgURL}" alt="{blogImgDesc}"></picture>
                 <p class="title fs-400">{title}</p>
                 <p class="intro fs-300">{metaDescription}</p>
