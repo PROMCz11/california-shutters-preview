@@ -74,7 +74,7 @@
             </div>
         </div>
         <div class="prices-cta">
-            <a href="/" class="bg-yellow text-navy">Get Started</a>
+            <a href="/#quote" class="bg-yellow text-navy">Get Started</a>
             <img src="{buttonTextureSrc}" alt="decorative texture behind the button">
         </div>
     </article>
@@ -102,7 +102,7 @@
     <div class="cta">
         <h3 class="fs-xl">We can't wait to help you!</h3>
         <p>Use our price calculator and get your FREE quote now</p>
-        <a href="/" class="bg-yellow text-navy">Get Started</a>
+        <a href="/#quote" class="bg-yellow text-navy">Get Started</a>
     </div>
 </main>
 

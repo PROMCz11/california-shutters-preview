@@ -131,7 +131,7 @@
                 <p class="fs-400 sub-heading">With Victorian styled crown molding built into the front-side faces, this Toronto inspired window shutter was made to turn heads.</p>
             </div>
             <div>
-                <a href="/"><button class="bg-yellow">GET FREE QUOTE NOW!</button></a>
+                <a href="#quote"><button class="bg-yellow">GET FREE QUOTE NOW!</button></a>
                 <p class="fs-xs">Thousands of delighted customers over 25 years!</p>
             </div>
         </div>

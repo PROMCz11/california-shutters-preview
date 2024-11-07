@@ -4,19 +4,6 @@
 	import { onMount } from "svelte";
 
     const submitQuote = () => {
-        // let shutterType = "";
-        // if(document.getElementById("composite").checked) {
-        //     shutterType = "composite";
-        // }
-
-        // else if(document.getElementById("select-wood/vinyl").checked) {
-        //     shutterType = "select-wood/vinyl";
-        // }
-        
-        // else if(document.getElementById("premium-wood/vinyl").checked) {
-        //     shutterType = "premium-wood/vinyl";
-        // }
-
         let shutterType;
         Array.from(document.querySelectorAll(".shutter-type > div input")).forEach(radioInput => {
             if(radioInput.checked) {
@@ -53,7 +40,7 @@
     }
 </script>
 
-<div class="main">
+<div class="main" id="quote">
     <div class="bg-white text-navy">
         <h2 class="text-xl">Get your FREE quote now!</h2>
         <p class="text-blue">Fill the form below and we'll confirm your quote ASAP!</p>

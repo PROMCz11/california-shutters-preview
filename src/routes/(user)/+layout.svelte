@@ -72,7 +72,7 @@
         <li><a href="#contact-info" on:click={() => isMenuActive = false}>Contact us</a></li>
         <button class="menu-close" on:click={() => isMenuActive = false}><img src="{closeIconSrc}" alt="close icon"></button>
     </ul>
-    <a class="button" class:active={isShadowCTAActive} href="/"><button class="fs-xs">Free Estimate</button></a>
+    <a class="button" class:active={isShadowCTAActive} href="/#quote"><button class="fs-xs">Free Estimate</button></a>
     <button class="menu-open" on:click={() => isMenuActive = true}><img src="{hamburgerIconSrc}" alt="menu icon"></button>
 </nav>
 
