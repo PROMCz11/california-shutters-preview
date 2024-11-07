@@ -20,7 +20,7 @@
                     class: Header,
                     config: {
                         placeholder: 'Enter a header',
-                        levels: [1, 2, 3],
+                        levels: [2, 3],
                         defaultLevel: 2
                     }
                 },
