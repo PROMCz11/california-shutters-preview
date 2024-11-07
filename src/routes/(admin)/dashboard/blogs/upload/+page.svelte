@@ -93,7 +93,7 @@
     <div class="editor-wrapper">
         <input bind:value={blogTitle} type="text" placeholder="Blog title">
         <input bind:value={blogImgURL} type="text" placeholder="Main img URL">
-        <input bind:value={blogImgDesc} type="text" placeholder="Main img URL">
+        <input bind:value={blogImgDesc} type="text" placeholder="Main img Description">
         <div id="editor"></div>
         <textarea bind:value={metaDescription} placeholder="Meta Description"></textarea>
     </div>
