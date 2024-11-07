@@ -8,7 +8,7 @@ try {
     if (error) {
         throw new Error(error.details[0].message);
     }
-    await platform.env.DB.prepare(`DELETE FROM blogs where id IN (${ value.ids.join(",") })`).run()
+    await platform.env.DB.prepare(`DELETE FROM blogs where blogID IN (${ value.ids.join(",") })`).run()
     return json({status:true,data:null})
 } catch (error) {
     return json({status:false,message:error.message})
