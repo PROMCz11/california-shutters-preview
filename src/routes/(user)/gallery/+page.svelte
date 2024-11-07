@@ -13,7 +13,7 @@
     import { fade } from "svelte/transition"
 
     onMount(() => {
-        const headings = document.querySelectorAll("main > div h2");
+        const headings = document.querySelectorAll("div:has(> h2)");
         headings.forEach(heading => {
             scroll(
                 animate(heading, { y: [-400, 400] }), {
@@ -113,7 +113,7 @@
             {/each}
             <p>{projects[1].projectName}</p>
         </button>
-        <h2 class="fs-xl">Explore the results of our work</h2>
+        <div><h2 class="fs-xl">Explore the results of our work</h2></div>
     </div>
     <div>
         <button class="group" on:click={() => openProject(2)}>
@@ -128,7 +128,7 @@
             {/each}
             <p>{projects[3].projectName}</p>
         </button>
-        <h2 class="fs-xl">Experience what our shutters feel like</h2>
+        <div><h2 class="fs-xl">Experience what our shutters feel like</h2></div>
     </div>
     <div>
         <button class="group" on:click={() => openProject(4)}>
@@ -143,7 +143,7 @@
             {/each}
             <p>{projects[5].projectName}</p>
         </button>
-        <h2 class="fs-xl">Your doors and windows are in good hands</h2>
+        <div><h2 class="fs-xl">Your doors and windows are in good hands</h2></div>
     </div>
     <div class="cta">
         <h3 class="fs-xl">It's time to take action</h3>
@@ -246,7 +246,7 @@
         translate: -35% -35%;
     }
 
-    h2 {
+    div:has(> h2) {
         position: absolute;
         top: 50%;
         left: 50%;
