@@ -17,12 +17,22 @@
         inView(".note", () => {
             isShadowCTAActive = true;
         })
+    
+
+        // Handling page loading
+        const handleLoad = () => document.getElementById("loader").style.display = "none";
+        if (document.readyState === 'complete') {
+            handleLoad();
+        } else {
+            window.addEventListener('load', handleLoad);
+        }
     })
 
     afterNavigate(() => {
         inView(".note", () => {
             isShadowCTAActive = true;
         })
+        handleLoad()
     })
     
     import { isHomepage } from "$lib/stores";

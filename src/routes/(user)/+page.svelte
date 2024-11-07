@@ -54,6 +54,7 @@
 	import { onMount } from "svelte";
 
     import Cta from "$lib/components/Cta.svelte";
+    import Loader from "$lib/components/Loader.svelte";
 
     import { isHomepage } from "$lib/stores";
 
@@ -119,14 +120,6 @@
                 target.parentElement.parentElement.parentElement.classList.toggle("active");
             }
         })
-
-        // Handling page loading
-        const handleLoad = () => document.getElementById("loader").style.display = "none";
-        if (document.readyState === 'complete') {
-            handleLoad();
-        } else {
-            window.addEventListener('load', handleLoad);
-        }
     })
 </script>
 
@@ -398,9 +391,7 @@
     </section>
     <Cta />
 </main>
-<div id="loader">
-    Loading... 
-</div>
+<Loader />
 
 <style>
     .hero {
@@ -518,7 +509,8 @@
 
     .main-features .double {
         display: flex;
-        gap: var(--spacing);
+        /* gap: var(--spacing); */
+        gap: calc(var(--spacing) * 3);
         justify-content: center;
         min-height: 80vh;
         position: relative;
