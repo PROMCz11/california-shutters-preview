@@ -81,10 +81,10 @@
 <footer id="contact-info" class="fs-xs">
     <img src="{stackedLogoSrc}" alt="logo">
     <div>
-        <p class="text-white">416-835-1312</p>
-        <p>180finchdeene sq Toronto Unit 13</p>
+        <a href="tel:416-835-1312" class="text-white">416-835-1312</a>
+        <a href="/">180finchdeene sq Toronto Unit 13</a>
     </div>
-    <p>Info@californiashutterstoronto.com</p>
+    <a href="mailto:info@californiashutterstoronto.com">info@californiashutterstoronto.com</a>
     <div class="socials"><img src="{instagramIconSrc}" alt="instagram icon"><p>californiashutterstoronto</p><img src="{facebookIconSrc}" alt="facebook icon"></div>
 </footer>
 
@@ -141,6 +141,10 @@
         gap: var(--spacing);
         align-items: end;
         justify-items: center;
+    }
+
+    footer > div > a {
+        display: block;
     }
 
     footer > img {
