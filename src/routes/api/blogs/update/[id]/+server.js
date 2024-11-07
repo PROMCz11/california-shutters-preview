@@ -9,7 +9,7 @@ export const PATCH=async({request,params,platform})=>{
             throw new Error(error.details[0].message);
         }
         const {id}=params;
-        await platform.env.DB.prepare(`UPDATE blogs SET text = ? WHERE id = ${+id}`).bind(JSON.stringify(value)).run()
+        await platform.env.DB.prepare(`UPDATE blogs SET blog = ? WHERE blogID = ${+id}`).bind(JSON.stringify(value)).run()
         return json({status:true,data:null})
     } catch (error) {
         return json({status:false,message:error.message})
