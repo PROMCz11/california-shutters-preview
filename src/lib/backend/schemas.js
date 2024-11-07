@@ -52,3 +52,32 @@ export const adminSchema = Joi.object({
 export const deleteBlogSchema=Joi.object({
 	ids:Joi.array().items(Joi.number().max(9999))
 })
+
+export const quoteSchema = Joi.object({
+	shutterType:Joi.string().required(),
+	averageEstimateSquareFootage:Joi.number().required(),
+	numberOfWindows:Joi.number().required(),
+	email: Joi.string()
+		.email({ tlds: { allow: false } })
+		.required()
+		.messages({
+			'string.base': 'Email should be a type of text',
+			'string.empty': 'Email cannot be empty',
+			'any.required': 'Email is a required field'
+		}),
+	password: Joi.string().required().min(6).max(50).messages({
+		'string.base': 'Password should be a type of text',
+		'string.empty': 'Password cannot be empty',
+		'string.min': 'Password should have a minimum length of 6',
+		'string.max': 'Password should have a maximum length of 50',
+		'any.required': 'Password is a required field'
+	}),
+	name:Joi.string().required(),
+	number:Joi.number().required(),
+	specificWindowDimensions:Joi.string().required(),
+	avgCostPerWindow:Joi.number().required()
+});
+
+export const deleteQuoteSchema=Joi.object({
+	ids:Joi.array().items(Joi.number().max(9999))
+})
