@@ -5,6 +5,7 @@
     import gallery_1_4Src from "$lib/assets/gallery/gallery1.4.webp"
     import { animate, scroll } from "motion"
 	import { onMount } from "svelte";
+    import Loader from "$lib/components/Loader.svelte";
 
     import { Splide, SplideSlide } from '@splidejs/svelte-splide';
     import '@splidejs/svelte-splide/css';
@@ -168,9 +169,7 @@
         </div>
     </button>
 {/if}
-<div id="loader">
-    Loading... 
-</div>
+<!-- <Loader /> -->
 
 <style>
     main {

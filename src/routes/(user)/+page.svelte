@@ -391,7 +391,7 @@
     </section>
     <Cta />
 </main>
-<Loader />
+<!-- <Loader /> -->
 
 <style>
     .hero {
