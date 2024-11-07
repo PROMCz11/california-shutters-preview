@@ -4,28 +4,23 @@
 
     export let data;
     const { blogs } = data;
-
-    // let blogs = [
-    //     {
-    //         title: "Top 5 Shutter Types",
-    //         intro: "Explore the top 5 shutters that bring both elegance and functionality to any home. These shutters are crafted with precision, offering durability, style, and customization to suit your taste. Perfect for adding a refined touch while enhancing privacy and light control, these selections represent the finest in modern window design.",
-    //         date: "Jul, 21st 2023",
-    //         imgSrc: articlePlaceholderSrc,
-    //         imgDesc: "this is the description form the app"
-    //         // ID or URL or whatever identifier we decide to use, this will be strapped to the href of the anchor element
-    //     },
-    // ];
+    
+    const formatDate = (ms) => {
+        const date = new Date(ms);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    }
 </script>
 
 <main>
     <h1 class="bg-white text-navy">Explore Further</h1>
     <div class="blogs bg-white text-navy">
-        {#each blogs as { title, id, date, imgSrc, imgDesc }}
-            <a href="./{id}" class="blog text-navy">
-                <picture><img src="{imgSrc}" alt="{imgDesc}"></picture>
+        {#each blogs as { title, blogID, date, blogImgURL, blogImgDesc, metaDescription }}
+            <a href="./{blogID}" class="blog text-navy">
+                <picture><img src="{blogImgURL}" alt="{blogImgDesc}"></picture>
                 <p class="title fs-400">{title}</p>
                 <p class="intro fs-300">{metaDescription}</p>
-                <p class="date fs-xs">{date}</p>
+                <p class="date fs-xs">{formatDate(date)}</p>
             </a>
         {/each}
     </div>
