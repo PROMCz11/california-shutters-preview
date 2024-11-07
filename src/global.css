@@ -166,6 +166,12 @@ select {
 /* Styles              */
 /* ------------------- */
 
+*,
+*::before,
+*::after {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--clr-navy);
     color: var(--clr-white);

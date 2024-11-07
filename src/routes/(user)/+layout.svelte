@@ -59,7 +59,7 @@
         <li><a href="/gallery">Gallery</a></li>
         <li><a href="/blog">Blog</a></li>
         <li><a href="/pricing">Pricing</a></li>
-        <li><a href="/">Contact us</a></li>
+        <li><a href="#contact-info">Contact us</a></li>
         <button class="menu-close" on:click={() => isMenuActive = false}><img src="{closeIconSrc}" alt="close icon"></button>
     </ul>
     <a class="button" class:active={isShadowCTAActive} href="/"><button class="fs-xs">Free Estimate</button></a>
@@ -68,7 +68,7 @@
 
 <slot></slot>
 
-<footer class="fs-xs">
+<footer id="contact-info" class="fs-xs">
     <img src="{stackedLogoSrc}" alt="logo">
     <div>
         <p class="text-white">416-835-1312</p>

@@ -1,5 +1,5 @@
 <script>
-    const getBlogs = () => {
+    const login = () => {
         fetch("../api/admin/login", {
             method: "POST",
             body: JSON.stringify({
@@ -15,7 +15,7 @@
 </script>
 
 <main>
-    <button on:click={getBlogs}>Fetch blogs</button>
+    <button on:click={login}>Login</button>
 </main>
 
 <style>
