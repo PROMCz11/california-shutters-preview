@@ -87,10 +87,9 @@
     <div class="options-container">
         <h2 class="fs-xl">Window types we can cover with our California shutters</h2>
         <div class="interactive-display">
-            <!-- <picture><img src="{bayWindowSrc}" alt="DELETE ME"></picture> -->
-            {#key selectedOptionSrc}
+            <!-- {#key selectedOptionSrc} -->
                 <picture><img src="{selectedOptionSrc}" alt="selected option"></picture>
-            {/key}
+            <!-- {/key} -->
             <div class="options">
                 <button class:active={selectedOptionSrc === bayWindowSrc} on:click={() => selectedOptionSrc = bayWindowSrc} class="text-white">Bay windows</button>
                 <button class:active={selectedOptionSrc === frenchDoorSrc} on:click={() => selectedOptionSrc = frenchDoorSrc} class="text-white">French doors</button>
