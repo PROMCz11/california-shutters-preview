@@ -8,8 +8,7 @@ try {
     if (error) {
         throw new Error(error.details[0].message);
     }
-    console.log(JSON.stringify(value))
-    await platform.env.DB.prepare(`INSERT INTO blogs(text) VALUES ( ? )`).bind(JSON.stringify(value)).run()
+    await platform.env.DB.prepare(`INSERT INTO blogs(blog) VALUES ( ? )`).bind(JSON.stringify(value)).run()
     return json({status:true,data:null})
 } catch (error) {
     return json({status:false,message:error.message})
