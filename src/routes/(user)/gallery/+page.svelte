@@ -152,11 +152,7 @@
     </div>
 </main>
 {#if selectedProject}
-    <button transition:fade={{duration: 150}} class="slider-wrapper" on:click={e => {
-        if(e.target.classList.contains("slider-wrapper")) {
-            closeProject();
-        }
-    }}>
+    <div transition:fade={{duration: 150}} class="slider-wrapper">
         <div class="slider">
             <p class="fs-500">{selectedProject.projectName}</p>
             <Splide options={ { rewind: true, width: 1200 } } aria-label="testimonials">
@@ -167,7 +163,8 @@
                 {/each}
             </Splide>
         </div>
-    </button>
+        <button on:click={closeProject}>Back</button>
+    </div>
 {/if}
 <!-- <Loader /> -->
 
@@ -263,9 +260,14 @@
         width: 120px;
     }
 
+    button {
+        padding: 0;
+        color: var(--clr-white);
+    }
+
     .slider {
         max-width: 1200px;
-        margin: auto;
+        margin-inline: auto;
     }
 
     .slider > p {
@@ -283,15 +285,18 @@
         inset: 0;
         z-index: 2;
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         background-color: rgba(11, 23, 29, 0.9);
         text-align: center;
     }
 
-    button {
-        padding: 0;
-        color: var(--clr-white);
+    .slider-wrapper > button {
+        padding: .2rem .4rem;
+        border: 1px solid white;
+        border-radius: .5rem;
+        margin-top: var(--spacing);
     }
 
     @media (min-width: 768px) {
@@ -307,6 +312,12 @@
         main > div {
             margin-bottom: 5rem;
             gap: 5rem;
+        }
+
+        .slider picture {
+            width: 25%;
+            max-width: 350px;
+            margin: auto;
         }
     }
 
