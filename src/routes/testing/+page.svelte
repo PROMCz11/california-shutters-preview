@@ -15,7 +15,7 @@
 
     const deleteBlog = blogID => {
         fetch("../api/blogs/delete", {
-            method: "POST",
+            method: "DELETE",
             body: JSON.stringify({
                 ids: [blogID]
             }),
