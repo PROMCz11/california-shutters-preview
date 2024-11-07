@@ -1,5 +1,6 @@
 export const load = async ({ fetch, params }) => {
     const blogID = params.slug;
+    console.log("Params Obj: ", params);
     console.log(blogID);
     const res = await fetch(`../../../api/blogs/${blogID}`);
     const blogData = await res.json();
