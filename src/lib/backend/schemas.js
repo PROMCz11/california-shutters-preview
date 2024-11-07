@@ -9,25 +9,25 @@ export const blogSchema = Joi.object({
 					id: Joi.string().required(),
 					type: Joi.string().required(),
 					data: Joi.object({
-						url: Joi.string().max(200),
-						caption: Joi.string().max(200),
+						url: Joi.string().max(50000),
+						caption: Joi.string().max(50000),
 						withBorder: Joi.boolean(),
 						withBackground: Joi.boolean(),
 						stretched: Joi.boolean(),
-						text: Joi.string().max(20000),
-						level: Joi.number().max(10),
+						text: Joi.string().max(50000),
+						level: Joi.number().max(6),
 						style: Joi.string().max(20),
-						items: Joi.array().items(Joi.string().max(200))
+						items: Joi.array().items(Joi.string().max(400))
 					}).required()
 				})
 			)
 			.required(),
-		version: Joi.string().max(8).required()
+		version: Joi.string().max(20)
 	}).required(),
-	metaDescription: Joi.string().required().max(300),
-	blogTitle: Joi.string().required().max(300),
-	blogImgURL: Joi.string().required().max(300),
-	blogImgDesc: Joi.string().required().max(300),
+	metaDescription: Joi.string().required().max(50000),
+	blogTitle: Joi.string().required().max(50000),
+	blogImgURL: Joi.string().required().max(50000),
+	blogImgDesc: Joi.string().required().max(50000),
 	tags: Joi.array().items(Joi.string().max(50))
 });
 
