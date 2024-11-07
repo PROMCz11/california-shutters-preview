@@ -16,7 +16,7 @@ export const POST = async ({ request, platform, cookies }) => {
 		).results;
 		if (admin.length > 0) {
 			if (bcrypt.compareSync(value.password, admin[0].password)) {
-				const authToken =await jwt.sign({ email: data.email }, JWT_SECRET, {
+				const authToken =await jwt.sign({ email: data.email,role:admin[0].role }, JWT_SECRET, {
 					expiresIn: 1000 * 60 * 60 * 24 * 30
 				});
 				cookies.set('sessionToken', `Bearer ${authToken}`, {
