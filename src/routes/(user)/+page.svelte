@@ -505,6 +505,8 @@
 
     .main-features > * {
         margin-bottom: 3rem;
+        max-width: 1200px;
+        margin-inline: auto;
     }
 
     .main-features .double {
