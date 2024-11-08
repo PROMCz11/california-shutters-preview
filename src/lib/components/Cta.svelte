@@ -11,32 +11,47 @@
             }
         });
         
-        let squareFootage;
+        let averageEstimateSquareFootage;
         Array.from(document.querySelectorAll(".square-footage > div input")).forEach(radioInput => {
             if(radioInput.checked) {
-                squareFootage = radioInput.id;
+                averageEstimateSquareFootage = radioInput.id;
             }
         });
 
         const numberOfWindows = document.getElementById("number-of-windows").value;
-        const phoneNumber = document.getElementById("phone-number").value;
-        const windowDimensions = document.getElementById("window-dimensions").value;
+        const number = document.getElementById("phone-number").value;
+        const specificWindowDimensations = document.getElementById("window-dimensions").value;
         const email = document.getElementById("email").value;
         const name = document.getElementById("name").value;
 
-        const quote = {
-            name: name,
-            email: email,
-            phoneNumber: phoneNumber,
-            shutterType: shutterType,
-            squareFootage: squareFootage,
-            numberOfWindows: numberOfWindows,
-            windowDimensions: windowDimensions,
-            avgCostPerWindow: "Nothing yet"
-        }
+        // const quote = {
+        //     name: name,
+        //     email: email,
+        //     number: number,
+        //     shutterType: shutterType,
+        //     averageEstimateSquareFootage: averageEstimateSquareFootage,
+        //     numberOfWindows: numberOfWindows,
+        //     specificWindowDimensations: specificWindowDimensations,
+        //     avgCostPerWindow: 9999
+        // }
 
-        console.log(quote);
-        
+        fetch("api/quotes/send", {
+            method: "POST",
+            body: JSON.stringify({
+                name: name,
+                email: email,
+                number: number,
+                shutterType: shutterType,
+                averageEstimateSquareFootage: averageEstimateSquareFootage,
+                numberOfWindows: numberOfWindows,
+                specificWindowDimensations: specificWindowDimensations,
+                avgCostPerWindow: 9999
+            }),
+            headers: { "Content-Type": "application/json" }
+        })
+        .then(res => res.json())
+        .then(json => console.log(json))
+        .catch(err => console.log(err))        
     }
 </script>
 
