@@ -31,5 +31,5 @@ export const load = async ({ cookies, fetch }) => {
         throw redirect(303, "/dashboard/login");
     }
     const account = accountData.data.adminDetails;
-    return { adminDetails };
+    return { account };
 }
