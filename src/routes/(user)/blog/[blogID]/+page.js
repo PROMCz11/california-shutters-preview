@@ -7,5 +7,6 @@ export const load = async ({ fetch, params }) => {
         return;
     }
     const blog = JSON.parse(blogData.data.blog);
-    return {blog};
+    const recentBlogs = blogData.data.recentBlogs;
+    return {blog, recentBlogs};
 }

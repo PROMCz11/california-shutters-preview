@@ -7,8 +7,16 @@
     // let blogID = $page.params.blogID; // This will be on the +page.js file
 
     export let data;
+    const { blog, recentBlogs } = data;
 
-    const { blog } = data;
+    // const recentBlogs = [
+    //     {
+    //         title: "Title", blogID: 39, date: 1731096226817, blogImgURL: "https://placehold.co/600x400.png", blogImgDesc: "Desc"
+    //     },
+    //     {
+    //         title: "Title", blogID: 39, date: 1731096226817, blogImgURL: "https://placehold.co/600x400.png", blogImgDesc: "Desc"
+    //     },
+    // ]
 
     // const blog = {
     //     "rawBlog": {
@@ -131,34 +139,16 @@
             {/if}
         {/each}
     </div>
-    <!-- <div class="blog-container fs-300">
-        <h1 class="fs-xl">15 Advantages of California Shutters You Need To Know Now (in 2023)</h1>
-        <img class="main-img" src="{blogPlaceholderSrc}" alt="blog img url">
-        <p class="date fs-xs text-blue">July 15, 2024</p>
-        <h2 class="fs-500">In 2023 “Less is More”</h2>
-        <h3 class="fs-400">In 2023 “Less is More”</h3>
-        <p>The resurgence of modern design principles in 2023 hinges on the mantra “less is more.” Homeowners are increasingly inclined toward open spaces, clean lines, and a balanced fusion of form and function. In such an atmosphere, California shutters find their place as the ultimate window covering, not merely as an aesthetic choice, but as a multifaceted addition that elevates the modern living experience. Let's explore how California shutters complement and enhance these design trends, shaping interiors that reflect the spirit of the times. Here are 15 compelling advantages of incorporating them into your home, with a focus on how they complement various interior design styles.</p>
-        <h2 class="fs-500">In 2023 “Less is More”</h2>
-        <h3 class="fs-400">In 2023 “Less is More”</h3>
-        <p>The resurgence of modern design principles in 2023 hinges on the mantra “less is more.” Homeowners are increasingly inclined toward open spaces, clean lines, and a balanced fusion of form and function. In such an atmosphere, California shutters find their place as the ultimate window covering, not merely as an aesthetic choice, but as a multifaceted addition that elevates the modern living experience. Let's explore how California shutters complement and enhance these design trends, shaping interiors that reflect the spirit of the times. Here are 15 compelling advantages of incorporating them into your home, with a focus on how they complement various interior design styles.</p>
-        <h2 class="fs-500">In 2023 “Less is More”</h2>
-        <h3 class="fs-400">In 2023 “Less is More”</h3>
-        <p>The resurgence of modern design principles in 2023 hinges on the mantra “less is more.” Homeowners are increasingly inclined toward open spaces, clean lines, and a balanced fusion of form and function. In such an atmosphere, California shutters find their place as the ultimate window covering, not merely as an aesthetic choice, but as a multifaceted addition that elevates the modern living experience. Let's explore how California shutters complement and enhance these design trends, shaping interiors that reflect the spirit of the times. Here are 15 compelling advantages of incorporating them into your home, with a focus on how they complement various interior design styles.</p>
-        <h2 class="fs-500">In 2023 “Less is More”</h2>
-        <h3 class="fs-400">In 2023 “Less is More”</h3>
-        <p>The resurgence of modern design principles in 2023 hinges on the mantra “less is more.” Homeowners are increasingly inclined toward open spaces, clean lines, and a balanced fusion of form and function. In such an atmosphere, California shutters find their place as the ultimate window covering, not merely as an aesthetic choice, but as a multifaceted addition that elevates the modern living experience. Let's explore how California shutters complement and enhance these design trends, shaping interiors that reflect the spirit of the times. Here are 15 compelling advantages of incorporating them into your home, with a focus on how they complement various interior design styles.</p>
-    </div> -->
     <div class="recent-posts">
         <h2 class="fs-500">Recent Posts</h2>
         <div>
-            <a class="text-navy" href="./">
-                <img src="{blogPlaceholderSrc}" alt="placeholder">
-                <p class="fs-xs">15 Advantages of California Shutters You Need To Know Now (in 2023)</p>
+            {#each recentBlogs as { title, blogID, date, blogImgURL, blogImgDesc }}
+            <a class="text-navy fs-xs" href="blog/{blogID}">
+                <img src="{blogImgURL}" alt="{blogImgDesc}">
+                <p>{title}</p>
+                <p class="text-blue">{formatDate(date)}</p>
             </a>
-            <a class="text-navy" href="./">
-                <img src="{blogPlaceholderSrc}" alt="placeholder">
-                <p class="fs-xs">15 Advantages of California Shutters You Need To Know Now (in 2023)</p>
-            </a>
+            {/each}
         </div>
     </div>
 </main>

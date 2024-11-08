@@ -45,7 +45,7 @@
                 averageEstimateSquareFootage: averageEstimateSquareFootage,
                 numberOfWindows: numberOfWindows,
                 specificWindowDimensions: specificWindowDimensions,
-                avgCostPerWindow: 9999
+                avgCostPerWindow: "9999"
             }),
             headers: { "Content-Type": "application/json" }
         })
