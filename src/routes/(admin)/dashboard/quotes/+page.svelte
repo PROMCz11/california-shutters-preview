@@ -1,6 +1,26 @@
 <script>
     import callIconSrc from "$lib/assets/admin/call-icon.svg";
     import sendEmailIconSrc from "$lib/assets/admin/send-email-icon.svg";
+    const formatDate = (ms) => {
+        const date = new Date(ms);
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return date.toLocaleDateString('en-US', options);
+    }
+
+    export let data;
+    let { quotes } = data;
+
+    // let quotes = [
+    //     {name: "Zain Suleiman", estimate: 4000, date: new Date().getTime(), number: +988531888, email: "zain@gmail.com", seen: false},
+    //     {name: "Zain Suleiman", estimate: 4000, date: new Date().getTime(), number: +988531888, email: "zain@gmail.com", seen: false},
+    //     {name: "Zain Suleiman", estimate: 4000, date: new Date().getTime(), number: +988531888, email: "zain@gmail.com", seen: false},
+    // ];
+
+    // $: console.log(quotes);
+
+    // const checkForCheckedQuotes = (quotes) => {
+        
+    // }
 </script>
 
 <main class="fs-300">
@@ -15,198 +35,16 @@
         </div>
     </div>
     <div class="quotes">
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
-        <div class="quote">
-            <input type="checkbox">
-            <p class="name">John Doe</p>
-            <p class="estimate">~xxx-xxx</p>
-            <p class="date">MM/DD/YY</p>
-            <a href="tel:0988531888"><img src="{callIconSrc}" alt="phone icon"></a>
-            <a href="mailto:admin@gmail.com"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-        </div>
+        {#each quotes as { quoteID, checked = false, name, estimate, date, number, email, seen }}
+            <div class="quote" class:seen id="{quoteID}">
+                <input type="checkbox" bind:checked>
+                <p class="name">{name}</p>
+                <p class="estimate">{estimate}</p>
+                <p class="date">{formatDate(date)}</p>
+                <a href="tel:{number}"><img src="{callIconSrc}" alt="phone icon"></a>
+                <a href="mailto:{email}"><img src="{sendEmailIconSrc}" alt="email icon"></a>
+            </div>
+        {/each}
     </div>
 </main>
 
