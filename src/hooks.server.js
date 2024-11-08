@@ -22,7 +22,7 @@ export async function handle({ event, resolve }) {
 
 				if (admin) {
 					event.locals.email = payload.email;
-					if (event.url.pathname.startsWith('/api/quotes') && admin.role != 'superadmin')
+					if (event.url.pathname.startsWith('/api/quotes') && admin.role != 'superAdmin')
 						return json({ status: false, message: 'invalid token' });
 					const response = await resolve(event);
 					return response;
