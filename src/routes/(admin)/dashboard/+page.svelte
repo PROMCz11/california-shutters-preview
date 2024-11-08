@@ -11,7 +11,7 @@
     <p>Role: {role}</p>
     <h3>Navigation</h3>
     <a href="dashboard/quotes"><button>Quotes</button></a>
-    <a href="dashboard/blogs/upload"><button>Blogs</button></a>
+    <a href="dashboard/blogs"><button>Blogs</button></a>
 </main>
 
 <style>
