@@ -73,7 +73,7 @@ export const quoteSchema = Joi.object({
 		'any.required': 'Password is a required field'
 	}),
 	name:Joi.string().required(),
-	number:Joi.number().required(),
+	phoneNumber:Joi.number().required(),
 	specificWindowDimensions:Joi.string().required(),
 	avgCostPerWindow:Joi.number().required()
 });

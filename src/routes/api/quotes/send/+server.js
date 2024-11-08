@@ -9,7 +9,7 @@ export const POST = async ({ request, platform }) => {
 			throw new Error(error.details[0].message);
 		}
 		await platform.env.DB.prepare(
-			`INSERT INTO quotes(shutterType,averageEstimateSquareFootage,numberOfWindows,email,password,name,number,specificWindowDimensations,avgCostPerWindow) VALUES ( ?,?,?,?,?,?,?,?,? )`
+			`INSERT INTO quotes(shutterType,averageEstimateSquareFootage,numberOfWindows,email,password,name,phoneNumber,specificWindowDimensations,avgCostPerWindow) VALUES ( ?,?,?,?,?,?,?,?,? )`
 		)
 			.bind(
 				value.shutterType,
@@ -18,8 +18,8 @@ export const POST = async ({ request, platform }) => {
 				value.email,
 				value.password,
 				value.name,
-				value.number,
-				value.specificWindowDimensations,
+				value.phoneNumber,
+				value.specificWindowDimensions,
 				value.avgCostPerWindow
 			)
 			.run();
