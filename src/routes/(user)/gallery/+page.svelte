@@ -16,7 +16,7 @@
         const headings = document.querySelectorAll("div:has(> h2)");
         headings.forEach(heading => {
             scroll(
-                animate(heading, { y: [-400, 400] }), {
+                animate(heading, { y: [-200, 200] }), {
                     target: heading
                 }
             )
