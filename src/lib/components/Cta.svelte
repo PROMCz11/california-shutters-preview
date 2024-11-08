@@ -19,8 +19,8 @@
         });
 
         const numberOfWindows = document.getElementById("number-of-windows").value;
-        const number = document.getElementById("phone-number").value;
-        const specificWindowDimensations = document.getElementById("window-dimensions").value;
+        const phoneNumber = document.getElementById("phone-number").value;
+        const specificWindowDimensions = document.getElementById("window-dimensions").value;
         const email = document.getElementById("email").value;
         const name = document.getElementById("name").value;
 
@@ -31,7 +31,7 @@
         //     shutterType: shutterType,
         //     averageEstimateSquareFootage: averageEstimateSquareFootage,
         //     numberOfWindows: numberOfWindows,
-        //     specificWindowDimensations: specificWindowDimensations,
+        //     specificWindowDimensions: specificWindowDimensions,
         //     avgCostPerWindow: 9999
         // }
 
@@ -40,11 +40,11 @@
             body: JSON.stringify({
                 name: name,
                 email: email,
-                number: number,
+                phoneNumber: phoneNumber,
                 shutterType: shutterType,
                 averageEstimateSquareFootage: averageEstimateSquareFootage,
                 numberOfWindows: numberOfWindows,
-                specificWindowDimensations: specificWindowDimensations,
+                specificWindowDimensions: specificWindowDimensions,
                 avgCostPerWindow: 9999
             }),
             headers: { "Content-Type": "application/json" }
@@ -58,7 +58,7 @@
 <div class="main" id="quote">
     <div class="bg-white text-navy">
         <h2 class="text-xl">Get your FREE quote now!</h2>
-        <p class="text-blue">Fill the form below and we'll confirm your quote ASAP!</p>
+        <p class="text-blue">Fill the form below and we'll confirm your<br>quote ASAP!</p>
     </div>
     <div class="primary-cta">
         <h2 class="text-500">Average cost per window is ~$1,800 - $2,250</h2>
