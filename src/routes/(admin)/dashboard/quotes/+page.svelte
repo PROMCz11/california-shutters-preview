@@ -9,8 +9,21 @@
         return date.toLocaleDateString('en-US', options);
     }
 
-    export let data;
-    let { quotes } = data;
+    // export let data;
+    // let { quotes } = data;
+
+    let quotes = [{
+        "quoteID": 2,
+        "shutterType": "composite",
+        "averageEstimateSquareFootage": 250,
+        "numberOfWindows": 333,
+        "name": "Zain Suleiman",
+        "email": "zain22@gmail.com",
+        "phoneNumber": 9999999999,
+        "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
+        "seen": 1,
+        "avgCostPerWindow": 9999
+      }];
 
     const selectAll = () => {
         quotes.forEach(quote => {
@@ -37,7 +50,7 @@
         <!-- svelte-ignore a11y_no_static_element_interactions -->
         <!-- svelte-ignore a11y_click_events_have_key_events -->
             <div class="quote" class:seen id="{quoteID}" on:click={e => {
-                if(!(e.target.tagName === "input" || e.target.classList.contains("call-btn") || e.target.classList.contains("email-btn"))) {
+                if(!(e.target.tagName === "INPUT" || e.target.tagName === "IMG" || e.target.classList.contains("call-btn") || e.target.classList.contains("email-btn"))) {
                     goto(`quotes/${quoteID}`);
                 }
             }}>
