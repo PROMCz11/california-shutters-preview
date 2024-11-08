@@ -9,21 +9,21 @@
         return date.toLocaleDateString('en-US', options);
     }
 
-    // export let data;
-    // let { quotes } = data;
+    export let data;
+    let { quotes } = data;
 
-    let quotes = [{
-        "quoteID": 2,
-        "shutterType": "composite",
-        "averageEstimateSquareFootage": 250,
-        "numberOfWindows": 333,
-        "name": "Zain Suleiman",
-        "email": "zain22@gmail.com",
-        "phoneNumber": 9999999999,
-        "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
-        "seen": 1,
-        "avgCostPerWindow": 9999
-      }];
+    // let quotes = [{
+    //     "quoteID": 2,
+    //     "shutterType": "composite",
+    //     "averageEstimateSquareFootage": 250,
+    //     "numberOfWindows": 333,
+    //     "name": "Zain Suleiman",
+    //     "email": "zain22@gmail.com",
+    //     "phoneNumber": 9999999999,
+    //     "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
+    //     "seen": 0,
+    //     "avgCostPerWindow": 9999
+    //   }];
 
     const selectAll = () => {
         quotes.forEach(quote => {
@@ -49,7 +49,7 @@
         {#each quotes as { quoteID, checked = false, name, estimate, date, phoneNumber, email, seen }}
         <!-- svelte-ignore a11y_no_static_element_interactions -->
         <!-- svelte-ignore a11y_click_events_have_key_events -->
-            <div class="quote" class:seen id="{quoteID}" on:click={e => {
+            <div class="quote" class:checked class:seen id="{quoteID}" on:click={e => {
                 if(!(e.target.tagName === "INPUT" || e.target.tagName === "IMG" || e.target.classList.contains("call-btn") || e.target.classList.contains("email-btn"))) {
                     goto(`quotes/${quoteID}`);
                 }
@@ -113,5 +113,20 @@
     .date {
         margin-left: auto;
         color: #999999;
+    }
+
+    .quote.seen {
+        background-color: #ECF1FA;
+        color: #64666A;
+    }
+
+    .quote.checked {
+        background-color: #C3D6FF;
+        border-color: #001882;
+        color: black;
+    }
+
+    .quote:hover {
+        border: 1px solid black;
     }
 </style>
