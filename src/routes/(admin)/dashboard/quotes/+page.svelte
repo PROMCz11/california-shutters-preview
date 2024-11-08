@@ -99,6 +99,8 @@
                 <a class="call-btn" href="tel:{phoneNumber}"><img src="{callIconSrc}" alt="phone icon"></a>
                 <a class="email-btn" href="mailto:{email}"><img src="{sendEmailIconSrc}" alt="email icon"></a>
             </div>
+        {:else}
+            <p style="text-align: center;">No quotes</p>
         {/each}
     </div>
 </main>
