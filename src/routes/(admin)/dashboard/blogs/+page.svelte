@@ -1,18 +1,18 @@
 <script>
 	import { goto } from "$app/navigation";
 
-    // export let data;
-    // let { blogs } = data;
+    export let data;
+    let { blogs } = data;
 
-    let blogs = [
-        {title: "hello", blogID: 2, date: 1731096226817},
-        {title: "hello", blogID: 2, date: 1731096226817},
-        {title: "hello", blogID: 2, date: 1731096226817},
-        {title: "hello", blogID: 2, date: 1731096226817},
-        {title: "hello", blogID: 2, date: 1731096226817},
-        {title: "hello", blogID: 2, date: 1731096226817},
-        {title: "hello", blogID: 2, date: 1731096226817},
-    ]
+    // let blogs = [
+    //     {title: "hello", blogID: 2, date: 1731096226817},
+    //     {title: "hello", blogID: 2, date: 1731096226817},
+    //     {title: "hello", blogID: 2, date: 1731096226817},
+    //     {title: "hello", blogID: 2, date: 1731096226817},
+    //     {title: "hello", blogID: 2, date: 1731096226817},
+    //     {title: "hello", blogID: 2, date: 1731096226817},
+    //     {title: "hello", blogID: 2, date: 1731096226817},
+    // ]
 
     const deleteBlog = (blogID) => {
         fetch("../../api/blogs/delete", {
