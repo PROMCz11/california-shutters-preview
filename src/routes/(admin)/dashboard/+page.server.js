@@ -30,6 +30,6 @@ export const load = async ({ cookies, fetch }) => {
     if(!status) {
         throw redirect(303, "/dashboard/login");
     }
-    const account = accountData.data.adminDetails;
-    return { account };
+    const adminDetails = accountData.data.adminDetails;
+    return { adminDetails };
 }
