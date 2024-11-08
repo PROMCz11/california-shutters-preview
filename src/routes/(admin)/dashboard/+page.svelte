@@ -10,8 +10,12 @@
     <p>Email: {email}</p>
     <p>Role: {role}</p>
     <h3>Navigation</h3>
-    <a href="dashboard/quotes"><button>Quotes</button></a>
-    <a href="dashboard/blogs"><button>Blogs</button></a>
+    {#if role === "superAdmin"}
+        <a href="dashboard/quotes"><button>Quotes</button></a>
+        <a href="dashboard/blogs"><button>Blogs</button></a>
+    {:else if role === "seo"}
+        <a href="dashboard/blogs"><button>Blogs</button></a>
+    {/if}
 </main>
 
 <style>
