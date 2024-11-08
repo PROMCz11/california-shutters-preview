@@ -1,13 +1,10 @@
 <script>
+	import { goto } from '$app/navigation';
     import EditorJS from '@editorjs/editorjs';
     import Header from '@editorjs/header';
     import List from "@editorjs/list";
     import SimpleImage from "@editorjs/simple-image";
 	import { onMount } from 'svelte';
-
-    // export let data;
-    // const { authToken } = data;
-    // console.log(authToken);
 
     let editor;
 
@@ -88,7 +85,7 @@
 <main>
     <div class="controls">
         <button on:click={uploadBlog} class="primary">Upload</button>
-        <button class="secondary">Cancel</button>
+        <button class="secondary" on:click={() => goto("/dashboard/blogs")}>Cancel</button>
     </div>
     <div class="editor-wrapper">
         <input bind:value={blogTitle} type="text" placeholder="Blog title">

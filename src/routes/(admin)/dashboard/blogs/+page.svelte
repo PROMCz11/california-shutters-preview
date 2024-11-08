@@ -1,18 +1,18 @@
 <script>
 	import { goto } from "$app/navigation";
 
-    export let data;
-    let { blogs } = data;
+    // export let data;
+    // let { blogs } = data;
 
-    // let blogs = [
-    //     {title: "hello", blogID: 2, date: 1731096226817},
-    //     {title: "hello", blogID: 2, date: 1731096226817},
-    //     {title: "hello", blogID: 2, date: 1731096226817},
-    //     {title: "hello", blogID: 2, date: 1731096226817},
-    //     {title: "hello", blogID: 2, date: 1731096226817},
-    //     {title: "hello", blogID: 2, date: 1731096226817},
-    //     {title: "hello", blogID: 2, date: 1731096226817},
-    // ]
+    let blogs = [
+        {title: "hello", blogID: 2, date: 1731096226817},
+        {title: "hello", blogID: 2, date: 1731096226817},
+        {title: "hello", blogID: 2, date: 1731096226817},
+        {title: "hello", blogID: 2, date: 1731096226817},
+        {title: "hello", blogID: 2, date: 1731096226817},
+        {title: "hello", blogID: 2, date: 1731096226817},
+        {title: "hello", blogID: 2, date: 1731096226817},
+    ]
 
     const deleteBlog = (blogID) => {
         fetch("../../api/blogs/delete", {
@@ -42,6 +42,7 @@
 
 <main>
     <h2>Blogs</h2>
+    <button on:click={() => goto("/dashboard/blogs/upload")}>Add</button>
     {#each blogs as { title, blogID, date }}
         <div class="blog">
             <p>{title}</p>
@@ -67,5 +68,9 @@
     .blog {
         display: flex;
         gap: .5rem;
+    }
+
+    button {
+        max-width: max-content;
     }
 </style>

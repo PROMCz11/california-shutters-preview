@@ -1,10 +1,10 @@
-export const load = async ({ fetch }) => {
-    const res = await fetch("../../api/blogs");
-    const blogsData = await res.json();
-    const status = blogsData.status;
-    if(!status) {
-        return;
-    }
-    const blogs = blogsData.data.allBlogs;
-    return {blogs};
-}
+// export const load = async ({ fetch }) => {
+//     const res = await fetch("../../api/blogs");
+//     const blogsData = await res.json();
+//     const status = blogsData.status;
+//     if(!status) {
+//         return;
+//     }
+//     const blogs = blogsData.data.allBlogs;
+//     return {blogs};
+// }
