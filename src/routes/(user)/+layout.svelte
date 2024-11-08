@@ -80,11 +80,11 @@
 
 <footer id="contact-info" class="fs-xs">
     <img src="{stackedLogoSrc}" alt="logo">
+    <a href="/">180finchdeene sq Toronto Unit 13</a>
     <div>
         <a href="tel:416-835-1312" class="phone-number text-white fs-500">416-835-1312</a>
-        <a href="/">180finchdeene sq Toronto Unit 13</a>
+        <a href="mailto:info@californiashutterstoronto.com">info@californiashutterstoronto.com</a>
     </div>
-    <a href="mailto:info@californiashutterstoronto.com">info@californiashutterstoronto.com</a>
     <div class="socials"><img src="{instagramIconSrc}" alt="instagram icon"><p>californiashutterstoronto</p><img src="{facebookIconSrc}" alt="facebook icon"></div>
 </footer>
 
@@ -154,6 +154,8 @@
 
     footer .phone-number {
         font-weight: 600;
+        text-align: center;
+        margin-bottom: 1.5rem;
     }
 
     footer .socials {
@@ -231,6 +233,14 @@
 
         footer > img {
             grid-column: unset;
+        }
+
+        footer > img {
+            order: -2;
+        }
+
+        footer div:has(.phone-number) {
+            order: -1;
         }
     }
 </style>
