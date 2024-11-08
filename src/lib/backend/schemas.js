@@ -68,7 +68,7 @@ export const quoteSchema = Joi.object({
 	name:Joi.string().required(),
 	phoneNumber:Joi.number().required(),
 	specificWindowDimensions:Joi.string().required(),
-	avgCostPerWindow:Joi.string().required()
+	avgCostPerWindow:Joi.required()
 });
 
 export const deleteQuoteSchema=Joi.object({

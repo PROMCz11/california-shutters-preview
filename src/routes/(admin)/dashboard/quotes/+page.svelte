@@ -123,9 +123,9 @@
         align-items: center;
     }
 
-    .select-all {
+    /* .select-all {
         margin-left: auto;
-    }
+    } */
 
     .quotes {
         display: flex;
