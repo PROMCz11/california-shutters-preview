@@ -15,6 +15,6 @@ export const load = async ({ cookies, platform }) => {
         ).all()
     ).results[0];
     if(!admin) {
-        throw redirect(303, "/login");
+        throw redirect(303, "/dashboard/login");
     }
 }
