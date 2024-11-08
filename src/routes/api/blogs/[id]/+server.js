@@ -19,6 +19,8 @@ export const GET = async ({ platform, params }) => {
 			newItem.blogImgDesc = item.blog.blogImgDesc;
 			return newItem;
 		});
+		if(!blogById)
+			throw new Error("invalid blogID")
 		return json({ status: true, data: { blog: blogById.blog,recentBlogs } });
 	} catch (error) {
 		return json({ status: false, message: error.message });
