@@ -11,25 +11,48 @@
     let { quotes } = data;
 
     // let quotes = [
-    //     {name: "Zain Suleiman", estimate: 4000, date: new Date().getTime(), number: +988531888, email: "zain@gmail.com", seen: false},
-    //     {name: "Zain Suleiman", estimate: 4000, date: new Date().getTime(), number: +988531888, email: "zain@gmail.com", seen: false},
-    //     {name: "Zain Suleiman", estimate: 4000, date: new Date().getTime(), number: +988531888, email: "zain@gmail.com", seen: false},
-    // ];
+    //   {
+    //     "quoteID": 1,
+    //     "shutterType": "zein shaban",
+    //     "averageEstimateSquareFootage": 10,
+    //     "numberOfWindows": 12,
+    //     "name": "zein shaban",
+    //     "email": "zain@gmail.com",
+    //     "phoneNumber": 16,
+    //     "specificWindowDimensions": "adfasdf",
+    //     "seen": 1,
+    //     "avgCostPerWindow": 50
+    //   },
+    //   {
+    //     "quoteID": 2,
+    //     "shutterType": "composite",
+    //     "averageEstimateSquareFootage": 250,
+    //     "numberOfWindows": 333,
+    //     "name": "Zain Suleiman",
+    //     "email": "zain22@gmail.com",
+    //     "phoneNumber": 9999999999,
+    //     "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
+    //     "seen": 0,
+    //     "avgCostPerWindow": 9999
+    //   }
+    // ]
 
-    // $: console.log(quotes);
+    const selectAll = () => {
+        quotes.forEach(quote => {
+            quote.checked = true;
+        })
 
-    // const checkForCheckedQuotes = (quotes) => {
-        
-    // }
+        quotes = quotes;
+    }
 </script>
 
 <main class="fs-300">
     <div class="controls">
         <h1 class="fs-500">Quotes</h1>
         <div>
-            <button>Unseen</button>
-            <button>All</button>
-            <button class="select-all">Select all</button>
+            <!-- <button>Unseen</button>
+            <button>All</button> -->
+            <button on:click={selectAll} class="select-all">Select all</button>
             <button>Mark as seen</button>
             <button>Delete</button>
         </div>

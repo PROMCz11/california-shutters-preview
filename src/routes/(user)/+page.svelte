@@ -276,7 +276,7 @@
     <section class="free-installation bg-white text-navy">
         <img src="{whiteShutterSrc}" alt="white shutter of the left">
         <div>
-            <h2 class="fs-xl">Free Calofornia Shutter Installation with Any Purchase</h2>
+            <h2 class="fs-xl">Free California Shutter Installation with Any Purchase</h2>
             <p>To thank you for your business, we will absorb all installation charges! We install your shutters with the same precision and care that was used to make them.</p>
         </div>
         <img class="reversed" src="{whiteShutterSrc}" alt="white shutter of the right">
