@@ -1,7 +1,7 @@
 <script>
     export let data;
     // Add quoteID
-    const { shutterType, averageEstimateSquareFootage, numberOfWindows, name, email, phoneNumber, specificWindowDimensions, avgCostPerWindow } = data;
+    const { shutterType, averageEstimateSquareFootage, numberOfWindows, name, email, phoneNumber, specificWindowDimensions, avgCostPerWindow } = data.quote;
 </script>
 
 <main class="fs-400">
