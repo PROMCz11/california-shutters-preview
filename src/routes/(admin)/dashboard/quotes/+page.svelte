@@ -37,10 +37,9 @@
         <!-- svelte-ignore a11y_no_static_element_interactions -->
         <!-- svelte-ignore a11y_click_events_have_key_events -->
             <div class="quote" class:seen id="{quoteID}" on:click={e => {
-                if(e.target.tagName === "input" || e.target.classList.contains("call-btn") || e.target.classList.contains("email-btn")) {
-                    return;
+                if(!(e.target.tagName === "input" || e.target.classList.contains("call-btn") || e.target.classList.contains("email-btn"))) {
+                    goto(`quotes/${quoteID}`);
                 }
-                goto(`quotes/${quoteID}`);
             }}>
                 <input type="checkbox" bind:checked>
                 <p class="name">{name}</p>
