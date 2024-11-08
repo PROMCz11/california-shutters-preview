@@ -65,13 +65,6 @@ export const quoteSchema = Joi.object({
 			'string.empty': 'Email cannot be empty',
 			'any.required': 'Email is a required field'
 		}),
-	password: Joi.string().required().min(6).max(50).messages({
-		'string.base': 'Password should be a type of text',
-		'string.empty': 'Password cannot be empty',
-		'string.min': 'Password should have a minimum length of 6',
-		'string.max': 'Password should have a maximum length of 50',
-		'any.required': 'Password is a required field'
-	}),
 	name:Joi.string().required(),
 	phoneNumber:Joi.number().required(),
 	specificWindowDimensions:Joi.string().required(),
