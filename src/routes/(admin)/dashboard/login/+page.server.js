@@ -16,8 +16,8 @@ export const actions = {
         const loginData = await res.json();
         const status = loginData.status;
         if(!status) {
-            // return {status: false, message: "Wrong email or password"}
-            return {status: false, message: loginData.message}
+            return {status: false, message: "Wrong email or password"}
+            // return {status: false, message: loginData.message}
         }
         throw redirect(302, "../dashboard");
     }
