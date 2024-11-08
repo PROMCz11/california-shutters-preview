@@ -20,7 +20,7 @@
 
         const numberOfWindows = document.getElementById("number-of-windows").value;
         const phoneNumber = document.getElementById("phone-number").value;
-        const specificWindowDimensations = document.getElementById("window-dimensions").value;
+        const specificWindowDimensions = document.getElementById("window-dimensions").value;
         const email = document.getElementById("email").value;
         const name = document.getElementById("name").value;
 
@@ -31,7 +31,7 @@
         //     shutterType: shutterType,
         //     averageEstimateSquareFootage: averageEstimateSquareFootage,
         //     numberOfWindows: numberOfWindows,
-        //     specificWindowDimensations: specificWindowDimensations,
+        //     specificWindowDimensions: specificWindowDimensions,
         //     avgCostPerWindow: 9999
         // }
 
@@ -44,7 +44,7 @@
                 shutterType: shutterType,
                 averageEstimateSquareFootage: averageEstimateSquareFootage,
                 numberOfWindows: numberOfWindows,
-                specificWindowDimensations: specificWindowDimensations,
+                specificWindowDimensions: specificWindowDimensions,
                 avgCostPerWindow: 9999
             }),
             headers: { "Content-Type": "application/json" }
