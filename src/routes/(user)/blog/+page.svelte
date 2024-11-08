@@ -59,31 +59,31 @@
         text-align: end;
     }
 
-    .load-more-wrapper {
+    /* .load-more-wrapper {
         padding-block: var(--spacing);
         padding-bottom: calc(var(--spacing) * 2);
         max-width: 1500px;
         margin: auto;
-    }
+    } */
 
-    .load-more-wrapper button {
+    /* .load-more-wrapper button {
         display: block;
         margin: auto;
         border-radius: .5rem;
-    }
+    } */
 
     /* When the user requests more blogs and the server returns the last batch, it should also return a message indicating no more, which will update the state of the button, call it "canLoadMore = false" and it will also be returned on the initial page load */
     /* .load-more-wrapper button.disabled {
         color: #182D3816;
     } */
 
-    .load-more-wrapper button:hover {
+    /* .load-more-wrapper button:hover {
         background-color: #182D3814;
-    }
+    } */
 
-    .load-more-wrapper button:active {
+    /* .load-more-wrapper button:active {
         background-color: #182D381A;
-    }
+    } */
 
     @media (max-width: 1150px) {
         .blogs {
