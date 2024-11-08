@@ -19,7 +19,7 @@
         });
 
         const numberOfWindows = document.getElementById("number-of-windows").value;
-        const number = document.getElementById("phone-number").value;
+        const phoneNumber = document.getElementById("phone-number").value;
         const specificWindowDimensations = document.getElementById("window-dimensions").value;
         const email = document.getElementById("email").value;
         const name = document.getElementById("name").value;
@@ -40,7 +40,7 @@
             body: JSON.stringify({
                 name: name,
                 email: email,
-                number: number,
+                phoneNumber: phoneNumber,
                 shutterType: shutterType,
                 averageEstimateSquareFootage: averageEstimateSquareFootage,
                 numberOfWindows: numberOfWindows,
