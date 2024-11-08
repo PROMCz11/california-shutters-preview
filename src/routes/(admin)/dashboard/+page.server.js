@@ -5,7 +5,7 @@ import { redirect } from "@sveltejs/kit";
 export const load = async ({ cookies, platform }) => {
     const token = cookies.get("sessionToken");
     if(!token) {
-        throw redirect(303, "/login");
+        throw redirect(303, "/dashboard/login");
     }
     const authToken = cookies.get('sessionToken').split(' ')[1];
     const { payload } = await jwt.verify(authToken, JWT_SECRET);
