@@ -8,8 +8,9 @@ export const POST = async ({ request, platform }) => {
 		if (error) {
 			throw new Error(error.details[0].message);
 		}
+		const date=Date.now();
 		await platform.env.DB.prepare(
-			`INSERT INTO quotes(shutterType,averageEstimateSquareFootage,numberOfWindows,email,name,phoneNumber,specificWindowDimensions,avgCostPerWindow) VALUES ( ?,?,?,?,?,?,?,? )`
+			`INSERT INTO quotes(shutterType,averageEstimateSquareFootage,numberOfWindows,email,name,phoneNumber,specificWindowDimensions,avgCostPerWindow,date) VALUES ( ?,?,?,?,?,?,?,?,? )`
 		)
 			.bind(
 				value.shutterType,
@@ -19,7 +20,8 @@ export const POST = async ({ request, platform }) => {
 				value.name,
 				value.phoneNumber,
 				value.specificWindowDimensions,
-				value.avgCostPerWindow
+				value.avgCostPerWindow,
+				date
 			)
 			.run();
 		return json({ status: true, data: null });
