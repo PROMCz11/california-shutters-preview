@@ -19,6 +19,6 @@ export const actions = {
             // return {status: false, message: "Wrong email or password"}
             return {status: false, message: loginData.message}
         }
-        throw redirect(302, "../");
+        throw redirect(302, "../dashboard");
     }
 };
