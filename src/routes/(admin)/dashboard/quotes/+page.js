@@ -1,5 +1,5 @@
 export const load = async ({ fetch }) => {
-    const res = await fetch("api/quotes");
+    const res = await fetch("../../../api/quotes");
     const quotesData = await res.json();
     const status = quotesData.status;
     if(!status) {
