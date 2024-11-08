@@ -1,12 +1,14 @@
 <script>
-    
+    export let data;
+    const { adminDetails } = data;
+    const { email, role } = adminDetails;
 </script>
 
 <main class="fs-300">
     <h2>Admin Dashboard</h2>
     <h3>Account details</h3>
-    <p>Email: admin@gmail.com</p>
-    <p>Role: Super Admin</p>
+    <p>Email: {email}</p>
+    <p>Role: {role}</p>
     <h3>Navigation</h3>
     <a href="dashboard/quotes"><button>Quotes</button></a>
     <a href="dashboard/blogs/upload"><button>Blogs</button></a>
