@@ -16,7 +16,6 @@ export const POST = async ({ request, platform }) => {
 				value.averageEstimateSquareFootage,
 				value.numberOfWindows,
 				value.email,
-				value.password,
 				value.name,
 				value.phoneNumber,
 				value.specificWindowDimensions,
