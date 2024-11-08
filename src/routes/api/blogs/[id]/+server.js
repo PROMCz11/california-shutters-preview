@@ -5,7 +5,7 @@ export const GET = async ({ platform, params }) => {
 		const { id } = params;
 		let blogById = (await platform.env.DB.prepare(`SELECT * FROM blogs where blogID = ${id}`).all())
 			.results[0];
-		let recentBlogs = (await platform.env.DB.prepare(`SELECT * FROM blogs ORDER BY blogID DESC LIMIT 2`).all()).results;
+		let recentBlogs = (await platform.env.DB.prepare(`SELECT * FROM blogs WHERE blogID != ${id} ORDER BY blogID DESC LIMIT 2`).all()).results;
 		recentBlogs = recentBlogs.map((item) => ({
 			...item,
 			blog: JSON.parse(item.blog)
@@ -19,6 +19,8 @@ export const GET = async ({ platform, params }) => {
 			newItem.blogImgDesc = item.blog.blogImgDesc;
 			return newItem;
 		});
+		if(!blogById)
+			throw new Error("invalid blogID")
 		return json({ status: true, data: { blog: blogById.blog,recentBlogs } });
 	} catch (error) {
 		return json({ status: false, message: error.message });
