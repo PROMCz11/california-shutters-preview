@@ -19,7 +19,7 @@ export const POST = async ({ request, platform }) => {
 				value.password,
 				value.name,
 				value.phoneNumber,
-				value.specificWindowDimensations,
+				value.specificWindowDimensions,
 				value.avgCostPerWindow
 			)
 			.run();
