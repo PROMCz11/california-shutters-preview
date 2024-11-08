@@ -78,9 +78,9 @@
         <div>
             <!-- <button>Unseen</button>
             <button>All</button> -->
-            <button on:click={selectAll} class="select-all">Select all</button>
+            <!-- <button on:click={selectAll} class="select-all">Select all</button>
             <button>Mark as seen</button>
-            <button>Delete</button>
+            <button>Delete</button> -->
         </div>
     </div>
     <div class="quotes">
