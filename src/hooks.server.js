@@ -7,6 +7,7 @@ export async function handle({ event, resolve }) {
 		event.url.pathname.startsWith('/api/blogs/create') ||
 		event.url.pathname.startsWith('/api/blogs/update') ||
 		event.url.pathname.startsWith('/api/blogs/delete') ||
+		event.url.pathname.startsWith('/api/admin/account') ||
 		(event.url.pathname.startsWith('/api/quotes') && event.url.pathname !== '/api/quotes/send')
 	) {
 		try {
@@ -19,11 +20,10 @@ export async function handle({ event, resolve }) {
 					).all()
 				).results[0];
 
-				if (
-					admin
-				) {
-                    if(event.url.pathname.startsWith('/api/quotes')&&admin.role!='superadmin')
-                        return json({status:false,message:"invalid token"})
+				if (admin) {
+					event.locals.email = payload.email;
+					if (event.url.pathname.startsWith('/api/quotes') && admin.role != 'superadmin')
+						return json({ status: false, message: 'invalid token' });
 					const response = await resolve(event);
 					return response;
 				}

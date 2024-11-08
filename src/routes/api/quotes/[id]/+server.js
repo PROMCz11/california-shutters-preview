@@ -7,7 +7,7 @@ export const GET = async ({ platform, params }) => {
 		let quoteById = (await platform.env.DB.prepare(`SELECT * FROM quotes where quoteID = ${id}`).all())
 			.results[0];
         // eslint-disable-next-line no-unused-vars
-        const {quoteID,seen,...quoteDetails}=quoteById
+        const {seen,...quoteDetails}=quoteById
 		return json({ status: true, data: { quote:quoteDetails} });
 	} catch (error) {
 		return json({ status: false, message: error.message });
