@@ -1,6 +1,8 @@
 <script>
+	import { goto } from "$app/navigation";
     import callIconSrc from "$lib/assets/admin/call-icon.svg";
     import sendEmailIconSrc from "$lib/assets/admin/send-email-icon.svg";
+
     const formatDate = (ms) => {
         const date = new Date(ms);
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -9,33 +11,6 @@
 
     export let data;
     let { quotes } = data;
-
-    // let quotes = [
-    //   {
-    //     "quoteID": 1,
-    //     "shutterType": "zein shaban",
-    //     "averageEstimateSquareFootage": 10,
-    //     "numberOfWindows": 12,
-    //     "name": "zein shaban",
-    //     "email": "zain@gmail.com",
-    //     "phoneNumber": 16,
-    //     "specificWindowDimensions": "adfasdf",
-    //     "seen": 1,
-    //     "avgCostPerWindow": 50
-    //   },
-    //   {
-    //     "quoteID": 2,
-    //     "shutterType": "composite",
-    //     "averageEstimateSquareFootage": 250,
-    //     "numberOfWindows": 333,
-    //     "name": "Zain Suleiman",
-    //     "email": "zain22@gmail.com",
-    //     "phoneNumber": 9999999999,
-    //     "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
-    //     "seen": 0,
-    //     "avgCostPerWindow": 9999
-    //   }
-    // ]
 
     const selectAll = () => {
         quotes.forEach(quote => {
@@ -59,13 +34,20 @@
     </div>
     <div class="quotes">
         {#each quotes as { quoteID, checked = false, name, estimate, date, phoneNumber, email, seen }}
-            <div class="quote" class:seen id="{quoteID}">
+        <!-- svelte-ignore a11y_no_static_element_interactions -->
+        <!-- svelte-ignore a11y_click_events_have_key_events -->
+            <div class="quote" class:seen id="{quoteID}" on:click={e => {
+                if(e.target.tagName === "input" || e.target.classList.contains("call-btn") || e.target.classList.contains("email-btn")) {
+                    return;
+                }
+                goto(`quotes/${quoteID}`);
+            }}>
                 <input type="checkbox" bind:checked>
                 <p class="name">{name}</p>
                 <p class="estimate">{estimate}</p>
                 <p class="date">{formatDate(date)}</p>
-                <a href="tel:{phoneNumber}"><img src="{callIconSrc}" alt="phone icon"></a>
-                <a href="mailto:{email}"><img src="{sendEmailIconSrc}" alt="email icon"></a>
+                <a class="call-btn" href="tel:{phoneNumber}"><img src="{callIconSrc}" alt="phone icon"></a>
+                <a class="email-btn" href="mailto:{email}"><img src="{sendEmailIconSrc}" alt="email icon"></a>
             </div>
         {/each}
     </div>
