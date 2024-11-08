@@ -1,5 +1,7 @@
 <script>
-
+    export let data;
+    // Add quoteID
+    const { shutterType, averageEstimateSquareFootage, numberOfWindows, name, email, phoneNumber, specificWindowDimensions, avgCostPerWindow } = data;
 </script>
 
 <main class="fs-400">
@@ -9,17 +11,17 @@
     </div>
     <div class="quote">
         <div class="personal-info">
-            <p class="name">John Doe</p>
+            <p class="name">{name}</p>
             <div>
-                <p class="email">example@example.com</p>
-                <p class="number">0999999999</p>
+                <p class="email">{email}</p>
+                <p class="number">{phoneNumber}</p>
             </div>
         </div>
-        <div class="shutter-type"><span>Shutter Type</span><span>Composite</span></div>
-        <div class="square-footage"><span>Average estimated<br>square footage</span><span>250</span></div>
-        <div class="number-of-windows"><span>Number of windows</span><span>5</span></div>
-        <div class="dimensions"><span>Specific window<br>dimensions</span><span>32” x 32”</span></div>
-        <div class="total-estimate">Total estimate: xxx-xxx</div>
+        <div class="shutter-type"><span>Shutter Type</span><span>{shutterType}</span></div>
+        <div class="square-footage"><span>Average estimated<br>square footage</span><span>{averageEstimateSquareFootage}</span></div>
+        <div class="number-of-windows"><span>Number of windows</span><span>{numberOfWindows}</span></div>
+        <div class="dimensions"><span>Specific window<br>dimensions</span><span>{specificWindowDimensions}</span></div>
+        <div class="total-estimate">Total estimate: {avgCostPerWindow}</div>
         <div>
             <a href="mailto:">Send Email</a>
             <a href="tel:">Call</a>

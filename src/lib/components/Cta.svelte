@@ -58,7 +58,7 @@
 <div class="main" id="quote">
     <div class="bg-white text-navy">
         <h2 class="text-xl">Get your FREE quote now!</h2>
-        <p class="text-blue">Fill the form below and we'll confirm your quote ASAP!</p>
+        <p class="text-blue">Fill the form below and we'll confirm your<br>quote ASAP!</p>
     </div>
     <div class="primary-cta">
         <h2 class="text-500">Average cost per window is ~$1,800 - $2,250</h2>
