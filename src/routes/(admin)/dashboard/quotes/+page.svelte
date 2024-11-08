@@ -35,13 +35,13 @@
         </div>
     </div>
     <div class="quotes">
-        {#each quotes as { quoteID, checked = false, name, estimate, date, number, email, seen }}
+        {#each quotes as { quoteID, checked = false, name, estimate, date, phoneNumber, email, seen }}
             <div class="quote" class:seen id="{quoteID}">
                 <input type="checkbox" bind:checked>
                 <p class="name">{name}</p>
                 <p class="estimate">{estimate}</p>
                 <p class="date">{formatDate(date)}</p>
-                <a href="tel:{number}"><img src="{callIconSrc}" alt="phone icon"></a>
+                <a href="tel:{phoneNumber}"><img src="{callIconSrc}" alt="phone icon"></a>
                 <a href="mailto:{email}"><img src="{sendEmailIconSrc}" alt="email icon"></a>
             </div>
         {/each}
