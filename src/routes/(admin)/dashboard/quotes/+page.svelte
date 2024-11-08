@@ -91,6 +91,7 @@
         padding: .5rem;
         border: 1px solid #999999;
         border-radius: .5rem;
+        cursor: pointer;
     }
 
     .name {
