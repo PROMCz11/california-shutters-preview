@@ -107,7 +107,7 @@
             </div>
             <div class="number-of-windows">
                 <p>Provide the number of windows</p>
-                <input type="number" placeholder="4" id="number-of-windows">
+                <input type="number" min="1" placeholder="4" id="number-of-windows">
             </div>
             <div class="email">
                 <p>What's your email?</p>

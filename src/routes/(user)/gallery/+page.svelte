@@ -176,6 +176,7 @@
 <style>
     main {
         padding: 10vw;
+        padding-bottom: var(--spacing);
     }
 
     main > h1 {
