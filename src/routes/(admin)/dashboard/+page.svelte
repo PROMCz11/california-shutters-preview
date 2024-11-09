@@ -4,6 +4,11 @@
     const { email, role } = adminDetails;
 </script>
 
+<svelte:head>
+	<title>Admin Dashboard</title>
+	<!-- <meta name="description" content="This is where the description goes for SEO" /> -->
+</svelte:head>
+
 <main class="fs-300">
     <h2>Admin Dashboard</h2>
     <h3>Account details</h3>

@@ -12,13 +12,6 @@
 	import { onMount } from "svelte";
 
     onMount(() => {
-        // scroll(
-        //     animate("article picture img", { y: [-100, 100] }), {
-        //         target: document.querySelector("article picture img"),
-        //         offset: ["end 50%", "start end"] // Should be more optimized later
-        //     }
-        // )
-
         scroll(
             animate(".main-1 picture img", { y: [-50, 50] }), {
                 target: document.querySelector(".main-1"),
@@ -34,6 +27,11 @@
         )
     })
 </script>
+
+<svelte:head>
+	<title>About us | California Shutters Toronto</title>
+	<!-- <meta name="description" content="This is where the description goes for SEO" /> -->
+</svelte:head>
 
 <main>
     <article>

@@ -72,6 +72,11 @@
     }
 </script>
 
+<svelte:head>
+	<title>Quotes</title>
+	<!-- <meta name="description" content="This is where the description goes for SEO" /> -->
+</svelte:head>
+
 <main class="fs-300">
     <div class="controls">
         <h1 class="fs-500">Quotes</h1>

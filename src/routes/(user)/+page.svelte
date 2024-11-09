@@ -123,6 +123,11 @@
     })
 </script>
 
+<svelte:head>
+	<title>California Shutters Toronto</title>
+	<!-- <meta name="description" content="This is where the description goes for SEO" /> -->
+</svelte:head>
+
 <main>
     <article class="hero">
         <div class="content">

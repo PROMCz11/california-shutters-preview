@@ -82,6 +82,11 @@
     }
 </script>
 
+<svelte:head>
+	<title>Upload</title>
+	<!-- <meta name="description" content="This is where the description goes for SEO" /> -->
+</svelte:head>
+
 <main>
     <div class="controls">
         <button on:click={uploadBlog} class="primary">Upload</button>

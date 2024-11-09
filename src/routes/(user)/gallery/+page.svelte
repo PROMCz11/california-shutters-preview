@@ -98,6 +98,11 @@
     const closeProject = () => selectedProject = 0;
 </script>
 
+<svelte:head>
+	<title>Gallery | California Shutters Toronto</title>
+	<!-- <meta name="description" content="This is where the description goes for SEO" /> -->
+</svelte:head>
+
 <main>
     <h1 class="fs-heading">Our Gallery</h1>
     <div>

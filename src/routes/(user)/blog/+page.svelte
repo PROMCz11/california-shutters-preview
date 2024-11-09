@@ -12,6 +12,11 @@
     }
 </script>
 
+<svelte:head>
+	<title>Blog | California Shutters Toronto</title>
+	<!-- <meta name="description" content="This is where the description goes for SEO" /> -->
+</svelte:head>
+
 <main>
     <h1 class="bg-white text-navy">Explore Further</h1>
     <div class="blogs bg-white text-navy">

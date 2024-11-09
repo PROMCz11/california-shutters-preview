@@ -7,6 +7,11 @@
     // $: console.log(errorMessage);
 </script>
 
+<svelte:head>
+	<title>Login</title>
+	<!-- <meta name="description" content="This is where the description goes for SEO" /> -->
+</svelte:head>
+
 <main class="fs-400">
     <form action="?/login" method="POST" use:enhance>
         <h2>Admin login</h2>

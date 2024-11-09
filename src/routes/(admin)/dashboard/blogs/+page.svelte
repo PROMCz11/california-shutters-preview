@@ -40,6 +40,11 @@
     }
 </script>
 
+<svelte:head>
+	<title>Blogs</title>
+	<!-- <meta name="description" content="This is where the description goes for SEO" /> -->
+</svelte:head>
+
 <main>
     <h2>Blogs</h2>
     <button on:click={() => goto("/dashboard/blogs/upload")}>Add</button>

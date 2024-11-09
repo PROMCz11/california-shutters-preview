@@ -23,6 +23,11 @@
     let selectedOptionSrc = bayWindowSrc;
 </script>
 
+<svelte:head>
+	<title>Pricing | California Shutters Toronto</title>
+	<!-- <meta name="description" content="This is where the description goes for SEO" /> -->
+</svelte:head>
+
 <main>
     <article class="bg-white text-navy">
         <div class="heading">

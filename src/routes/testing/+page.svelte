@@ -27,6 +27,11 @@
     }
 </script>
 
+<svelte:head>
+	<title>Testing</title>
+	<!-- <meta name="description" content="This is where the description goes for SEO" /> -->
+</svelte:head>
+
 <main>
     <button on:click={login}>Login</button>
     <input type="text" placeholder="blogID to delete" on:keydown={e => {
