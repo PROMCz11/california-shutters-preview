@@ -81,7 +81,7 @@
 <footer id="contact-info" class="fs-xs">
     <img src="{stackedLogoSrc}" alt="logo">
     <!-- The following link must be configured asap -->
-    <a href="">180 Finchdene Square Scarborough unit 12</a>
+    <a href="/">180 Finchdene Square Scarborough unit 12</a>
     <div>
         <a href="tel:416-835-1312" class="phone-number text-white fs-500">416-835-1312</a>
         <a href="mailto:info@californiashutterstoronto.com">info@californiashutterstoronto.com</a>
