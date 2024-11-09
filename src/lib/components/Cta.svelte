@@ -105,25 +105,27 @@
                     </div>
                 </div>
             </div>
-            <div class="number-of-windows">
-                <p>Provide the number of windows</p>
-                <input type="number" min="1" placeholder="4" id="number-of-windows">
-            </div>
-            <div class="email">
-                <p>What's your email?</p>
-                <input type="text" placeholder="Enter your email" id="email">
-            </div>
-            <div class="name">
-                <p>What's your name?</p>
-                <input type="text" placeholder="Enter your name" id="name">
-            </div>
-            <div class="phone-number">
-                <p>What's your number?</p>
-                <input type="text" placeholder="Number input" id="phone-number">
-            </div>
-            <div class="window-dimensions">
-                <p>What are your specific window dimensions?</p>
-                <input type="text" placeholder="Window dimensions" id="window-dimensions">
+            <div class="grid">
+                <div class="number-of-windows">
+                    <p>Provide the number of windows</p>
+                    <input type="number" min="1" placeholder="4" id="number-of-windows">
+                </div>
+                <div class="email">
+                    <p>What's your email?</p>
+                    <input type="text" placeholder="Enter your email" id="email">
+                </div>
+                <div class="name">
+                    <p>What's your name?</p>
+                    <input type="text" placeholder="Enter your name" id="name">
+                </div>
+                <div class="phone-number">
+                    <p>What's your number?</p>
+                    <input type="text" placeholder="Number input" id="phone-number">
+                </div>
+                <div class="window-dimensions">
+                    <p>What are your specific window dimensions?</p>
+                    <input type="text" placeholder="Window dimensions" id="window-dimensions">
+                </div>
             </div>
             <button on:click={submitQuote} class="bg-yellow text-navy">Confirm my quote</button>
         </div>
@@ -157,7 +159,7 @@
         max-width: 900px;
     }
 
-    .form > div > div {
+    .form > div:not(.grid) > div {
         margin-inline-start: var(--spacing);
         display: flex;
         flex-wrap: wrap;
@@ -175,6 +177,22 @@
         display: grid;
         grid-template-columns: 1.2em auto;
         gap: 0.5em;
+    }
+    
+    .form .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing);
+    }
+
+    @media (max-width: 450px) {
+        .form .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .form .grid input {
+        width: 100%;
     }
 
     input[type="text"], input[type="number"] {
