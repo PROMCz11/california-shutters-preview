@@ -5,9 +5,7 @@
     import blogPlaceholderSrc from "$lib/assets/blog/blog-article-placeholder.webp";
 
     export let data;
-    // $: { blog, recentBlogs } = data;
-    $: blog = data.blog;
-    $: recentBlogs = data.recentBlogs;
+    $: ({ blog, recentBlogs } = data);
 
     const formatDate = (ms) => {
         const date = new Date(ms);
