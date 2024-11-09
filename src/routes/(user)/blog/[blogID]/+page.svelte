@@ -57,7 +57,7 @@
         <h2 class="fs-500">Recent Posts</h2>
         <div>
             {#each recentBlogs as { title, blogID, date, blogImgURL, blogImgDesc }}
-            <a class="text-navy fs-xs" href="{blogID}">
+            <a class="text-navy fs-xs" href="/blog/{blogID}">
                 <img src="{blogImgURL}" alt="{blogImgDesc}">
                 <p>{title}</p>
                 <p class="text-blue">{formatDate(date)}</p>
