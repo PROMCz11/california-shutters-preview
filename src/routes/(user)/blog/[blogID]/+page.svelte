@@ -4,99 +4,8 @@
 
     import blogPlaceholderSrc from "$lib/assets/blog/blog-article-placeholder.webp";
 
-    // let blogID = $page.params.blogID; // This will be on the +page.js file
-
     export let data;
     const { blog, recentBlogs } = data;
-
-    // const recentBlogs = [
-    //     {
-    //         title: "Title", blogID: 39, date: 1731096226817, blogImgURL: "https://placehold.co/600x400.png", blogImgDesc: "Desc"
-    //     },
-    //     {
-    //         title: "Title", blogID: 39, date: 1731096226817, blogImgURL: "https://placehold.co/600x400.png", blogImgDesc: "Desc"
-    //     },
-    // ]
-
-    // const blog = {
-    //     "rawBlog": {
-    //         "time": 1730816257391,
-    //         "blocks": [
-    //             {
-    //                 "id": "XVSCAYqvh1",
-    //                 "type": "header",
-    //                 "data": {
-    //                     "text": "Main Title",
-    //                     "level": 1
-    //                 }
-    //             },
-    //             {
-    //                 "id": "MDmD3kUF_r",
-    //                 "type": "header",
-    //                 "data": {
-    //                     "text": "Section Title",
-    //                     "level": 2
-    //                 }
-    //             },
-    //             {
-    //                 "id": "SUfR66we1u",
-    //                 "type": "header",
-    //                 "data": {
-    //                     "text": "Section Subtitle",
-    //                     "level": 3
-    //                 }
-    //             },
-    //             {
-    //                 "id": "Rbwefynj2s",
-    //                 "type": "paragraph",
-    //                 "data": {
-    //                     "text": "Paragraph, lorem ipsum"
-    //                 }
-    //             },
-    //             {
-    //                 "id": "7E_NkMUQSa",
-    //                 "type": "list",
-    //                 "data": {
-    //                     "style": "unordered",
-    //                     "items": [
-    //                         "List item",
-    //                         "List item",
-    //                         "List item",
-    //                         "List item"
-    //                     ]
-    //                 }
-    //             },
-    //             {
-    //                 "id": "L6I1oqm3CP",
-    //                 "type": "image",
-    //                 "data": {
-    //                     "url": "https://cdn.pixabay.com/photo/2017/09/01/21/53/blue-2705642_1280.jpg",
-    //                     "caption": "This is the image's alt tag",
-    //                     "withBorder": false,
-    //                     "withBackground": false,
-    //                     "stretched": false
-    //                 }
-    //             },
-    //             {
-    //                 "id": "BagtrG4wbU",
-    //                 "type": "paragraph",
-    //                 "data": {
-    //                     "text": "Thanks for reading, the end."
-    //                 }
-    //             }
-    //         ],
-    //         "version": "2.30.6"
-    //     },
-    //     "metaDescription": "This blog is about nothing at all",
-    //     "blogTitle": "This is the blog's title",
-    //     "blogImgURL": blogPlaceholderSrc,
-    //     "blogImgDesc": "Whatever",
-    //     "tags": [
-    //         "Tag 1 ",
-    //         "Tag 2",
-    //         "Bananas"
-    //     ]
-    // };
 
     const formatDate = (ms) => {
         const date = new Date(ms);
@@ -104,6 +13,11 @@
         return date.toLocaleDateString('en-US', options);
     }
 </script>
+
+<svelte:head>
+	<title>{blog.blogTitle} | California Shutters Toronto</title>
+	<meta name="description" content="{blog.metaDescription}" />
+</svelte:head>
 
 <main class="bg-white text-navy">
     <div class="blog-container fs-300">
