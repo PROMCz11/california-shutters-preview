@@ -9,67 +9,77 @@
         return date.toLocaleDateString('en-US', options);
     }
 
-    export let data;
-    let { quotes } = data;
+    // export let data;
+    // let { quotes } = data;
 
-    // let quotes = [
-    //     {
-    //     "quoteID": 2,
-    //     "shutterType": "composite",
-    //     "averageEstimateSquareFootage": 250,
-    //     "numberOfWindows": 333,
-    //     "name": "Zain Suleiman",
-    //     "email": "zain22@gmail.com",
-    //     "phoneNumber": 9999999999,
-    //     "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
-    //     "seen": 0,
-    //     "avgCostPerWindow": 9999
-    //   },
-    //     {
-    //     "quoteID": 2,
-    //     "shutterType": "composite",
-    //     "averageEstimateSquareFootage": 250,
-    //     "numberOfWindows": 333,
-    //     "name": "Zain Suleiman",
-    //     "email": "zain22@gmail.com",
-    //     "phoneNumber": 9999999999,
-    //     "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
-    //     "seen": 1,
-    //     "avgCostPerWindow": 9999
-    //   },
-    //     {
-    //     "quoteID": 2,
-    //     "shutterType": "composite",
-    //     "averageEstimateSquareFootage": 250,
-    //     "numberOfWindows": 333,
-    //     "name": "Zain Suleiman",
-    //     "email": "zain22@gmail.com",
-    //     "phoneNumber": 9999999999,
-    //     "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
-    //     "seen": 0,
-    //     "avgCostPerWindow": 9999
-    //   },
-    //     {
-    //     "quoteID": 2,
-    //     "shutterType": "composite",
-    //     "averageEstimateSquareFootage": 250,
-    //     "numberOfWindows": 333,
-    //     "name": "Zain Suleiman",
-    //     "email": "zain22@gmail.com",
-    //     "phoneNumber": 9999999999,
-    //     "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
-    //     "seen": 0,
-    //     "avgCostPerWindow": 9999
-    //   },
-    // ];
+    let quotes = [
+        {
+        "quoteID": 2,
+        "shutterType": "composite",
+        "averageEstimateSquareFootage": 250,
+        "numberOfWindows": 333,
+        "name": "Zain Suleiman",
+        "email": "zain22@gmail.com",
+        "phoneNumber": 9999999999,
+        "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
+        "seen": 0,
+        "avgCostPerWindow": 9999
+      },
+        {
+        "quoteID": 2,
+        "shutterType": "composite",
+        "averageEstimateSquareFootage": 250,
+        "numberOfWindows": 333,
+        "name": "Zain Suleiman",
+        "email": "zain22@gmail.com",
+        "phoneNumber": 9999999999,
+        "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
+        "seen": 1,
+        "avgCostPerWindow": 9999
+      },
+        {
+        "quoteID": 2,
+        "shutterType": "composite",
+        "averageEstimateSquareFootage": 250,
+        "numberOfWindows": 333,
+        "name": "Zain Suleiman",
+        "email": "zain22@gmail.com",
+        "phoneNumber": 9999999999,
+        "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
+        "seen": 0,
+        "avgCostPerWindow": 9999
+      },
+        {
+        "quoteID": 2,
+        "shutterType": "composite",
+        "averageEstimateSquareFootage": 250,
+        "numberOfWindows": 333,
+        "name": "Zain Suleiman",
+        "email": "zain22@gmail.com",
+        "phoneNumber": 9999999999,
+        "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
+        "seen": 0,
+        "avgCostPerWindow": 9999
+      },
+    ];
+
+    $: checkedQuotes = quotes.filter(quote => quote.checked);
 
     const selectAll = () => {
         quotes.forEach(quote => {
             quote.checked = true;
         })
-
         quotes = quotes;
     }
+
+    const unselectAll = () => {
+        quotes.forEach(quote => {
+            quote.checked = false;
+        })
+        quotes = quotes;
+    }
+
+    let unseenQuotesOnly = false;
 </script>
 
 <svelte:head>
@@ -81,32 +91,61 @@
     <div class="controls">
         <h1 class="fs-500">Quotes</h1>
         <div>
-            <!-- <button>Unseen</button>
-            <button>All</button> -->
-            <!-- <button on:click={selectAll} class="select-all">Select all</button>
-            <button>Mark as seen</button>
-            <button>Delete</button> -->
+            <button class:active={!unseenQuotesOnly} on:click={() => unseenQuotesOnly = false}>All</button>
+            <button class:active={unseenQuotesOnly} on:click={() => unseenQuotesOnly = true}>Unseen</button>
+            {#if checkedQuotes.length === quotes.length}
+                <button on:click={unselectAll} class="select-all">Unselect all</button>
+            {:else}   
+                <button on:click={selectAll} class="select-all">Select all</button>
+            {/if}
+            {#if checkedQuotes.length}
+                <button>Mark as seen</button>
+                <button>Delete</button>
+            {/if}
         </div>
     </div>
     <div class="quotes">
-        {#each quotes as { quoteID, checked = false, name, estimate, date, phoneNumber, email, seen }}
-        <!-- svelte-ignore a11y_no_static_element_interactions -->
-        <!-- svelte-ignore a11y_click_events_have_key_events -->
-            <div class="quote" class:checked class:seen id="{quoteID}" on:click={e => {
-                if(!(e.target.tagName === "INPUT" || e.target.tagName === "IMG" || e.target.classList.contains("call-btn") || e.target.classList.contains("email-btn"))) {
-                    goto(`quotes/${quoteID}`);
-                }
-            }}>
-                <input type="checkbox" bind:checked>
-                <p class="name">{name}</p>
-                <p class="estimate">{estimate}</p>
-                <p class="date">{formatDate(date)}</p>
-                <a class="call-btn" href="tel:{phoneNumber}"><img src="{callIconSrc}" alt="phone icon"></a>
-                <a class="email-btn" href="mailto:{email}"><img src="{sendEmailIconSrc}" alt="email icon"></a>
-            </div>
+        {#if !unseenQuotesOnly} 
+            {#each quotes as { quoteID, checked = false, name, estimate, date, phoneNumber, email, seen }}
+            <!-- svelte-ignore a11y_no_static_element_interactions -->
+            <!-- svelte-ignore a11y_click_events_have_key_events -->
+                <div class="quote" class:checked class:seen id="{quoteID}" on:click={e => {
+                    if(!(e.target.tagName === "INPUT" || e.target.tagName === "IMG" || e.target.classList.contains("call-btn") || e.target.classList.contains("email-btn"))) {
+                        goto(`quotes/${quoteID}`);
+                    }
+                }}>
+                    <input type="checkbox" bind:checked>
+                    <p class="name">{name}</p>
+                    <p class="estimate">{estimate}</p>
+                    <p class="date">{formatDate(date)}</p>
+                    <a class="call-btn" href="tel:{phoneNumber}"><img src="{callIconSrc}" alt="phone icon"></a>
+                    <a class="email-btn" href="mailto:{email}"><img src="{sendEmailIconSrc}" alt="email icon"></a>
+                </div>
+            {:else}
+                <p style="text-align: center;">No quotes</p>
+            {/each}
         {:else}
-            <p style="text-align: center;">No quotes</p>
-        {/each}
+            {#each quotes as { quoteID, checked = false, name, estimate, date, phoneNumber, email, seen }}
+            <!-- svelte-ignore a11y_no_static_element_interactions -->
+            <!-- svelte-ignore a11y_click_events_have_key_events -->
+                {#if !seen}
+                    <div class="quote" class:checked class:seen id="{quoteID}" on:click={e => {
+                        if(!(e.target.tagName === "INPUT" || e.target.tagName === "IMG" || e.target.classList.contains("call-btn") || e.target.classList.contains("email-btn"))) {
+                            goto(`quotes/${quoteID}`);
+                        }
+                    }}>
+                        <input type="checkbox" bind:checked>
+                        <p class="name">{name}</p>
+                        <p class="estimate">{estimate}</p>
+                        <p class="date">{formatDate(date)}</p>
+                        <a class="call-btn" href="tel:{phoneNumber}"><img src="{callIconSrc}" alt="phone icon"></a>
+                        <a class="email-btn" href="mailto:{email}"><img src="{sendEmailIconSrc}" alt="email icon"></a>
+                    </div>
+                {/if}
+            {:else}
+                <p style="text-align: center;">No quotes</p>
+            {/each}
+        {/if}
     </div>
 </main>
 
@@ -128,9 +167,9 @@
         align-items: center;
     }
 
-    /* .select-all {
+    .select-all {
         margin-left: auto;
-    } */
+    }
 
     .quotes {
         display: flex;
