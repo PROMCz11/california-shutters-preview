@@ -2,6 +2,7 @@
 	import { goto } from "$app/navigation";
     import callIconSrc from "$lib/assets/admin/call-icon.svg";
     import sendEmailIconSrc from "$lib/assets/admin/send-email-icon.svg";
+	import { error } from "@sveltejs/kit";
 
     const formatDate = (ms) => {
         const date = new Date(ms);
@@ -13,6 +14,18 @@
     // let { quotes } = data;
 
     let quotes = [
+        {
+        "quoteID": 2,
+        "shutterType": "composite",
+        "averageEstimateSquareFootage": 250,
+        "numberOfWindows": 333,
+        "name": "Zain Suleiman",
+        "email": "zain22@gmail.com",
+        "phoneNumber": 9999999999,
+        "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
+        "seen": 1,
+        "avgCostPerWindow": 9999
+      },
         {
         "quoteID": 2,
         "shutterType": "composite",
@@ -49,18 +62,6 @@
         "seen": 0,
         "avgCostPerWindow": 9999
       },
-        {
-        "quoteID": 2,
-        "shutterType": "composite",
-        "averageEstimateSquareFootage": 250,
-        "numberOfWindows": 333,
-        "name": "Zain Suleiman",
-        "email": "zain22@gmail.com",
-        "phoneNumber": 9999999999,
-        "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
-        "seen": 0,
-        "avgCostPerWindow": 9999
-      },
     ];
 
     $: checkedQuotes = quotes.filter(quote => quote.checked);
@@ -80,6 +81,26 @@
     }
 
     let unseenQuotesOnly = false;
+
+    const deleteQuotes = async () => {
+        const deletedQuotesIDS = checkedQuotes.map(quote => quote.quoteID);
+        try {
+            const res = await fetch("../../../api/quotes/delete", {
+                method: "DELETE",
+                body: JSON.stringify({ ids: deletedQuotesIDS }),
+                headers: { "Content-Type": "application/json" }
+            });
+            const deleteData = await res.json();
+            const status = deleteData.status;
+            if(!status) {
+                throw error(400, deleteData.message);
+            }
+            quotes = quotes.filter(quote => !quote.checked);
+            checkedQuotes = [];
+        } catch (err) {
+            console.log(err);
+        }
+    }
 </script>
 
 <svelte:head>
@@ -90,19 +111,21 @@
 <main class="fs-300">
     <div class="controls">
         <h1 class="fs-500">Quotes</h1>
-        <div>
-            <button class:active={!unseenQuotesOnly} on:click={() => unseenQuotesOnly = false}>All</button>
-            <button class:active={unseenQuotesOnly} on:click={() => unseenQuotesOnly = true}>Unseen</button>
-            {#if checkedQuotes.length === quotes.length}
-                <button on:click={unselectAll} class="select-all">Unselect all</button>
-            {:else}   
-                <button on:click={selectAll} class="select-all">Select all</button>
-            {/if}
-            {#if checkedQuotes.length}
-                <button>Mark as seen</button>
-                <button>Delete</button>
-            {/if}
-        </div>
+        {#if quotes.length}
+            <div>
+                <button class:active={!unseenQuotesOnly} on:click={() => unseenQuotesOnly = false}>All</button>
+                <button class:active={unseenQuotesOnly} on:click={() => unseenQuotesOnly = true}>Unseen</button>
+                {#if checkedQuotes.length === quotes.length}
+                    <button on:click={unselectAll} class="select-all">Unselect all</button>
+                {:else}   
+                    <button on:click={selectAll} class="select-all">Select all</button>
+                {/if}
+                {#if checkedQuotes.length}
+                    <!-- <button>Mark as seen</button> -->
+                    <button on:click={deleteQuotes}>Delete</button>
+                {/if}
+            </div>
+        {/if}
     </div>
     <div class="quotes">
         {#if !unseenQuotesOnly} 
@@ -212,5 +235,19 @@
 
     .quote:hover {
         border: 1px solid black;
+    }
+
+    button {
+        border: 1px solid black;
+        border-radius: .5rem;
+        padding: .2rem .6rem;
+        color: black;
+        background-color: white;
+    }
+
+    button.active {
+        background-color: #C3D6FF;
+        border-color: #001882;
+        color: black;
     }
 </style>
