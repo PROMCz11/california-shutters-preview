@@ -1,22 +1,22 @@
 <script>
 	import { goto } from "$app/navigation";
 
-    // export let data;
-    // // Add quoteID
-    // const { quoteID, shutterType, averageEstimateSquareFootage, numberOfWindows, name, email, phoneNumber, specificWindowDimensions, avgCostPerWindow } = data.quote;
+    export let data;
+    // Add quoteID
+    const { quoteID, shutterType, averageEstimateSquareFootage, numberOfWindows, name, email, phoneNumber, specificWindowDimensions, avgCostPerWindow } = data.quote;
 
-    const { shutterType, averageEstimateSquareFootage, numberOfWindows, name, email, phoneNumber, specificWindowDimensions, avgCostPerWindow } = {
-      "quoteID": 1,
-      "shutterType": "zein shaban",
-      "averageEstimateSquareFootage": 10,
-      "numberOfWindows": 12,
-      "name": "zein shaban",
-      "email": "zain@gmail.com",
-      "phoneNumber": 16,
-      "specificWindowDimensions": "adfasdf",
-      "avgCostPerWindow": "50",
-      "date": 1731093735332
-    }
+    // const { shutterType, averageEstimateSquareFootage, numberOfWindows, name, email, phoneNumber, specificWindowDimensions, avgCostPerWindow } = {
+    //   "quoteID": 1,
+    //   "shutterType": "zein shaban",
+    //   "averageEstimateSquareFootage": 10,
+    //   "numberOfWindows": 12,
+    //   "name": "zein shaban",
+    //   "email": "zain@gmail.com",
+    //   "phoneNumber": 16,
+    //   "specificWindowDimensions": "adfasdf",
+    //   "avgCostPerWindow": "50",
+    //   "date": 1731093735332
+    // }
 
     const deleteQuote = async () => {
         try {
