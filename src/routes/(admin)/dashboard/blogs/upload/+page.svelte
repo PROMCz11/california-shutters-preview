@@ -5,6 +5,8 @@
     import List from "@editorjs/list";
     import SimpleImage from "@editorjs/simple-image";
 	import { onMount } from 'svelte';
+	import Modal from '$lib/components/Modal.svelte';
+    import { showModal } from "$lib/stores";
 
     let editor;
 
@@ -77,9 +79,27 @@
             headers: { "Content-Type": "application/json", "Authorization": `Bearer ${getAuthToken()}` }
         })
         .then(res => res.json())
-        .then(json => console.log(json))
-        .catch(err => console.log(err))
+        .then(json => {
+            if(!json.status) {
+                modalError = true;
+                $showModal = true;
+                console.log(json.message);
+            }
+
+            else {
+                modalError = false;
+                $showModal = true;
+                console.log(json);
+            }
+        })
+        .catch(err => {
+            modalError = true;
+            $showModal = true;
+            console.log(err);
+        })
     }
+
+    let modalError = false;
 </script>
 
 <svelte:head>
@@ -122,6 +142,9 @@
         </div>
     </div>
 </main>
+{#if $showModal}
+    <Modal heading={modalError ? "Something went wrong" : "Blog uploaded successfully!"} paragraph={modalError ? "Couldn't upload blog, please try again" : "You'll be redirected to the live blog"} buttonText={modalError ? "Okay" : "Go"}/>
+{/if}
 
 
 <style>
