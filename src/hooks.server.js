@@ -1,6 +1,6 @@
 import jwt from '@tsndr/cloudflare-worker-jwt';
 import { JWT_SECRET } from '$env/static/private';
-import { json } from '@sveltejs/kit';
+import { json, redirect } from '@sveltejs/kit';
 
 export async function handle({ event, resolve }) {
 	if (
@@ -31,6 +31,13 @@ export async function handle({ event, resolve }) {
 			throw new Error('invalid token');
 		} catch {
 			return json({ status: false, message: 'invalid token' });
+		}
+	}
+
+	else if (event.url.pathname.startsWith('/dashboard') && event.url.pathname !== '/dashboard/login') {
+		// console.log("Restricted Route");
+		if(!event.cookies.get('sessionToken')) {
+			throw redirect(303, "/dashboard/login");
 		}
 	}
 	const response = await resolve(event);
