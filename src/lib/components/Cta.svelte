@@ -127,8 +127,8 @@
                     <input type="text" placeholder="Window dimensions" id="window-dimensions">
                 </div>
                 <div class="btns">
-                    <button on:click={submitQuote} class="bg-yellow text-navy">Confirm my quote</button>
                     <a href="tel:1111111111"><button class="text-white">Call us</button></a>
+                    <button on:click={submitQuote} class="bg-yellow text-navy">Confirm my quote</button>
                 </div>
             </div>
         </div>
