@@ -56,8 +56,8 @@
         <div class="dimensions"><span>Specific window<br>dimensions</span><span>{specificWindowDimensions}</span></div>
         <div class="total-estimate">Total estimate: {avgCostPerWindow}</div>
         <div>
-            <a href="mailto:">Send Email</a>
-            <a href="tel:">Call</a>
+            <a href="mailto:{email}">Send Email</a>
+            <a href="tel:{phoneNumber}">Call</a>
         </div>
     </div>
 </main>
