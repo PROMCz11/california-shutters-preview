@@ -193,6 +193,10 @@
         gap: 8rem;
     }
 
+    main .cta {
+        margin-bottom: 0;
+    }
+
     .group:first-of-type {
         margin-left: auto;
     }

@@ -266,7 +266,7 @@
         flex-wrap: wrap;
     }
 
-    @media (max-width: 515px) {
+    @media (max-width: 515px) and (min-width: 450px) {
         .form .btns {
             justify-content: start;
         }

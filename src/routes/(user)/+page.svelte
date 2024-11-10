@@ -145,12 +145,12 @@
                 <picture>
                     <img src="{heroImg1Src}" alt="background shutter">
                 </picture>
-                <picture>
+                <picture style="scale: 1.5;">
                     <img src="{heroImg2Src}" alt="background shutter">
                 </picture>
             </div>
             <div class="reverse-shift">
-                <picture style="scale: 1.5;">
+                <picture style="scale: 1.3;">
                     <img src="{heroImg3Src}" alt="background shutter">
                 </picture>
                 <picture>
@@ -161,15 +161,15 @@
                 <picture>
                     <img src="{heroImg5Src}" alt="background shutter">
                 </picture>
-                <picture style="scale: 1.5;">
+                <picture style="scale: 1.3;">
                     <img src="{heroImg6Src}" alt="background shutter">
                 </picture>
             </div>
             <div class="reverse-shift">
-                <picture>
+                <picture style="scale: 1.3;">
                     <img src="{heroImg7Src}" alt="background shutter">
                 </picture>
-                <picture style="scale: 1.5;">
+                <picture>
                     <img src="{heroImg8Src}" alt="background shutter">
                 </picture>
             </div>
@@ -177,7 +177,7 @@
                 <picture>
                     <img src="{heroImg9Src}" alt="background shutter">
                 </picture>
-                <picture style="scale: 1.5;">
+                <picture>
                     <img src="{heroImg10Src}" alt="background shutter">
                 </picture>
             </div>
@@ -476,6 +476,7 @@
 
     .general-benefits > div {
         padding: 3rem;
+        padding-block: 6rem;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -495,7 +496,7 @@
     .general-benefits > h1 {
         padding-inline: 2rem;
         padding-bottom: var(--spacing);
-        padding-top: calc(var(--spacing) * 5);
+        /* padding-top: calc(var(--spacing) * 5); */
         text-align: center;
     }
 
