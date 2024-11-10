@@ -2,6 +2,7 @@
 	import { goto } from "$app/navigation";
     import callIconSrc from "$lib/assets/admin/call-icon.svg";
     import sendEmailIconSrc from "$lib/assets/admin/send-email-icon.svg";
+    import noQuotesIconSrc from "$lib/assets/admin/no-quotes.svg";
 	import { error } from "@sveltejs/kit";
 
     const formatDate = (ms) => {
@@ -10,10 +11,10 @@
         return date.toLocaleDateString('en-US', options);
     }
 
-    export let data;
-    let { quotes } = data;
+    // export let data;
+    // let { quotes } = data;
 
-    // let quotes = [
+    let quotes = [
     //     {
     //     "quoteID": 2,
     //     "shutterType": "composite",
@@ -62,7 +63,7 @@
     //     "seen": 0,
     //     "avgCostPerWindow": 9999
     //   },
-    // ];
+    ];
 
     $: checkedQuotes = quotes.filter(quote => quote.checked);
 
@@ -145,7 +146,10 @@
                     <a class="email-btn" href="mailto:{email}"><img src="{sendEmailIconSrc}" alt="email icon"></a>
                 </div>
             {:else}
-                <p style="text-align: center;">No quotes</p>
+                <div class="no-quotes fs-xl">
+                    <img src="{noQuotesIconSrc}" alt="no quotes">
+                    <p>No quotes for now</p>
+                </div>
             {/each}
         {:else}
             {#each quotes as { quoteID, checked = false, name, estimate, date, phoneNumber, email, seen }}
@@ -250,5 +254,19 @@
         background-color: #C3D6FF;
         border-color: #001882;
         color: black;
+    }
+
+    .no-quotes {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+        align-items: center;
+        color: #999999;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        width: 100%;
     }
 </style>

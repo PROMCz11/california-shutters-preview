@@ -34,12 +34,12 @@ export async function handle({ event, resolve }) {
 		}
 	}
 
-	else if (event.url.pathname.startsWith('/dashboard') && event.url.pathname !== '/dashboard/login') {
-		// console.log("Restricted Route");
-		if(!event.cookies.get('sessionToken')) {
-			throw redirect(303, "/dashboard/login");
-		}
-	}
+	// else if (event.url.pathname.startsWith('/dashboard') && event.url.pathname !== '/dashboard/login') {
+	// 	// console.log("Restricted Route");
+	// 	if(!event.cookies.get('sessionToken')) {
+	// 		throw redirect(303, "/dashboard/login");
+	// 	}
+	// }
 	const response = await resolve(event);
 	return response;
 }
