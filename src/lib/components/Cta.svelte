@@ -126,8 +126,11 @@
                     <p>What are your specific window dimensions?</p>
                     <input type="text" placeholder="Window dimensions" id="window-dimensions">
                 </div>
+                <div class="btns">
+                    <button on:click={submitQuote} class="bg-yellow text-navy">Confirm my quote</button>
+                    <a href="tel:1111111111"><button class="text-white">Call us</button></a>
+                </div>
             </div>
-            <button on:click={submitQuote} class="bg-yellow text-navy">Confirm my quote</button>
         </div>
     </div>
     <div class="secondary-cta">
@@ -233,9 +236,27 @@
         transform: scale(1);
     }
 
-    .form > button {
-        margin-inline: auto;
-        display: block;
+    .form .btns {
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        gap: .5rem;
+        flex-wrap: wrap;
+    }
+
+    @media (max-width: 515px) {
+        .form .btns {
+            justify-content: start;
+        }
+    }
+
+    .form .btns button {
+        max-width: max-content;
+        padding-inline: .4rem;
+    }
+
+    .form .btns a button {
+        border: 1px solid var(--clr-white);
     }
 
     .secondary-cta {

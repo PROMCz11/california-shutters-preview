@@ -5,13 +5,13 @@
     let { blogs } = data;
 
     // let blogs = [
-    //     {title: "hello", blogID: 2, date: 1731096226817},
-    //     {title: "hello", blogID: 2, date: 1731096226817},
-    //     {title: "hello", blogID: 2, date: 1731096226817},
-    //     {title: "hello", blogID: 2, date: 1731096226817},
-    //     {title: "hello", blogID: 2, date: 1731096226817},
-    //     {title: "hello", blogID: 2, date: 1731096226817},
-    //     {title: "hello", blogID: 2, date: 1731096226817},
+    //     {title: "Top 15 Shutters in Toronto you should be looking out for", blogID: 2, date: 1731096226817},
+    //     {title: "Top 15 Shutters in Toronto you should be looking out for", blogID: 2, date: 1731096226817},
+    //     {title: "Top 15 Shutters in Toronto you should be looking out for", blogID: 2, date: 1731096226817},
+    //     {title: "Top 15 Shutters in Toronto you should be looking out for", blogID: 2, date: 1731096226817},
+    //     {title: "Top 15 Shutters in Toronto you should be looking out for", blogID: 2, date: 1731096226817},
+    //     {title: "Top 15 Shutters in Toronto you should be looking out for", blogID: 2, date: 1731096226817},
+    //     {title: "Top 15 Shutters in Toronto you should be looking out for", blogID: 2, date: 1731096226817},
     // ]
 
     const deleteBlog = (blogID) => {
@@ -46,6 +46,7 @@
 </svelte:head>
 
 <main>
+    <a href="/dashboard"><button>Back to Dashboard</button></a>
     <h2>Blogs</h2>
     <button on:click={() => goto("/dashboard/blogs/upload")}>Add</button>
     {#each blogs as { title, blogID, date }}
@@ -76,6 +77,18 @@
     }
 
     button {
+        border: 1px solid black;
+        border-radius: .5rem;
+        padding: .2rem .6rem;
+        color: black;
+        background-color: white;
+        cursor: pointer;
         max-width: max-content;
+    }
+
+    button:active {
+        background-color: #C3D6FF;
+        border-color: #001882;
+        color: black;
     }
 </style>
