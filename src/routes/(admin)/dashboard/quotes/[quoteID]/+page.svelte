@@ -1,13 +1,46 @@
 <script>
-    export let data;
-    // Add quoteID
-    const { shutterType, averageEstimateSquareFootage, numberOfWindows, name, email, phoneNumber, specificWindowDimensions, avgCostPerWindow } = data.quote;
+	import { goto } from "$app/navigation";
+
+    // export let data;
+    // // Add quoteID
+    // const { quoteID, shutterType, averageEstimateSquareFootage, numberOfWindows, name, email, phoneNumber, specificWindowDimensions, avgCostPerWindow } = data.quote;
+
+    const { shutterType, averageEstimateSquareFootage, numberOfWindows, name, email, phoneNumber, specificWindowDimensions, avgCostPerWindow } = {
+      "quoteID": 1,
+      "shutterType": "zein shaban",
+      "averageEstimateSquareFootage": 10,
+      "numberOfWindows": 12,
+      "name": "zein shaban",
+      "email": "zain@gmail.com",
+      "phoneNumber": 16,
+      "specificWindowDimensions": "adfasdf",
+      "avgCostPerWindow": "50",
+      "date": 1731093735332
+    }
+
+    const deleteQuote = async () => {
+        try {
+            const res = await fetch("../../../../api/quotes/delete", {
+                method: "DELETE",
+                body: JSON.stringify({ ids: [quoteID] }),
+                headers: { "Content-Type": "application/json" }
+            });
+            const deleteData = await res.json();
+            const status = deleteData.status;
+            if(!status) {
+                throw error(400, deleteData.message);
+            }
+            goto("/dashboard/quotes");
+        } catch (err) {
+            console.log(err);
+        }
+    }
 </script>
 
 <main class="fs-400">
     <div class="controls">
         <a href="/dashboard/quotes">Back</a>
-        <button>Delete</button>
+        <button on:click={deleteQuote}>Delete</button>
     </div>
     <div class="quote">
         <div class="personal-info">
@@ -79,6 +112,24 @@
         display: flex;
         justify-content: end;
         gap: .5rem;
+    }
+
+    button {
+        border: 1px solid black;
+        border-radius: .5rem;
+        padding: .2rem .6rem;
+        color: black;
+        background-color: white;
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        border: 1px solid black;
+        border-radius: .5rem;
+        padding: .2rem .6rem;
+        color: black;
+        background-color: white;
     }
 
     @media (max-width: 768px) {

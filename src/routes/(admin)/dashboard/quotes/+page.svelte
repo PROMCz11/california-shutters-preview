@@ -10,59 +10,59 @@
         return date.toLocaleDateString('en-US', options);
     }
 
-    // export let data;
-    // let { quotes } = data;
+    export let data;
+    let { quotes } = data;
 
-    let quotes = [
-        {
-        "quoteID": 2,
-        "shutterType": "composite",
-        "averageEstimateSquareFootage": 250,
-        "numberOfWindows": 333,
-        "name": "Zain Suleiman",
-        "email": "zain22@gmail.com",
-        "phoneNumber": 9999999999,
-        "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
-        "seen": 1,
-        "avgCostPerWindow": 9999
-      },
-        {
-        "quoteID": 2,
-        "shutterType": "composite",
-        "averageEstimateSquareFootage": 250,
-        "numberOfWindows": 333,
-        "name": "Zain Suleiman",
-        "email": "zain22@gmail.com",
-        "phoneNumber": 9999999999,
-        "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
-        "seen": 0,
-        "avgCostPerWindow": 9999
-      },
-        {
-        "quoteID": 2,
-        "shutterType": "composite",
-        "averageEstimateSquareFootage": 250,
-        "numberOfWindows": 333,
-        "name": "Zain Suleiman",
-        "email": "zain22@gmail.com",
-        "phoneNumber": 9999999999,
-        "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
-        "seen": 1,
-        "avgCostPerWindow": 9999
-      },
-        {
-        "quoteID": 2,
-        "shutterType": "composite",
-        "averageEstimateSquareFootage": 250,
-        "numberOfWindows": 333,
-        "name": "Zain Suleiman",
-        "email": "zain22@gmail.com",
-        "phoneNumber": 9999999999,
-        "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
-        "seen": 0,
-        "avgCostPerWindow": 9999
-      },
-    ];
+    // let quotes = [
+    //     {
+    //     "quoteID": 2,
+    //     "shutterType": "composite",
+    //     "averageEstimateSquareFootage": 250,
+    //     "numberOfWindows": 333,
+    //     "name": "Zain Suleiman",
+    //     "email": "zain22@gmail.com",
+    //     "phoneNumber": 9999999999,
+    //     "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
+    //     "seen": 1,
+    //     "avgCostPerWindow": 9999
+    //   },
+    //     {
+    //     "quoteID": 2,
+    //     "shutterType": "composite",
+    //     "averageEstimateSquareFootage": 250,
+    //     "numberOfWindows": 333,
+    //     "name": "Zain Suleiman",
+    //     "email": "zain22@gmail.com",
+    //     "phoneNumber": 9999999999,
+    //     "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
+    //     "seen": 0,
+    //     "avgCostPerWindow": 9999
+    //   },
+    //     {
+    //     "quoteID": 2,
+    //     "shutterType": "composite",
+    //     "averageEstimateSquareFootage": 250,
+    //     "numberOfWindows": 333,
+    //     "name": "Zain Suleiman",
+    //     "email": "zain22@gmail.com",
+    //     "phoneNumber": 9999999999,
+    //     "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
+    //     "seen": 1,
+    //     "avgCostPerWindow": 9999
+    //   },
+    //     {
+    //     "quoteID": 2,
+    //     "shutterType": "composite",
+    //     "averageEstimateSquareFootage": 250,
+    //     "numberOfWindows": 333,
+    //     "name": "Zain Suleiman",
+    //     "email": "zain22@gmail.com",
+    //     "phoneNumber": 9999999999,
+    //     "specificWindowDimensions": "oncincj pwi vihe vph wfewf",
+    //     "seen": 0,
+    //     "avgCostPerWindow": 9999
+    //   },
+    // ];
 
     $: checkedQuotes = quotes.filter(quote => quote.checked);
 
@@ -243,6 +243,7 @@
         padding: .2rem .6rem;
         color: black;
         background-color: white;
+        cursor: pointer;
     }
 
     button.active {
