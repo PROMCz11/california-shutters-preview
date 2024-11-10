@@ -2,6 +2,10 @@
     import desktopBgSrc from "$lib/assets/cta/gallery-cta-desktop.webp";
     import mobileBgSrc from "$lib/assets/cta/gallery-cta-mobile.webp";
 	import { onMount } from "svelte";
+	import Modal from "$lib/components/Modal.svelte";
+    import { showModal } from "$lib/stores";
+
+    let modalError = false;
 
     const submitQuote = () => {
         let shutterType;
@@ -50,8 +54,23 @@
             headers: { "Content-Type": "application/json" }
         })
         .then(res => res.json())
-        .then(json => console.log(json))
-        .catch(err => console.log(err))        
+        .then(json => {
+            if(!json.status) {
+                modalError = true;
+                $showModal = true;
+                console.log(json.message);
+            }
+            else {
+                modalError = false;
+                $showModal = true;
+                console.log(json);
+            }
+        })
+        .catch(err => {
+            modalError = true;
+            $showModal = true;
+            console.log(err);
+        })        
     }
 </script>
 
@@ -139,6 +158,9 @@
         </div>
     </div>
 </div>
+{#if $showModal}
+    <Modal heading={modalError ? "Something went wrong" : "Thank you for submitting!"} paragraph={modalError ? "Please try again later" : "We will review your request and reach out to you as soon as possible."} buttonText={"Okay"}/>
+{/if}
 
 <style>
     .main > div:first-of-type {
